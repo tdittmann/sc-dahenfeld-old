@@ -1,0 +1,51 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Navigation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-list>
+      <ion-list-header>Verein</ion-list-header>
+      <button ion-item menuClose *ngFor="let p of vereinNavigation" (click)="openPage(p)"
+              [ngClass]="{'navigationItemIsActive' : p.active}">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>Fußball</ion-list-header>
+      <button ion-item menuClose *ngFor="let p of fussballNavigation" (click)="openPage(p)"
+              [ngClass]="{'navigationItemIsActive' : p.active}">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>Turnen & Tischtennis</ion-list-header>
+      <button ion-item menuClose *ngFor="let p of turnenTischtennisNavigation" (click)="openPage(p)"
+              [ngClass]="{'navigationItemIsActive' : p.active}">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>Die SCD-App</ion-list-header>
+      <button ion-item menuClose *ngFor="let p of appNavigation" (click)="openPage(p)"
+              [ngClass]="{'navigationItemIsActive' : p.active}">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

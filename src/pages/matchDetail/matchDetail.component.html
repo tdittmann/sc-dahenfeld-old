@@ -1,0 +1,218 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Spielinformationen</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span showWhen="ios">Zurück</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="overview">
+        Übersicht
+      </ion-segment-button>
+      <ion-segment-button value="lineup" (ionSelect)="setInitialSelectedTeam()">
+        Aufstellung
+      </ion-segment-button>
+      <ion-segment-button value="scoresheet" (ionSelect)="getSpielbericht()">
+        Spielbericht
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding class="grayBackground">
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ng-template [ngIf]="match.matchInformation && !isError">
+    <div [ngSwitch]="type">
+
+      <!-- Uebersicht -->
+      <div *ngSwitchCase="'overview'">
+        <div class="matchInfos" *ngIf="match.matchInformation">
+
+          <div class="matchInfosHome">
+            <img src="assets/img/clubs/{{ match.matchInformation.home_id }}.png"
+                 onError="this.src='assets/img/defaultLogoBig.png'"/>
+            <br/>
+            {{ match.matchInformation.home_name }}
+          </div>
+
+          <div class="matchInfosResult">
+            <ng-template [ngIf]="match.matchInformation.home_result != null">
+              {{ match.matchInformation.home_result }} : {{ match.matchInformation.away_result }}
+            </ng-template>
+            <ng-template [ngIf]="match.matchInformation.home_result == null">- : -</ng-template>
+          </div>
+
+          <div class="matchInfosAway">
+            <img src="assets/img/clubs/{{ match.matchInformation.away_id }}.png"
+                 onError="this.src='assets/img/defaultLogoBig.png'"/>
+            <br/>
+            {{ match.matchInformation.away_name }}
+          </div>
+
+          <div style="clear: both;"></div>
+        </div>
+
+        <ng-template [ngIf]="match.overview && match.overview.length > 0">
+          <h4 class="statsHeading uebersichtHeading">Übersicht</h4>
+          <ion-card class="uebersicht">
+            <ion-list>
+              <ion-item *ngFor="let e of match.overview | orderBy : ['zeit']">
+
+                <div style="width: 40px;"
+                     [ngClass]="{ floatLeft : e.clubId == match.matchInformation.home_id, floatRight : e.clubId == match.matchInformation.away_id }">
+                  <b>{{ e.zeit }}'</b> <br/>
+                  <img src="assets/img/icons/{{ e.ereignisIcon }}" style="height: 20px; width: auto;"/>
+                </div>
+
+                <div style="display: table; height: 43px; overflow: hidden;"
+                     [ngClass]="{ floatLeft : e.clubId == match.matchInformation.home_id, floatRight : e.clubId == match.matchInformation.away_id }">
+                  <div style="display: table-cell; vertical-align: middle;">
+                    <h2>{{ e.name }}</h2>
+                    <p *ngIf="e.name1">{{ e.name1 }}</p>
+                  </div>
+                </div>
+
+              </ion-item>
+            </ion-list>
+          </ion-card>
+        </ng-template>
+
+        <h4 class="statsHeading">Spielinformationen</h4>
+        <ng-template [ngIf]="match.matchInformation">
+          <ion-card style="text-align: center;">
+            <ion-card-content>
+              <span class="smallDescription">Anstoß</span><br/>
+              <span class="bigValue">{{ match.matchInformation.date | date : 'HH:mm'}} Uhr</span>
+              <hr/>
+
+              <div style="float: left; width: 50%;">
+                <span class="smallDescription">Datum</span><br/>
+                <span class="bigValue">{{ match.matchInformation.date | date : 'longDate'}}</span>
+              </div>
+
+              <div style="float: left; width: 50%;">
+                <span class="smallDescription">Spieltag</span><br/>
+                <span class="bigValue">{{ match.matchInformation.round_number }}</span>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ng-template>
+      </div>
+
+      <!-- Aufstellung -->
+      <div *ngSwitchCase="'lineup'">
+        <ng-template [ngIf]="match.lineup.length <= 0">
+          <div class="loadingSpinner">
+            Leider ist aktuell keine Aufstellung vorhanden<br/>
+            <ion-icon name="football"></ion-icon>
+          </div>
+        </ng-template>
+
+        <ng-template [ngIf]="match.lineup.length > 0">
+          <ng-template [ngIf]="match.matchInformation">
+            <div class="mannschaftsauswahl">
+              <div class="mannschaftTeam" (click)="changeSelectedClub(match.matchInformation.home_id)"
+                   [ngClass]="{ mannschaftAktiv : match.matchInformation.home_id == selectedClub}">
+                {{ match.matchInformation.home_name }}
+              </div>
+              <div class="mannschaftTeam" (click)="changeSelectedClub(match.matchInformation.away_id)"
+                   [ngClass]="{ mannschaftAktiv : match.matchInformation.away_id == selectedClub}">
+                {{ match.matchInformation.away_name }}
+              </div>
+            </div>
+          </ng-template>
+
+          <ng-template [ngIf]="match.lineup">
+            <h4 class="statsHeading">Startaufstellung</h4>
+            <ion-card class="startaufstellung">
+              <ion-list>
+                <div *ngFor="let e of match.lineup | orderBy : ['trikotnummer']">
+                  <ion-item *ngIf="selectedClub == e.clubId">
+                    <div style="float: left; width: 80%; display: table; height: 43px; overflow: hidden;">
+                      <div style="display: table-cell; vertical-align: middle;">
+                        <h2>{{ e.name }}</h2>
+                      </div>
+                    </div>
+                    <div style="width: 20%; min-width: 30px; float: left; position: relative; text-align: center;">
+                      <img src="assets/img/trikot.png"
+                           style="display: block; margin: 0 auto; height: 40px; width: auto;"/>
+                      <div style="position: absolute; font-size: 0.9em; top: 10px; width: 100%">{{
+                        e.trikotnummer }}
+                      </div>
+                    </div>
+                  </ion-item>
+                </div>
+              </ion-list>
+            </ion-card>
+          </ng-template>
+
+          <ng-template [ngIf]="match.substitutions && match.substitutions.length > 0">
+            <h4 class="statsHeading">Auswechslungen</h4>
+            <ion-card>
+              <ion-list>
+                <div *ngFor="let e of match.substitutions | orderBy : ['zeit']">
+                  <ion-item *ngIf="selectedClub == e.clubId">
+                    <div style="min-width: 40px; float: left;">
+                      <b>{{ e.zeit }}'</b> <br/>
+                      <img src="assets/img/icons/{{ e.ereignisIcon }}"
+                           style="height: 20px; width: auto;"/>
+                    </div>
+                    <div style="float: left; display: table; height: 43px; overflow: hidden;">
+                      <div style="display: table-cell; vertical-align: middle;">
+                        <h2>{{ e.name }}</h2>
+                        <p>{{ e.name1 }}</p>
+                      </div>
+                    </div>
+                  </ion-item>
+                </div>
+              </ion-list>
+            </ion-card>
+          </ng-template>
+        </ng-template>
+      </div>
+
+      <!-- Spielbericht -->
+      <div *ngSwitchCase="'scoresheet'">
+        <ng-template [ngIf]="!news">
+          <div class="loadingSpinner">
+            Leider ist aktuell kein Spielbericht vorhanden<br/>
+            <ion-icon name="document"></ion-icon>
+          </div>
+        </ng-template>
+
+        <ng-template [ngIf]="news">
+          <div padding>
+            <h2 class="headingTop" style="text-align: center">{{ news?.kategorie }}</h2>
+            <h1 class="heading" style="text-align: center">{{ news?.titel }}</h1>
+
+            <div class="headingLeft">
+              <h2 class="headingTop">{{ news?.erstellungsdatum | date : 'longDate' }}</h2>
+            </div>
+            <div class="headingRight">
+              <h2 class="headingTop">{{ news?.ersteller }}</h2>
+            </div>
+          </div>
+
+          <hr/>
+
+          <div padding [innerHtml]="news?.text" class="htmlContent"></div>
+
+          <div padding>
+            <button ion-button color="dark" icon-left block (click)="shareNews()">
+              <ion-icon name="share"></ion-icon>
+              Teilen
+            </button>
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="shareNews()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <div padding>
+    <h2 class="headingTop" style="text-align: center" *ngIf="news?.id != 733 && news?.id != 755">{{ news?.kategorie}}</h2>
+    <h1 class="heading" style="text-align: center">{{ news?.titel }}</h1>
+
+    <div class="headingLeft" *ngIf="news?.id != 733 && news?.id != 755">
+      <h2 class="headingTop">{{ news?.erstellungsdatum | date : 'longDate' }}</h2>
+    </div>
+    <div class="headingRight" *ngIf="news?.id != 733 && news?.id != 755">
+      <h2 class="headingTop">{{ news?.ersteller }}</h2>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div padding [innerHtml]="news?.text" class="htmlContent"></div>
+
+  <div padding>
+    <button ion-button color="dark" icon-left block (click)="shareNews()">
+      <ion-icon name="share"></ion-icon>
+      Teilen
+    </button>
+  </div>
+
+</ion-content>
