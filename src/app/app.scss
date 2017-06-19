@@ -1,0 +1,146 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@import "../pages/newsList/newsList.component";
+@import "../pages/newsDetail/newsDetail.component";
+
+.headerImage {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+.grayBackground {
+  background-color: #dcdcdc;
+}
+
+hr {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.htmlContent {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.htmlContent img {
+  height: auto;
+  width: 100%;
+}
+
+/* NAVBAR */
+.transparentNavBar::after,
+.transparentNavBar .toolbar-background {
+  background: transparent !important;
+}
+
+/* HEADING */
+.heading {
+  font-size: 2rem !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.headingTop {
+  color: $gray-color !important;
+  font-size: 12px !important;
+  margin: 0px;
+}
+
+.statsHeading {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 1.2em;
+}
+
+.navigationItemIsActive {
+  color: $primary-color;
+}
+
+.rankingStats {
+  color: $gray-color;
+  text-align: center;
+}
+
+.rankingRow {
+  padding-top: 10px;
+}
+
+/* CLUB LOGOS */
+.logoSmall,
+.logoMiddle,
+.logoBig {
+  width: auto;
+  margin: auto;
+}
+
+.logoSmall {
+  height: 25px;
+}
+
+.logoMiddle {
+  height: 50px;
+}
+
+.logoBig {
+  height: 75px;
+}
+
+/* Tabelle */
+.rankingFav {
+  font-weight: bold !important;
+}
+
+.tabelleErster {
+  background: #00ab00 !important;
+  color: #fff !important;
+}
+
+.tabelleRelegationAufstieg {
+  background: #a7de39 !important;
+  color: #fff !important;
+}
+
+.tabelleMittelfeld {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.tabelleRelegationAbstieg {
+  background: #ff3800 !important;
+  color: #fff !important;
+}
+
+.tabelleAbstieg {
+  background: #dc000d !important;
+  color: #fff !important;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+}

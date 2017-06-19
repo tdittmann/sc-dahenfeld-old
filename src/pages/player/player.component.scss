@@ -1,0 +1,24 @@
+.playerImage {
+  width: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  height: 200px;
+}
+
+.playerInfos {
+  text-align: center;
+}
+
+.playerInfosText {
+  text-transform: uppercase;
+}
+
+.playerInfosValue {
+  font-size: 1.5em;
+}
+
+.playerStats {
+  float: right
+}

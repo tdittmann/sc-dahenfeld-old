@@ -1,0 +1,35 @@
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ soccerService.soccer.team.toString() }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6></ion-col>
+      <ion-col col-2 class="rankingStats">Sp</ion-col>
+      <ion-col col-2 class="rankingStats">+/-</ion-col>
+      <ion-col col-2 class="rankingStats">Pk</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let t of soccerService.soccer.table | orderBy : ['-punkte', '-diff']; let i = index"
+             [ngClass]="{ rankingFav : (t.name == favTeam) }"
+             class="rankingRow">
+      <ion-col col-1 class="rankingPlaceCol">
+        <div class="rankingPlace">{{ i + 1 }}</div>
+      </ion-col>
+      <ion-col col-5 class="rankingTeam">{{ t.name }}</ion-col>
+      <ion-col col-2 class="rankingStats">{{ t.spiele }}</ion-col>
+      <ion-col col-2 class="rankingStats">{{ t.diff }}</ion-col>
+      <ion-col col-2 class="rankingStats">{{ t.punkte }}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
