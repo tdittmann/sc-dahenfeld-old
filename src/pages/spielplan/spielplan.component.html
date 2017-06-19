@@ -46,7 +46,7 @@
 
             <ion-col class="spielHeim">{{ spiel.home_name }}</ion-col>
             <ion-col class="spielHeimLogo">
-              <img src="assets/img/clubs/{{ spiel.home_id }}.png" onError="this.src='assets/img/defaultLogoBig.png'"/>
+              <img src="assets/img/clubs/{{ spiel.home_id }}.png" onError="this.src='assets/img/defaultLogo.png'"/>
             </ion-col>
 
             <ion-col class="spielErgebnis" *ngIf="spiel.home_result && spiel.away_result">
@@ -57,7 +57,7 @@
             </ion-col>
 
             <ion-col class="spielGastLogo">
-              <img src="assets/img/clubs/{{ spiel.away_id }}.png" onError="this.src='assets/img/defaultLogoBig.png'"/>
+              <img src="assets/img/clubs/{{ spiel.away_id }}.png" onError="this.src='assets/img/defaultLogo.png'"/>
             </ion-col>
             <ion-col class="spielGast">{{ spiel.away_name }}</ion-col>
 
