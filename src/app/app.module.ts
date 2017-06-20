@@ -69,7 +69,9 @@ import {EventComponent} from "../pages/event/event.component";
     Ng2FilterPipeModule,
     IonicStorageModule.forRoot(),
     CloudModule.forRoot(CLOUD_SETTINGS),
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Zurück',
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
