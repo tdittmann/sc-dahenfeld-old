@@ -33,6 +33,7 @@ export class NewsDetailComponent implements OnInit {
       this.newsService.loadNews(this.navParams.data.parameter).subscribe(
         (news) => {
           this.news = news;
+          console.log(this.news);
           this.isLoading = false;
         },
         (error) => {

@@ -4,6 +4,7 @@ import {Observable} from "rxjs/Observable";
 import {environment} from "../environments/environment";
 import {Event} from "../entities/Event";
 import {Match} from "../entities/Match";
+import 'rxjs/Rx';
 
 @Injectable()
 export class EventService {
