@@ -10,6 +10,7 @@ import {SocialSharingService} from "../../services/socialSharing.service";
 export class NewsDetailComponent implements OnInit {
 
   news: News;
+  hideInformationIds = ['733', '755', '830'];
 
   isLoading = true;
   isError = false;
@@ -48,6 +49,10 @@ export class NewsDetailComponent implements OnInit {
 
   shareNews(): void {
     this.socialSharingService.share(this.news);
+  }
+
+  showInformation(newsId: string): boolean {
+    return this.hideInformationIds.indexOf(newsId) == -1;
   }
 
 }

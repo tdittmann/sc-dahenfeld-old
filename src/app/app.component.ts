@@ -29,6 +29,7 @@ export class MyApp {
   vereinNavigation: NavigationItem[] = [
     {title: 'News', component: NewsListComponent, parameter: "", icon: "paper", active: true},
     {title: 'Vereinskalender', component: VereinskalenderComponent, parameter: "", icon: "calendar", active: false},
+    {title: 'Sportheim', component: NewsDetailComponent, parameter: "830", icon: "restaurant", active: false},
   ];
   fussballNavigation: NavigationItem[] = [
     {
