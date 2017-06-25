@@ -3,6 +3,7 @@ import {Http} from "@angular/http";
 import {environment} from "../environments/environment";
 import {News} from "../entities/News";
 import {Observable} from "rxjs/Observable";
+import "rxjs/Rx";
 
 @Injectable()
 export class NewsService {
@@ -17,15 +18,21 @@ export class NewsService {
   }
 
   loadNews(newsId: string): Observable<News> {
+
+    console.log(environment.backendUrl + "news?id=" + newsId);
+
     return this.http.get(environment.backendUrl + "news?id=" + newsId)
-      .map(response => response.json()[0]);
+      .map(response => {
+        console.log(response);
+        return response.json()[0];
+      });
   }
 
   incrementMobileHitForNews(news: News) {
     this.http.post(environment.backendUrl + "news", JSON.stringify(news))
       .subscribe(
         (response) => {
-          // Should do nothing
+          // Do nothing
         },
         (err) => {
           console.error(err);

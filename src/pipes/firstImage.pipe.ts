@@ -9,7 +9,12 @@ export class FirstImagePipe {
     // Get first image in content
     let div = document.createElement('div');
     div.innerHTML = text;
-    return div.getElementsByTagName("img")[0].src;
+
+    if (div.getElementsByTagName("img").length > 0) {
+      return div.getElementsByTagName("img")[0].src;
+    }
+
+    return "";
   }
 
 }

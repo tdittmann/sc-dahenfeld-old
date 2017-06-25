@@ -6,8 +6,6 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {IonicStorageModule} from "@ionic/storage";
 
 import {MyApp} from "./app.component";
-import {CLOUD_SETTINGS} from "./app.cloudsettings";
-import {CloudModule} from "@ionic/cloud-angular";
 import {NewsListComponent} from "../pages/newsList/newsList.component";
 import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
@@ -37,6 +35,7 @@ import {MatchDetailComponent} from "../pages/matchDetail/matchDetail.component";
 import {SocialSharingService} from "../services/socialSharing.service";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {EventComponent} from "../pages/event/event.component";
+import {Push} from "@ionic-native/push";
 
 @NgModule({
   declarations: [
@@ -68,7 +67,6 @@ import {EventComponent} from "../pages/event/event.component";
     NgPipesModule,
     Ng2FilterPipeModule,
     IonicStorageModule.forRoot(),
-    CloudModule.forRoot(CLOUD_SETTINGS),
     IonicModule.forRoot(MyApp, {
       backButtonText: 'Zurück',
     }),
@@ -103,6 +101,7 @@ import {EventComponent} from "../pages/event/event.component";
     SocialSharingService,
     FilterMatchdayPipe,
     OrderPositionPipe,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: "de-DE"},
   ]

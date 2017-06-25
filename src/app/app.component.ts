@@ -2,8 +2,6 @@ import {Component, ViewChild} from "@angular/core";
 import {Nav, Platform} from "ionic-angular";
 import {StatusBar} from "@ionic-native/status-bar";
 import {SplashScreen} from "@ionic-native/splash-screen";
-import {Push} from "@ionic/cloud-angular";
-import {PushToken} from "@ionic/cloud/dist/es5";
 import {NavigationItem} from "../entities/NavigationItem";
 import {NewsListComponent} from "../pages/newsList/newsList.component";
 import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
@@ -16,6 +14,7 @@ import {TourComponent} from "../pages/tour/tour.component";
 import {Http} from "@angular/http";
 import {environment} from "../environments/environment";
 import {YouthComponent} from "../pages/youth/youth.component";
+import {Push, PushObject, PushOptions} from "@ionic-native/push";
 
 @Component({
   templateUrl: 'app.html'
@@ -23,12 +22,13 @@ import {YouthComponent} from "../pages/youth/youth.component";
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
-  rootPage: any;
+  rootPage: any = NewsListComponent;
 
   /* NAVIGATION */
   vereinNavigation: NavigationItem[] = [
     {title: 'News', component: NewsListComponent, parameter: "", icon: "paper", active: true},
     {title: 'Vereinskalender', component: VereinskalenderComponent, parameter: "", icon: "calendar", active: false},
+    {title: 'Sportheim', component: NewsDetailComponent, parameter: "830", icon: "restaurant", active: false},
   ];
   fussballNavigation: NavigationItem[] = [
     {
@@ -59,9 +59,6 @@ export class MyApp {
               private push: Push, private storage: Storage, private http: Http) {
     platform.ready().then(() => {
 
-      // Root Page
-      this.rootPage = NewsListComponent;
-
       // Check if tour already showed
       this.storage.get("tour").then(
         (result) => {
@@ -72,8 +69,8 @@ export class MyApp {
       );
 
       // Push Notifications
-      this.registerPush();
-      this.receivePushNotification();
+      this.handlePush();
+      // this.receivePushNotification();
 
       statusBar.styleDefault();
       splashScreen.hide();
@@ -100,20 +97,43 @@ export class MyApp {
     }
   }
 
-  private registerPush() {
-    this.push.register().then((t: PushToken) => {
-      return this.push.saveToken(t);
-    }).then((t: PushToken) => {
-      this.saveToken(t.token);
-      console.log('Token saved:', t.token);
-    });
-  }
+  private handlePush() {
 
-  private receivePushNotification() {
-    this.push.rx.notification().subscribe(
-      (msg) => {
-        // TODO
-        alert(msg.title + ': ' + msg.text);
+    // Init the push service
+    const pushOptions: PushOptions = {
+      android: {
+        "senderID": "695018893719",
+        "forceShow": "true"
+      },
+      ios: {
+        alert: "true",
+        badge: "true",
+        sound: "true"
+      },
+      windows: {}
+    };
+
+    const pushObject: PushObject = this.push.init(pushOptions);
+
+    // Registration
+    pushObject.on('registration').subscribe(
+      (registration: any) => {
+        this.saveToken(registration.registrationId);
+        console.log('Token saved:', registration.registrationId);
+      });
+
+    // Notification
+    pushObject.on('notification').subscribe(
+      (notification: any) => {
+        console.log('Received a notification', notification);
+
+        if (notification.additionalData.page == "newsDetail") {
+          this.nav.setRoot(NewsDetailComponent, {parameter: notification.additionalData.id});
+        } else if (notification.additionalData.page == "vereinskalender") {
+          this.nav.setRoot(VereinskalenderComponent);
+        } else {
+          this.nav.setRoot(NewsListComponent);
+        }
       });
   }
 

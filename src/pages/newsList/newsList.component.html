@@ -20,12 +20,12 @@
           <img src="http://sc-dahenfeld.de/{{ event.image }}">
         </ion-avatar>
 
+        <h2><b>{{ event.title }}</b></h2>
         <p *ngIf="event.end == '0'">am {{ event.start | date : 'longDate' }}</p>
         <p *ngIf="event.end != '0'">
           von {{ event.start | date : "dd" }}.
           bis {{ event.end | date : 'longDate' }}
         </p>
-        <h2><b>{{ event.title }}</b></h2>
       </ion-item>
     </ion-card>
   </div>
@@ -33,7 +33,7 @@
   <!-- NEWS -->
   <ion-card *ngFor="let n of news" (click)="openNews(n)">
 
-    <div class="card-image" [ngStyle]="{'background-image' : 'url(' + n.image + ')'}"></div>
+    <div *ngIf="n.image" class="card-image" [ngStyle]="{'background-image' : 'url(' + n.image + ')'}"></div>
 
     <ion-card-content>
       <h2 class="headingTop">{{ n.erstellungsdatum | date : 'longDate'}}</h2>
