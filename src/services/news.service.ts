@@ -18,12 +18,8 @@ export class NewsService {
   }
 
   loadNews(newsId: string): Observable<News> {
-
-    console.log(environment.backendUrl + "news?id=" + newsId);
-
     return this.http.get(environment.backendUrl + "news?id=" + newsId)
       .map(response => {
-        console.log(response);
         return response.json()[0];
       });
   }
