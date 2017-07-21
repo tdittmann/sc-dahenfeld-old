@@ -46,7 +46,9 @@ export class NewsListComponent implements OnInit {
 
         // Get first image
         for (let n of this.news) {
-          n.image = FirstImagePipe.transform(n.text);
+          // This is needed, because sometimes it can happen that an imagename contains special chars
+          // and escaping these does not work in frontend
+          n.image = 'url("' + FirstImagePipe.transform(n.text) + '")';
         }
 
         this.isLoading = false;

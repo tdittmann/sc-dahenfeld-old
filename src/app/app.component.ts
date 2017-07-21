@@ -70,7 +70,6 @@ export class MyApp {
 
       // Push Notifications
       this.handlePush();
-      // this.receivePushNotification();
 
       statusBar.styleDefault();
       splashScreen.hide();
@@ -148,12 +147,13 @@ export class MyApp {
       );
   }
 
+  // We only provide android and ios, so if no android device it is automatically an ios-device.
   private getOperationSystem(): string {
     if (navigator.userAgent.match(/Android/i)) {
       return "android";
-    } else if (navigator.userAgent.match(/iPhone/i)) {
-      return "ios";
     }
+
+    return "ios";
   }
 }
 

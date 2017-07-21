@@ -33,7 +33,7 @@
   <!-- NEWS -->
   <ion-card *ngFor="let n of news" (click)="openNews(n)">
 
-    <div *ngIf="n.image" class="card-image" [ngStyle]="{'background-image' : 'url(' + n.image + ')'}"></div>
+    <div *ngIf="n.image" class="card-image" [ngStyle]="{'background-image' : n.image}"></div>
 
     <ion-card-content>
       <h2 class="headingTop">{{ n.erstellungsdatum | date : 'longDate'}}</h2>
