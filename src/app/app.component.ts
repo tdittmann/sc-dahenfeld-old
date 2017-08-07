@@ -45,6 +45,7 @@ export class MyApp {
       icon: "football",
       active: false
     },
+    {title: 'Alte Herren', component: NewsListComponent, parameter: "109", icon: "football", active: false},
     {title: 'Jugend', component: YouthComponent, parameter: "", icon: "football", active: false},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [
