@@ -27,11 +27,12 @@ export class NewsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.navParams.data.heading) {
+      this.heading = this.navParams.data.heading;
+    }
 
-    console.log(this.navParams.data.parameter);
     if (this.navParams.data.parameter) {
       this.categoryId = this.navParams.data.parameter;
-      this.heading = "Alte Herren";
     }
 
     this.loadNews();
@@ -81,4 +82,5 @@ export class NewsListComponent implements OnInit {
       }
     );
   }
+
 }
