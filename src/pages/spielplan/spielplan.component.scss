@@ -51,6 +51,12 @@
   text-align: center;
 }
 
+.spielHeimLogo img,
+.spielGastLogo img {
+  max-height: 50px;
+  width: auto;
+}
+
 .spielGast {
   text-align: right;
   width: 35%;
