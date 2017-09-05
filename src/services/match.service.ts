@@ -22,7 +22,8 @@ export class MatchService {
 
           this.matchDetail.matchInformation = data.spielinfos;
           this.matchDetail.events = data.ereignisse;
-          this.matchDetail.overview = data.ereignisse.concat(data.auswechslungen);
+          this.matchDetail.overview = data.ereignisse.concat(data.auswechslungen)
+            .sort((a, b) => a.zeit > b.zeit);
           this.matchDetail.substitutions = data.auswechslungen;
           this.matchDetail.lineup = data.startaufstellung;
         },
