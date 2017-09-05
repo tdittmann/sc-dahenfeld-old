@@ -12,8 +12,8 @@ export class NewsService {
 
   }
 
-  loadAllNews(): Observable<News[]> {
-    return this.http.get(environment.backendUrl + "news")
+  loadAllNews(categoryId: number): Observable<News[]> {
+    return this.http.get(environment.backendUrl + "news?categoryId=" + categoryId)
       .map(response => response.json());
   }
 

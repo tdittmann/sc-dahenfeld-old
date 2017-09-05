@@ -5,7 +5,7 @@ import {Component, OnInit} from "@angular/core";
 })
 export class AboutComponent implements OnInit {
 
-  version: any = "3.0.2";
+  version: any = "3.0.4";
 
   constructor() {
 

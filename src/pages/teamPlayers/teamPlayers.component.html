@@ -16,21 +16,6 @@
 
     <ng-template [ngIf]="checkHeaderPosition(p.position)">
       <ion-item-divider light style="position: static;">{{ p.position }}</ion-item-divider>
-      <ion-grid style="margin-top: -50px;">
-        <ion-row>
-          <ion-col col-2></ion-col>
-          <ion-col col-10>
-            <ion-grid>
-              <ion-row>
-                <ion-col col-6></ion-col>
-                <ion-col col-2 class="rankingStats"><img src="assets/img/icons/goal.png"/></ion-col>
-                <ion-col col-2 class="rankingStats"><img src="assets/img/icons/yellow_card.png"/></ion-col>
-                <ion-col col-2 class="rankingStats"><img src="assets/img/icons/playtime.png"/></ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
     </ng-template>
 
     <button ion-item (click)="openPlayer(p)">
@@ -41,13 +26,10 @@
 
       <ion-grid>
         <ion-row>
-          <ion-col col-6>
+          <ion-col>
             <h2>{{ p.vorname | shorten : 1}}. {{ p.nachname }}</h2>
             <p>{{ p.age }} Jahre</p>
           </ion-col>
-          <ion-col col-2 class="rankingStats">{{ p.tore }}</ion-col>
-          <ion-col col-2 class="rankingStats">{{ p.gelbeKarten }}</ion-col>
-          <ion-col col-2 class="rankingStats">{{ p.spielminuten }}</ion-col>
         </ion-row>
       </ion-grid>
 

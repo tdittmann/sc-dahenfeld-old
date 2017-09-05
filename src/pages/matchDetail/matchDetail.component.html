@@ -63,7 +63,7 @@
           <h4 class="statsHeading uebersichtHeading">Übersicht</h4>
           <ion-card class="uebersicht">
             <ion-list>
-              <ion-item *ngFor="let e of match.overview | orderBy : ['zeit']">
+              <ion-item *ngFor="let e of match.overview">
 
                 <div style="width: 40px;"
                      [ngClass]="{ floatLeft : e.clubId == match.matchInformation.home_id, floatRight : e.clubId == match.matchInformation.away_id }">
@@ -133,7 +133,7 @@
             <h4 class="statsHeading">Startaufstellung</h4>
             <ion-card class="startaufstellung">
               <ion-list>
-                <div *ngFor="let e of match.lineup | orderBy : ['trikotnummer']">
+                <div *ngFor="let e of match.lineup">
                   <ion-item *ngIf="selectedClub == e.clubId">
                     <div style="float: left; width: 80%; display: table; height: 43px; overflow: hidden;">
                       <div style="display: table-cell; vertical-align: middle;">
@@ -157,7 +157,7 @@
             <h4 class="statsHeading">Auswechslungen</h4>
             <ion-card>
               <ion-list>
-                <div *ngFor="let e of match.substitutions | orderBy : ['zeit']">
+                <div *ngFor="let e of match.substitutions">
                   <ion-item *ngIf="selectedClub == e.clubId">
                     <div style="min-width: 40px; float: left;">
                       <b>{{ e.zeit }}'</b> <br/>

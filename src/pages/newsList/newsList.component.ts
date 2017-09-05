@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {News} from "../../entities/News";
 import {NewsService} from "../../services/news.service";
-import {NavController} from "ionic-angular";
+import {NavController, NavParams} from "ionic-angular";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {NewsDetailComponent} from "../newsDetail/newsDetail.component";
 import {EventService} from "../../services/event.service";
@@ -13,16 +13,27 @@ import {EventComponent} from "../event/event.component";
 })
 export class NewsListComponent implements OnInit {
 
-  news: News[] = [];
   event: Event;
+  news: News[] = [];
+  categoryId: number;
+  heading: string = "News";
+
   isLoading: boolean = true;
   isError: boolean = false;
 
-  constructor(private newsService: NewsService, private nav: NavController, private eventService: EventService) {
+  constructor(private newsService: NewsService, private nav: NavController,
+              private eventService: EventService, private navParams: NavParams) {
 
   }
 
   ngOnInit(): void {
+    if (this.navParams.data.heading) {
+      this.heading = this.navParams.data.heading;
+    }
+
+    if (this.navParams.data.parameter) {
+      this.categoryId = this.navParams.data.parameter;
+    }
 
     this.loadNews();
     this.loadEvents();
@@ -40,7 +51,7 @@ export class NewsListComponent implements OnInit {
   }
 
   private loadNews() {
-    this.newsService.loadAllNews().subscribe(
+    this.newsService.loadAllNews(this.categoryId).subscribe(
       (news) => {
         this.news = news;
 
@@ -71,4 +82,5 @@ export class NewsListComponent implements OnInit {
       }
     );
   }
+
 }

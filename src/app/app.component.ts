@@ -26,7 +26,8 @@ export class MyApp {
 
   /* NAVIGATION */
   vereinNavigation: NavigationItem[] = [
-    {title: 'News', component: NewsListComponent, parameter: "", icon: "paper", active: true},
+    {title: 'News', component: NewsListComponent, parameter: "", heading: "News", icon: "paper", active: true},
+    {title: 'Chronik', component: NewsListComponent, parameter: "155", heading: "Chronik", icon: "time", active: false},
     {title: 'Vereinskalender', component: VereinskalenderComponent, parameter: "", icon: "calendar", active: false},
     {title: 'Sportheim', component: NewsDetailComponent, parameter: "830", icon: "restaurant", active: false},
   ];
@@ -45,6 +46,7 @@ export class MyApp {
       icon: "football",
       active: false
     },
+    {title: 'Alte Herren', component: NewsListComponent, parameter: "109", heading: "Alte Herren", icon: "football", active: false},
     {title: 'Jugend', component: YouthComponent, parameter: "", icon: "football", active: false},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [
@@ -80,7 +82,7 @@ export class MyApp {
     this.resetPageActiveStates();
 
     page.active = true;
-    this.nav.setRoot(page.component, {parameter: page.parameter});
+    this.nav.setRoot(page.component, {parameter: page.parameter, heading: page.heading});
   }
 
   private resetPageActiveStates() {
