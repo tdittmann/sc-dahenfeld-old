@@ -6,10 +6,11 @@ import {NavParams, ViewController} from "ionic-angular";
 })
 export class PlayerComponent {
 
-  spieler: any = [];
+  player: any = [];
+  segmentType: string = "playerInfo";
 
   constructor(private navParams: NavParams, public viewCtrl: ViewController) {
-    this.spieler = navParams.data.params;
+    this.player = navParams.data.params;
   }
 
   dismiss() {

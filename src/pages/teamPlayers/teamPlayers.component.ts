@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {SoccerService} from "../../services/soccer.service";
 import {ModalController} from "ionic-angular";
 import {PlayerComponent} from "../player/player.component";
+import {Player} from "../../entities/Player";
 
 @Component({
   templateUrl: "teamPlayers.component.html"
@@ -24,7 +25,7 @@ export class TeamPlayersComponent implements OnInit {
     return showHeader;
   }
 
-  openPlayer(player) {
+  openPlayer(player: Player) {
     let modal = this.modalCtrl.create(PlayerComponent, {params: player});
     modal.present();
   }

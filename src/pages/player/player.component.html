@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ spieler.vorname }} {{ spieler.nachname }}</ion-title>
+    <ion-title>{{ player.vorname }} {{ player.nachname }}</ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
         <span showWhen="ios">Zurück</span>
@@ -13,148 +13,41 @@
 
 <ion-content>
 
-  <!-- IMG -->
+  <!-- Image -->
   <div class="playerImage">
-    <img *ngIf="spieler.bild" src="http://sc-dahenfeld.de/{{ spieler.bild }}"/>
-    <img *ngIf="!spieler.bild" src="assets/img/platzhalter_kader.png"/>
+    <img *ngIf="player.bild" src="http://sc-dahenfeld.de/{{ player.bild }}"/>
+    <img *ngIf="!player.bild" src="assets/img/platzhalter_kader.png"/>
   </div>
 
-  <!-- PLAYER INFOS -->
-  <div class="playerInfos">
-    <ion-grid>
-      <ion-row>
-        <ion-col width-33>
-          <span class="playerInfosValue">{{spieler.age}}</span><br/>
-          <span class="playerInfosText rankingStats">Alter</span>
-        </ion-col>
-        <ion-col width-33>
-          <span class="playerInfosValue">{{spieler.position}}</span><br/>
-          <span class="playerInfosText rankingStats">Position</span>
-        </ion-col>
-        <ion-col width-33>
-          <span class="playerInfosValue">{{spieler.spielminuten}}</span><br/>
-          <span class="playerInfosText rankingStats">Spielminuten</span>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  <!-- Segment -->
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segmentType">
+      <ion-segment-button value="playerInfo">
+        Spielerinfo
+      </ion-segment-button>
+      <ion-segment-button value="seasonStats">
+        Akt. Saison
+      </ion-segment-button>
+      <ion-segment-button value="careerStats">
+        Karriere
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 
-  <!-- STATS -->
-  <ion-item-divider light>Statistiken der aktuellen Saison</ion-item-divider>
+  <div [ngSwitch]="segmentType">
+    <!-- Player Info -->
+    <playerInfo *ngSwitchCase="'playerInfo'" [player]="player"></playerInfo>
 
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/played.png"/></ion-icon>
-    Spiele
-    <div class="playerStats">{{ spieler.spiele }}</div>
-  </ion-item>
+    <!-- Season -->
+    <playerStats *ngSwitchCase="'seasonStats'"
+                 [stats]="player.seasonStats"
+                 heading="Statistiken der aktuellen Saison"></playerStats>
 
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/startroster.png"/></ion-icon>
-    Startelf
-    <div class="playerStats">{{ spieler.startelf }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/playtime.png"/></ion-icon>
-    Spielminuten
-    <div class="playerStats">{{ spieler.spielminuten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/in.png"/></ion-icon>
-    Einwechslungen
-    <div class="playerStats">{{ spieler.einwechslungen }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/out.png"/></ion-icon>
-    Auswechslungen
-    <div class="playerStats">{{ spieler.auswechslungen }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/yellow_card.png"/></ion-icon>
-    Gelbe Karten
-    <div class="playerStats">{{ spieler.gelbeKarten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/yellow_red_card.png"/></ion-icon>
-    Gelb-Rote Karten
-    <div class="playerStats">{{ spieler.gelbRoteKarten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/red_card.png"/></ion-icon>
-    Rote Karten
-    <div class="playerStats">{{ spieler.roteKarten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/goal.png"/></ion-icon>
-    Tore
-    <div class="playerStats">{{ spieler.tore }}</div>
-  </ion-item>
-
-  <!-- KARRIERE-STATS -->
-  <ion-item-divider light>Statistiken der Karriere*</ion-item-divider>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/played.png"/></ion-icon>
-    Spiele
-    <div class="playerStats">{{ spieler.karriereSpiele }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/startroster.png"/></ion-icon>
-    Startelf
-    <div class="playerStats">{{ spieler.karriereStartelf }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/playtime.png"/></ion-icon>
-    Spielminuten
-    <div class="playerStats">{{ spieler.karriereSpielminuten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/in.png"/></ion-icon>
-    Einwechslungen
-    <div class="playerStats">{{ spieler.karriereEinwechslungen }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/out.png"/></ion-icon>
-    Auswechslungen
-    <div class="playerStats">{{ spieler.karriereAuswechslungen }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/yellow_card.png"/></ion-icon>
-    Gelbe Karten
-    <div class="playerStats">{{ spieler.karriereGelbeKarten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/yellow_red_card.png"/></ion-icon>
-    Gelb-Rote Karten
-    <div class="playerStats">{{ spieler.karriereGelbRoteKarten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/red_card.png"/></ion-icon>
-    Rote Karten
-    <div class="playerStats">{{ spieler.karriereRoteKarten }}</div>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon item-left><img src="assets/img/icons/goal.png"/></ion-icon>
-    Tore
-    <div class="playerStats">{{ spieler.karriereTore }}</div>
-  </ion-item>
-
-  <div style="padding: 5px; background-color: #fff;">
-    * seit der Saison 2013/2014
+    <!-- Career -->
+    <playerStats *ngSwitchCase="'careerStats'"
+                 [stats]="player.careerStats"
+                 heading="Statistiken der Karriere*"
+                 information="* seit der Saison 2013/2014"></playerStats>
   </div>
 
 </ion-content>

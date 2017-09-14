@@ -1,0 +1,59 @@
+<ion-item-divider light>{{ heading }}</ion-item-divider>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/played.png"/></ion-icon>
+  Spiele
+  <div item-right>{{ stats.spiele }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/startroster.png"/></ion-icon>
+  Startelf
+  <div item-right>{{ stats.startelf }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/playtime.png"/></ion-icon>
+  Spielminuten
+  <div item-right>{{ stats.spielminuten }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/in.png"/></ion-icon>
+  Einwechslungen
+  <div item-right>{{ stats.einwechslungen }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/out.png"/></ion-icon>
+  Auswechslungen
+  <div item-right>{{ stats.auswechslungen }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/yellow_card.png"/></ion-icon>
+  Gelbe Karten
+  <div item-right>{{ stats.gelbeKarten }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/yellow_red_card.png"/></ion-icon>
+  Gelb-Rote Karten
+  <div item-right>{{ stats.gelbRoteKarten }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/red_card.png"/></ion-icon>
+  Rote Karten
+  <div item-right>{{ stats.roteKarten }}</div>
+</ion-item>
+
+<ion-item>
+  <ion-icon item-left><img src="assets/img/icons/goal.png"/></ion-icon>
+  Tore
+  <div item-right>{{ stats.tore }}</div>
+</ion-item>
+
+<div style="padding: 5px; background-color: #fff;" *ngIf="information">
+  {{ information }}
+</div>
