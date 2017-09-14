@@ -36,6 +36,8 @@ import {SocialSharingService} from "../services/socialSharing.service";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {EventComponent} from "../pages/event/event.component";
 import {Push} from "@ionic-native/push";
+import {PlayerInfoComponent} from "../pages/playerInfo/playerInfo.component";
+import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import {Push} from "@ionic-native/push";
     OrderPositionPipe,
     TourComponent,
     PlayerComponent,
+    PlayerInfoComponent,
+    PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
@@ -86,6 +90,8 @@ import {Push} from "@ionic-native/push";
     TeamPlayersComponent,
     TourComponent,
     PlayerComponent,
+    PlayerInfoComponent,
+    PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,

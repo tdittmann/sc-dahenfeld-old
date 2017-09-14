@@ -1,3 +1,5 @@
+import {Stats} from "./Stats";
+
 export class Player {
 
   person_id: number;
@@ -11,26 +13,8 @@ export class Player {
   position: string;
   age: number;
 
-  // Actual season
-  gelbeKarten: number;
-  gelbRoteKarten: number;
-  roteKarten: number;
-  tore: number;
-  spiele: number;
-  startelf: number;
-  einwechslungen: number;
-  auswechslungen: number;
-  spielminuten: number;
-
-  // Carrer
-  karriereGelbeKarten: number;
-  karriereGelbRoteKarten: number;
-  karriereRoteKarten: number;
-  karriereTore: number;
-  karriereSpiele: number;
-  karriereStartelf: number;
-  karriereEinwechslungen: number;
-  karriereAuswechslungen: number;
-  karriereSpielminuten: number;
+  // Stats
+  seasonStats: Stats;
+  careerStats: Stats;
 
 }
