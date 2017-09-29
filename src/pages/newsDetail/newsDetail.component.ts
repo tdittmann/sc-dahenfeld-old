@@ -49,7 +49,7 @@ export class NewsDetailComponent implements OnInit {
   }
 
   shareNews(): void {
-    this.socialSharingService.share(this.news);
+    this.socialSharingService.shareNews(this.news);
   }
 
   showInformation(newsId: string): boolean {

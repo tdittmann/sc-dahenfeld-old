@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Geburtstage</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <ion-item-group>
+    <div *ngFor="let birthday of birthdays | orderBy : 'daysUntilBirthday'">
+
+      <ion-item (click)="shareBirthday(birthday)" [ngClass]="{'todayBirthday' : (birthday.daysUntilBirthday == 0)}">
+        <h2>{{ birthday.firstname }} {{ birthday.lastname }}</h2>
+        <p>wird {{ birthday.age }} am {{ birthday.date | date : 'dd. MMMM'}}</p>
+        <ion-note item-end *ngIf="birthday.daysUntilBirthday == 0">heute</ion-note>
+        <ion-note item-end *ngIf="birthday.daysUntilBirthday == 1">morgen</ion-note>
+        <ion-note item-end *ngIf="birthday.daysUntilBirthday > 1">in {{birthday.daysUntilBirthday}}<br/>Tagen</ion-note>
+      </ion-item>
+
+    </div>
+
+  </ion-item-group>
+
+
+</ion-content>

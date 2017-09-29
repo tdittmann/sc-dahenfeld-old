@@ -35,6 +35,15 @@
       </button>
     </ion-list>
 
+    <ion-list *ngIf="!isProduction()">
+      <ion-list-header>Development</ion-list-header>
+      <button ion-item menuClose *ngFor="let p of developmentNavigation" (click)="openPage(p)"
+              [ngClass]="{'navigationItemIsActive' : p.active}">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
     <ion-list>
       <ion-list-header>Die SCD-App</ion-list-header>
       <button ion-item menuClose *ngFor="let p of appNavigation" (click)="openPage(p)"
