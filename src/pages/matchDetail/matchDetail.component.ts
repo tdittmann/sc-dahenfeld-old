@@ -62,7 +62,7 @@ export class MatchDetailComponent implements OnInit {
   }
 
   shareNews(): void {
-    this.socialSharingService.share(this.news);
+    this.socialSharingService.shareNews(this.news);
   }
 
   changeSelectedClub(clubId) {

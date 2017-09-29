@@ -38,6 +38,8 @@ import {EventComponent} from "../pages/event/event.component";
 import {Push} from "@ionic-native/push";
 import {PlayerInfoComponent} from "../pages/playerInfo/playerInfo.component";
 import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
+import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
+import {BirthdayService} from "../services/birthday.service";
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
+    BirthdaysComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +98,7 @@ import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
+    BirthdaysComponent,
   ],
   providers: [
     StatusBar,
@@ -103,6 +107,7 @@ import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
     EventService,
     SoccerService,
     MatchService,
+    BirthdayService,
     SocialSharing,
     SocialSharingService,
     FilterMatchdayPipe,

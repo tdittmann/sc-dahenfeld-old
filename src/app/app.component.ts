@@ -15,6 +15,7 @@ import {Http} from "@angular/http";
 import {environment} from "../environments/environment";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {Push, PushObject, PushOptions} from "@ionic-native/push";
+import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -46,12 +47,22 @@ export class MyApp {
       icon: "football",
       active: false
     },
-    {title: 'Alte Herren', component: NewsListComponent, parameter: "109", heading: "Alte Herren", icon: "football", active: false},
+    {
+      title: 'Alte Herren',
+      component: NewsListComponent,
+      parameter: "109",
+      heading: "Alte Herren",
+      icon: "football",
+      active: false
+    },
     {title: 'Jugend', component: YouthComponent, parameter: "", icon: "football", active: false},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [
     {title: 'Turnen', component: NewsDetailComponent, parameter: "733", icon: "body", active: false},
     {title: 'Tischtennis', component: NewsDetailComponent, parameter: "755", icon: "walk", active: false},
+  ];
+  developmentNavigation: NavigationItem[] = [
+    {title: 'Geburtstage', component: BirthdaysComponent, parameter: "", icon: "time", active: false},
   ];
   appNavigation: NavigationItem[] = [
     {title: 'Über die App', component: AboutComponent, parameter: "", icon: "information-circle", active: false}
@@ -103,7 +114,6 @@ export class MyApp {
     // Init the push service
     const pushOptions: PushOptions = {
       android: {
-        "senderID": "695018893719",
         "forceShow": "true"
       },
       ios: {
@@ -156,6 +166,10 @@ export class MyApp {
     }
 
     return "ios";
+  }
+
+  private isProduction(): boolean {
+    return environment.production;
   }
 }
 
