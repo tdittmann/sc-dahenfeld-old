@@ -35,7 +35,7 @@
       </button>
     </ion-list>
 
-    <ion-list *ngIf="!isProduction()">
+    <ion-list *ngIf="false">
       <ion-list-header>Development</ion-list-header>
       <button ion-item menuClose *ngFor="let p of developmentNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">

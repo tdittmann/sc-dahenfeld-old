@@ -167,9 +167,5 @@ export class MyApp {
 
     return "ios";
   }
-
-  private isProduction(): boolean {
-    return environment.production;
-  }
 }
 
