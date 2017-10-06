@@ -176,6 +176,16 @@ hr {
 
   .navigationItemIsActive {
     color: $primary-color;
+    background-color: $active-color;
+  }
+
+  ion-list-header {
+    margin-bottom: 0px !important;
+  }
+
+  .navigationFront {
+    color: $primary-color;
+    font-weight: bold;
   }
 }
 
