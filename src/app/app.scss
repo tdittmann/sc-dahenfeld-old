@@ -15,12 +15,6 @@
 @import "../pages/newsList/newsList.component";
 @import "../pages/newsDetail/newsDetail.component";
 
-.headerImage {
-  height: 350px;
-  background-size: cover;
-  background-position: center;
-}
-
 .grayBackground {
   background-color: #dcdcdc;
 }
@@ -37,6 +31,10 @@ hr {
 .htmlContent img {
   height: auto;
   width: 100%;
+}
+
+.padding-top {
+  padding-top: 16px;
 }
 
 /* NAVBAR */
@@ -62,10 +60,6 @@ hr {
   padding-left: 20px;
   padding-top: 20px;
   font-size: 1.2em;
-}
-
-.navigationItemIsActive {
-  color: $primary-color;
 }
 
 .rankingStats {
@@ -143,4 +137,71 @@ hr {
 .inner {
   margin-left: auto;
   margin-right: auto;
+}
+
+#menu-material {
+  .menu-header {
+    padding: 5px 15px;
+    background-image: url('../assets/img/menu_bg.png');
+    background-size: cover;
+    color: white;
+    text-align: center;
+
+    .name {
+      font-weight: 400;
+      font-size: 1.25em;
+      margin: 0;
+    }
+
+  }
+
+  ion-list-header {
+    text-transform: uppercase;
+  }
+
+  .user-avatar {
+    padding: 0;
+    height: 12vh;
+  }
+
+  .list-header {
+    font-size: 1.2em !important;
+    font-weight: 400 !important;
+  }
+
+  h3,
+  .label {
+    font-weight: 400;
+  }
+
+  .navigationItemIsActive {
+    color: $primary-color;
+  }
+}
+
+.transparent-header {
+  // This is just to make the header transparent and button/icon with white color
+  .toolbar-content,
+  .back-button {
+    color: white;
+  }
+
+  .toolbar-background,
+  ion-navbar,
+  ion-header {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  .header-md::after,
+  .toolbar-background-ios {
+    background-image: none;
+    border-bottom: 0;
+  }
+
+  .header-ios .toolbar-background-ios,
+  .footer-ios .toolbar-background-ios {
+    border: 0;
+  }
+
 }

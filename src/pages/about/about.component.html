@@ -3,13 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Über die App</ion-title>
+    <ion-title>Impressum</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content no-padding>
-  <div class="aboutTop">
-    <img src="assets/img/logo.png"/>
+<ion-content>
+  <div text-center class="padding-top">
+    <img src="assets/img/logo.png" class="aboutImage"/>
     <p>
       <b>SC Dahenfeld 1946 e.V.</b><br/>
       In den Prügelwiesen<br/>
@@ -18,14 +18,13 @@
   </div>
 
   <ion-item-group>
-    <ion-item-divider light>Die SC Dahenfeld App</ion-item-divider>
     <ion-item>
       <ion-label>App-Version</ion-label>
       <p item-right>{{ version }}</p>
     </ion-item>
     <ion-item>
       <ion-label>Design und Entwicklung</ion-label>
-      <p item-right>Timo Dittmann</p>
+      <p item-right>{{ developer }}</p>
     </ion-item>
   </ion-item-group>
 

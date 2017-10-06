@@ -65,7 +65,7 @@ export class MyApp {
     {title: 'Geburtstage', component: BirthdaysComponent, parameter: "", icon: "time", active: false},
   ];
   appNavigation: NavigationItem[] = [
-    {title: 'Über die App', component: AboutComponent, parameter: "", icon: "information-circle", active: false}
+    {title: 'Impressum', component: AboutComponent, parameter: "", icon: "information-circle", active: false}
   ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,

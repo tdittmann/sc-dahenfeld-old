@@ -40,6 +40,7 @@ import {PlayerInfoComponent} from "../pages/playerInfo/playerInfo.component";
 import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {BirthdayService} from "../services/birthday.service";
+import {SuperTabsModule} from "ionic2-super-tabs";
 
 @NgModule({
   declarations: [
@@ -74,8 +75,10 @@ import {BirthdayService} from "../services/birthday.service";
     NgPipesModule,
     Ng2FilterPipeModule,
     IonicStorageModule.forRoot(),
+    SuperTabsModule.forRoot(),
     IonicModule.forRoot(MyApp, {
-      backButtonText: 'Zurück',
+      activator: 'ripple',
+      backButtonText: '',
     }),
   ],
   bootstrap: [IonicApp],
