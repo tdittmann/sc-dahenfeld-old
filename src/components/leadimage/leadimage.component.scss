@@ -1,0 +1,10 @@
+leadimage {
+
+  .container {
+    height: $leadimage-height;
+    box-shadow: $leadimage-shadow;
+    background-size: cover;
+    background-position: center;
+  }
+
+}

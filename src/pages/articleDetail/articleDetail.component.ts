@@ -1,13 +1,17 @@
-import {Component, OnInit} from "@angular/core";
-import {NavParams} from "ionic-angular";
+import {Component, OnInit, ViewChild} from "@angular/core";
+import {Content, Navbar, NavParams} from "ionic-angular";
 import {ArticleService} from "../../services/article.service";
 import {Article} from "../../entities/News";
 import {SocialSharingService} from "../../services/socialSharing.service";
 
 @Component({
+  selector: "articleDetail",
   templateUrl: "articleDetail.component.html"
 })
 export class ArticleDetailComponent implements OnInit {
+
+  @ViewChild(Content) content: Content;
+  @ViewChild(Navbar) navbar: Navbar;
 
   article: Article;
   hideInformationIds = ['733', '755', '830'];
@@ -20,11 +24,19 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Add Listener on Scroll (Change Navbar Color)
+    this.content.ionScroll.subscribe(() => {
+      this.changeNavbarColor();
+    });
+
+
+
 
     if (this.navParams.data.parameter instanceof Object) {
 
       // Get the whole article object from parent view
       this.article = this.navParams.data.parameter;
+      this.removeFirstImage(this.article);
       this.isLoading = false;
 
     } else {
@@ -33,7 +45,7 @@ export class ArticleDetailComponent implements OnInit {
       this.articleService.loadArticle(this.navParams.data.parameter).subscribe(
         (news) => {
           this.article = news;
-          console.log(this.article);
+          this.removeFirstImage(this.article);
           this.isLoading = false;
         },
         (error) => {
@@ -46,6 +58,20 @@ export class ArticleDetailComponent implements OnInit {
     }
 
     this.articleService.incrementMobileHitForArticle(this.article);
+  }
+
+  private removeFirstImage(article: Article) {
+    this.article.text = this.article.text.replace(/<img[^>]*>/,"");
+  }
+
+  private changeNavbarColor(): void {
+    let sliderHeight = this.content.getContentDimensions().contentHeight * 0.60;
+
+    if (this.content.getContentDimensions().scrollTop > sliderHeight) {
+      this.navbar.setElementClass('navBar-color-onScroll', true);
+    } else {
+      this.navbar.setElementClass('navBar-color-onScroll', false);
+    }
   }
 
   shareArticle(): void {

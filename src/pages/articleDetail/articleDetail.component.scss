@@ -1,9 +1,7 @@
-.headingLeft,
-.headingRight {
-  float: left;
-  width: 50%;
-}
+articleDetail {
 
-.headingRight {
-  text-align: right;
+  ion-content > .scroll-content {
+    padding-top: 0px !important;
+  }
+
 }

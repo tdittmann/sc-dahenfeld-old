@@ -27,7 +27,7 @@ export class FrontPageComponent implements OnInit {
   isError: boolean = false;
 
   constructor(private newsService: ArticleService, private nav: NavController,
-              private eventService: EventService, private element: ElementRef) {
+              private eventService: EventService) {
 
   }
 
@@ -39,14 +39,7 @@ export class FrontPageComponent implements OnInit {
 
     // Load Content
     this.loadArticles();
-    // this.loadEvents();
-
-    this.event = new EventEntry();
-    this.event.text = "Das ist ein Test";
-    this.event.start = "1507327200000";
-    this.event.end = "1507413600000";
-    this.event.title = "Dahenfelder Dorffest";
-    this.event.image = "/media/com_tdevents/1507309229_human-110316_640.jpg";
+    this.loadEvents();
   }
 
   private loadArticles() {

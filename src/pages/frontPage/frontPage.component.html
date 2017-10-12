@@ -7,12 +7,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content fullscreen class="grayBackground" #content>
+<ion-content fullscreen class="grayBackground">
 
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
-  <ion-slides class="articlesSlider" pager loop autoplay="500000" *ngIf="featureArticles.length">
+  <ion-slides class="articlesSlider" pager loop autoplay="5000" *ngIf="featureArticles.length">
 
     <ng-template ngFor let-article [ngForOf]="featureArticles">
       <ion-slide [ngStyle]="{'background-image' : article.image}"
@@ -56,7 +56,7 @@
 
     <ion-card-content>
       <h2 class="headingTop">{{ article.kategorie }}</h2>
-      <h1 class="heading">{{ article.titel }}</h1>
+      <h1 class="headingSmall">{{ article.titel }}</h1>
     </ion-card-content>
   </ion-card>
 

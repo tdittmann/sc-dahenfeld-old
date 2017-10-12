@@ -42,6 +42,7 @@ import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {BirthdayService} from "../services/birthday.service";
 import {SuperTabsModule} from "ionic2-super-tabs";
 import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
+import {LeadImageComponent} from "../components/leadimage/leadimage.component";
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
     EventComponent,
     BirthdaysComponent,
     FrontPageComponent,
+    LeadImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +107,7 @@ import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
     EventComponent,
     BirthdaysComponent,
     FrontPageComponent,
+    LeadImageComponent,
   ],
   providers: [
     StatusBar,

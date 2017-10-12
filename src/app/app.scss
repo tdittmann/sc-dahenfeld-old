@@ -128,6 +128,7 @@ hr {
   margin-right: auto;
 }
 
+/* MENU */
 #menu-material {
   .menu-header {
     padding: 5px 15px;
@@ -181,4 +182,41 @@ hr {
 /* Slider */
 .swiper-pagination-bullet-active {
   background: $primary-color !important;
+}
+
+/* SCROLLING NAVBAR */
+.navBar-color-onScroll {
+  background-color: $primary-color;
+}
+
+.navBar-color-onScroll-transition {
+  transition: background-color 0.5s ease-out;
+}
+
+/* HEADING */
+.headingTop {
+  color: $primary-color !important;
+  font-size: 12px !important;
+  margin: 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.headingBig,
+.headingSmall {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.headingBig {
+  font-size: 2rem !important;
+}
+
+.headingSmall {
+  font-size: 1.75rem !important;
+}
+
+.subHeading {
+  color: $gray-color;
+  font-size: 12px !important;
 }

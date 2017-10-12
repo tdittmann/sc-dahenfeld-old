@@ -18,7 +18,7 @@
 
     <ion-card-content>
       <h2 class="headingTop">{{ article.erstellungsdatum | date : 'longDate'}}</h2>
-      <h1 class="heading">{{ article.titel }}</h1>
+      <h1 class="headingSmall">{{ article.titel }}</h1>
       <div [innerHtml]="article.text | limitHtmlText: 150"></div>
     </ion-card-content>
   </ion-card>

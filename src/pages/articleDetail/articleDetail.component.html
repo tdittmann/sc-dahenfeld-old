@@ -1,9 +1,11 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent class="navBar-color-onScroll-transition">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title></ion-title>
+
     <ion-buttons end>
       <button ion-button icon-only (click)="shareArticle()">
         <ion-icon name="share"></ion-icon>
@@ -12,21 +14,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content no-padding>
+<ion-content fullscreen>
 
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
+  <leadimage [src]="article?.image"></leadimage>
+
   <div padding>
     <h2 class="headingTop" style="text-align: center" *ngIf="showInformation(article?.id)">{{ article?.kategorie}}</h2>
-    <h1 class="heading" style="text-align: center">{{ article?.titel }}</h1>
 
-    <div class="headingLeft" *ngIf="showInformation(article?.id)">
-      <h2 class="headingTop">{{ article?.erstellungsdatum | date : 'longDate' }}</h2>
-    </div>
-    <div class="headingRight" *ngIf="showInformation(article?.id)">
-      <h2 class="headingTop">{{ article?.ersteller }}</h2>
-    </div>
+    <h1 class="headingBig" style="text-align: center">{{ article?.titel }}</h1>
+
+    <ion-grid *ngIf="showInformation(article?.id)" class="subHeading">
+      <ion-row>
+        <ion-col text-left>
+          {{ article?.erstellungsdatum | date : 'longDate'}}
+        </ion-col>
+        <ion-col text-right>
+          {{ article?.ersteller }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
   <hr/>
@@ -34,7 +43,7 @@
   <div padding [innerHtml]="article?.text" class="htmlContent"></div>
 
   <div padding>
-    <button ion-button color="dark" icon-left block (click)="shareArticle()">
+    <button ion-button color="primary" icon-left block (click)="shareArticle()">
       <ion-icon name="share"></ion-icon>
       Teilen
     </button>

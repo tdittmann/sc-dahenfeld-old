@@ -4,37 +4,16 @@ frontPage {
     padding-top: 0px !important;
   }
 
-  .navBar-color-onScroll {
-    background-color: $primary-color;
-  }
-
-  .navBar-color-onScroll-transition {
-    transition: background-color 0.5s ease-out;
-  }
-
-  .headingTop {
-    color: $primary-color !important;
-    font-size: 12px !important;
-    margin: 0px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  .heading {
-    font-size: 1.75rem !important;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
   .sliderBackgroundImage {
+    width: 100%;
     background-size: cover;
     background-position: center;
   }
 
   .articlesSlider {
-    height: 60vh;
+    height: $leadimage-height;
     text-transform: uppercase;
-    box-shadow: 0px 1px 20px grey;
+    box-shadow: $leadimage-shadow;
   }
 
   .articlesSlider .swiper-slide {
