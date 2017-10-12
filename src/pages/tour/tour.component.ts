@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {Storage} from "@ionic/storage";
 import {NavController} from "ionic-angular";
-import {NewsListComponent} from "../newsList/newsList.component";
+import {FrontPageComponent} from "../frontPage/frontPage.component";
 
 @Component({
   templateUrl: "tour.component.html",
@@ -38,7 +38,7 @@ export class TourComponent {
 
   redirectToNewsList() {
     this.storage.set("tour", "1");
-    this.nav.setRoot(NewsListComponent);
+    this.nav.setRoot(FrontPageComponent);
   }
 
 }

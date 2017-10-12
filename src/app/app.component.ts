@@ -3,10 +3,10 @@ import {Nav, Platform} from "ionic-angular";
 import {StatusBar} from "@ionic-native/status-bar";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {NavigationItem} from "../entities/NavigationItem";
-import {NewsListComponent} from "../pages/newsList/newsList.component";
+import {ArticleCardListComponent} from "../pages/articleCardList/articleCardList.component";
 import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
 import {AboutComponent} from "../pages/about/about.component";
-import {NewsDetailComponent} from "../pages/newsDetail/newsDetail.component";
+import {ArticleDetailComponent} from "../pages/articleDetail/articleDetail.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {Mannschaftsart} from "../entities/Mannschaftsart";
 import {Storage} from "@ionic/storage";
@@ -16,6 +16,7 @@ import {environment} from "../environments/environment";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {Push, PushObject, PushOptions} from "@ionic-native/push";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
+import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -23,14 +24,21 @@ import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = NewsListComponent;
+  rootPage: any = FrontPageComponent;
 
   /* NAVIGATION */
   vereinNavigation: NavigationItem[] = [
-    {title: 'News', component: NewsListComponent, parameter: "", heading: "News", icon: "paper", active: true},
-    {title: 'Chronik', component: NewsListComponent, parameter: "155", heading: "Chronik", icon: "time", active: false},
+    {title: 'News', component: FrontPageComponent, parameter: "", icon: "paper", active: true},
+    {
+      title: 'Chronik',
+      component: ArticleCardListComponent,
+      parameter: "155",
+      heading: "Chronik",
+      icon: "time",
+      active: false
+    },
     {title: 'Vereinskalender', component: VereinskalenderComponent, parameter: "", icon: "calendar", active: false},
-    {title: 'Sportheim', component: NewsDetailComponent, parameter: "830", icon: "restaurant", active: false},
+    {title: 'Sportheim', component: ArticleDetailComponent, parameter: "830", icon: "restaurant", active: false},
   ];
   fussballNavigation: NavigationItem[] = [
     {
@@ -49,7 +57,7 @@ export class MyApp {
     },
     {
       title: 'Alte Herren',
-      component: NewsListComponent,
+      component: ArticleCardListComponent,
       parameter: "109",
       heading: "Alte Herren",
       icon: "football",
@@ -58,8 +66,8 @@ export class MyApp {
     {title: 'Jugend', component: YouthComponent, parameter: "", icon: "football", active: false},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [
-    {title: 'Turnen', component: NewsDetailComponent, parameter: "733", icon: "body", active: false},
-    {title: 'Tischtennis', component: NewsDetailComponent, parameter: "755", icon: "walk", active: false},
+    {title: 'Turnen', component: ArticleDetailComponent, parameter: "733", icon: "body", active: false},
+    {title: 'Tischtennis', component: ArticleDetailComponent, parameter: "755", icon: "walk", active: false},
   ];
   developmentNavigation: NavigationItem[] = [
     {title: 'Geburtstage', component: BirthdaysComponent, parameter: "", icon: "time", active: false},
@@ -139,11 +147,11 @@ export class MyApp {
         console.log('Received a notification', notification);
 
         if (notification.additionalData.page == "newsDetail") {
-          this.nav.setRoot(NewsDetailComponent, {parameter: notification.additionalData.id});
+          this.nav.setRoot(ArticleDetailComponent, {parameter: notification.additionalData.id});
         } else if (notification.additionalData.page == "vereinskalender") {
           this.nav.setRoot(VereinskalenderComponent);
         } else {
-          this.nav.setRoot(NewsListComponent);
+          this.nav.setRoot(ArticleCardListComponent);
         }
       });
   }
@@ -159,7 +167,9 @@ export class MyApp {
       );
   }
 
-  // We only provide android and ios, so if no android device it is automatically an ios-device.
+  /**
+   *   We only provide android and ios, so if no android device it is automatically an ios-device.
+   */
   private getOperationSystem(): string {
     if (navigator.userAgent.match(/Android/i)) {
       return "android";

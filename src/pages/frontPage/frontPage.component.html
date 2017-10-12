@@ -1,0 +1,63 @@
+<ion-header no-border>
+  <ion-navbar transparent class="navBar-color-onScroll-transition">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+      <ion-title>{{ heading }}</ion-title>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="grayBackground" #content>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ion-slides class="articlesSlider" pager loop autoplay="500000" *ngIf="featureArticles.length">
+
+    <ng-template ngFor let-article [ngForOf]="featureArticles">
+      <ion-slide [ngStyle]="{'background-image' : article.image}"
+                 class="sliderBackgroundImage"
+                 (click)="openArticle(article)">
+
+        <div class="slideContent">
+          <p class="noMargin">{{ article.kategorie }}</p>
+          <h3 class="noMargin">{{ article.titel }}</h3>
+        </div>
+      </ion-slide>
+
+    </ng-template>
+  </ion-slides>
+
+  <!-- Event -->
+  <div *ngIf="event">
+    <h5 class="sectionHeading">Veranstaltung</h5>
+    <ion-card (click)="openEvent(event)">
+      <ion-item class="card-event">
+        <ion-avatar item-left>
+          <img src="http://sc-dahenfeld.de/{{ event.image }}">
+        </ion-avatar>
+
+        <h2><b>{{ event.title }}</b></h2>
+        <p *ngIf="event.end == '0'">am {{ event.start | date : 'longDate' }}</p>
+        <p *ngIf="event.end != '0'">
+          von {{ event.start | date : "dd" }}.
+          bis {{ event.end | date : 'longDate' }}
+        </p>
+      </ion-item>
+    </ion-card>
+    <div class="separator"></div>
+  </div>
+
+  <!-- Articles -->
+  <h5 class="sectionHeading">Neues vom SCD</h5>
+  <ion-card *ngFor="let article of articles" (click)="openArticle(article)">
+
+    <div *ngIf="article.image" class="card-image" [ngStyle]="{'background-image' : article.image}"></div>
+
+    <ion-card-content>
+      <h2 class="headingTop">{{ article.kategorie }}</h2>
+      <h1 class="heading">{{ article.titel }}</h1>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

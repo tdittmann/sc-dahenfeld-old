@@ -1,0 +1,78 @@
+frontPage {
+
+  ion-content > .scroll-content {
+    padding-top: 0px !important;
+  }
+
+  .navBar-color-onScroll {
+    background-color: $primary-color;
+  }
+
+  .navBar-color-onScroll-transition {
+    transition: background-color 0.5s ease-out;
+  }
+
+  .headingTop {
+    color: $primary-color !important;
+    font-size: 12px !important;
+    margin: 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .heading {
+    font-size: 1.75rem !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .sliderBackgroundImage {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .articlesSlider {
+    height: 60vh;
+    text-transform: uppercase;
+    box-shadow: 0px 1px 20px grey;
+  }
+
+  .articlesSlider .swiper-slide {
+    align-items: flex-end !important;
+  }
+
+  .slideContent {
+    margin-bottom: 25px;
+  }
+
+  .sectionHeading {
+    text-transform: uppercase;
+    color: $primary-color;
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  ion-slide {
+    color: #fff;
+  }
+
+  .card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-event {
+    background-color: #343434;
+    text-align: center;
+  }
+
+  .card-event h1,
+  .card-event h2,
+  .card-event p {
+    color: #fff !important;
+  }
+
+}

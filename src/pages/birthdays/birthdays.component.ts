@@ -26,9 +26,9 @@ export class BirthdaysComponent implements OnInit {
           this.isLoading = false;
         },
         (error) => {
-          console.error(error);
           this.isError = true;
           this.isLoading = false;
+          console.error(error);
         }
       )
   }

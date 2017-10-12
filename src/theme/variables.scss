@@ -13,8 +13,9 @@ $font-path: "../assets/fonts";
 
 $primary-color: #e00001;
 $gray-color: gray;
-$text-color: #505050;
+$text-color: #3e3e3e;
 $active-color: #dadada;
+$blue-dark: #007aff;
 $background-color: #fff;
 $ionic-content-bg-color: #e1e6ea;
 $toolbar-background: $primary-color;
@@ -37,7 +38,7 @@ $colors: (
   danger: #c03636,
   light: $gray-color,
   dark: #222,
-  favorite: #69BB7B
+  favorite: #69BB7B,
 );
 
 $tabs-background: $primary-color;

@@ -32,6 +32,7 @@ export class VereinskalenderComponent implements OnInit {
       },
       (error) => {
         this.isError = true;
+        this.isLoading = false;
         console.error(error);
       }
     );

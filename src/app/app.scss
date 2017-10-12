@@ -12,11 +12,11 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-@import "../pages/newsList/newsList.component";
-@import "../pages/newsDetail/newsDetail.component";
+@import "../pages/articleCardList/articleCardList.component";
+@import "../pages/articleDetail/articleDetail.component";
 
 .grayBackground {
-  background-color: #dcdcdc;
+  background-color: #ebebeb;
 }
 
 hr {
@@ -37,23 +37,12 @@ hr {
   padding-top: 16px;
 }
 
-/* NAVBAR */
-.transparentNavBar::after,
-.transparentNavBar .toolbar-background {
-  background: transparent !important;
+.separator {
+  height: 16px;
 }
 
-/* HEADING */
-.heading {
-  font-size: 2rem !important;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.headingTop {
-  color: $gray-color !important;
-  font-size: 12px !important;
-  margin: 0px;
+.noMargin {
+  margin: 0;
 }
 
 .statsHeading {
@@ -189,29 +178,7 @@ hr {
   }
 }
 
-.transparent-header {
-  // This is just to make the header transparent and button/icon with white color
-  .toolbar-content,
-  .back-button {
-    color: white;
-  }
-
-  .toolbar-background,
-  ion-navbar,
-  ion-header {
-    background: transparent !important;
-    background-color: transparent !important;
-  }
-
-  .header-md::after,
-  .toolbar-background-ios {
-    background-image: none;
-    border-bottom: 0;
-  }
-
-  .header-ios .toolbar-background-ios,
-  .footer-ios .toolbar-background-ios {
-    border: 0;
-  }
-
+/* Slider */
+.swiper-pagination-bullet-active {
+  background: $primary-color !important;
 }

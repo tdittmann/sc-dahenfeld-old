@@ -6,12 +6,12 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {IonicStorageModule} from "@ionic/storage";
 
 import {MyApp} from "./app.component";
-import {NewsListComponent} from "../pages/newsList/newsList.component";
+import {ArticleCardListComponent} from "../pages/articleCardList/articleCardList.component";
 import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
-import {NewsService} from "../services/news.service";
+import {ArticleService} from "../services/article.service";
 import {HttpModule} from "@angular/http";
-import {NewsDetailComponent} from "../pages/newsDetail/newsDetail.component";
+import {ArticleDetailComponent} from "../pages/articleDetail/articleDetail.component";
 import {RemoveFirstImagePipe} from "../pipes/removeFirstImage.pipe";
 import {EventService} from "../services/event.service";
 import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
@@ -41,12 +41,13 @@ import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {BirthdayService} from "../services/birthday.service";
 import {SuperTabsModule} from "ionic2-super-tabs";
+import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 
 @NgModule({
   declarations: [
     MyApp,
-    NewsListComponent,
-    NewsDetailComponent,
+    ArticleCardListComponent,
+    ArticleDetailComponent,
     FirstImagePipe,
     LimitHtmlText,
     RemoveFirstImagePipe,
@@ -68,6 +69,7 @@ import {SuperTabsModule} from "ionic2-super-tabs";
     YouthComponent,
     EventComponent,
     BirthdaysComponent,
+    FrontPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,8 +86,8 @@ import {SuperTabsModule} from "ionic2-super-tabs";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    NewsListComponent,
-    NewsDetailComponent,
+    ArticleCardListComponent,
+    ArticleDetailComponent,
     VereinskalenderComponent,
     AboutComponent,
     LoadingComponent,
@@ -102,11 +104,12 @@ import {SuperTabsModule} from "ionic2-super-tabs";
     YouthComponent,
     EventComponent,
     BirthdaysComponent,
+    FrontPageComponent,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    NewsService,
+    ArticleService,
     EventService,
     SoccerService,
     MatchService,

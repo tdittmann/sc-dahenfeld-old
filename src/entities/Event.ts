@@ -1,4 +1,4 @@
-export class Event {
+export class EventEntry {
 
   title: string;
   image: string;

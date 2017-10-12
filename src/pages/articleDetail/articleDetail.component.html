@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="shareArticle()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <div padding>
+    <h2 class="headingTop" style="text-align: center" *ngIf="showInformation(article?.id)">{{ article?.kategorie}}</h2>
+    <h1 class="heading" style="text-align: center">{{ article?.titel }}</h1>
+
+    <div class="headingLeft" *ngIf="showInformation(article?.id)">
+      <h2 class="headingTop">{{ article?.erstellungsdatum | date : 'longDate' }}</h2>
+    </div>
+    <div class="headingRight" *ngIf="showInformation(article?.id)">
+      <h2 class="headingTop">{{ article?.ersteller }}</h2>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div padding [innerHtml]="article?.text" class="htmlContent"></div>
+
+  <div padding>
+    <button ion-button color="dark" icon-left block (click)="shareArticle()">
+      <ion-icon name="share"></ion-icon>
+      Teilen
+    </button>
+  </div>
+
+</ion-content>

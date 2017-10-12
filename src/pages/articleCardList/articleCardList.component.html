@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ heading }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="grayBackground">
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ion-card *ngFor="let article of articles" (click)="openArticle(article)">
+
+    <div *ngIf="article.image" class="card-image" [ngStyle]="{'background-image' : article.image}"></div>
+
+    <ion-card-content>
+      <h2 class="headingTop">{{ article.erstellungsdatum | date : 'longDate'}}</h2>
+      <h1 class="heading">{{ article.titel }}</h1>
+      <div [innerHtml]="article.text | limitHtmlText: 150"></div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

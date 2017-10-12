@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {News} from "../../entities/News";
+import {Article} from "../../entities/News";
 import {MatchDetail} from "../../entities/MatchDetail";
 import {NavParams, ViewController} from "ionic-angular";
 import {MatchService} from "../../services/match.service";
-import {NewsService} from "../../services/news.service";
+import {ArticleService} from "../../services/article.service";
 import {SocialSharingService} from "../../services/socialSharing.service";
 
 @Component({
@@ -11,7 +11,7 @@ import {SocialSharingService} from "../../services/socialSharing.service";
 })
 export class MatchDetailComponent implements OnInit {
 
-  news: News;
+  news: Article;
   selectedClub: string = "";
 
   type: string = "overview";
@@ -20,7 +20,7 @@ export class MatchDetailComponent implements OnInit {
   match: MatchDetail = new MatchDetail();
 
   constructor(private matchService: MatchService, private navParams: NavParams,
-              private viewCtrl: ViewController, private newsService: NewsService,
+              private viewCtrl: ViewController, private newsService: ArticleService,
               private socialSharingService: SocialSharingService) {
 
   }
@@ -35,6 +35,7 @@ export class MatchDetailComponent implements OnInit {
       },
       (error) => {
         this.isError = true;
+        this.isLoading = false;
         console.error(error);
       }
     )
@@ -49,7 +50,7 @@ export class MatchDetailComponent implements OnInit {
   getSpielbericht() {
 
     if (!this.news) {
-      this.newsService.loadNews(this.match.matchInformation.spielberichtId).subscribe(
+      this.newsService.loadArticle(this.match.matchInformation.spielberichtId).subscribe(
         (news) => {
           this.news = news;
         },
