@@ -14,7 +14,7 @@ export class SocialSharingService {
   shareNews(news: Article): void {
     let options = {
       subject: news.titel,
-      message: 'Hey, schau dir den folgenden Artikel "' + news.titel + '" auf http://sc-dahenfeld.de/index.php?option=com_content&view=article&id=' + news.id + ' an!'
+      message: 'http://sc-dahenfeld.de/index.php?option=com_content&view=article&id=' + news.id
     }
 
     this.socialSharing.shareWithOptions(options).then(
