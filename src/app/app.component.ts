@@ -122,7 +122,7 @@ export class MyApp {
     // Init the push service
     const pushOptions: PushOptions = {
       android: {
-        "forceShow": "true"
+        forceShow: "true",
       },
       ios: {
         alert: "true",
@@ -132,6 +132,16 @@ export class MyApp {
       windows: {}
     };
 
+    // Check if we have permission
+    this.push.hasPermission()
+      .then((res: any) => {
+        if (res.isEnabled) {
+          console.log('We have permission to send push notifications');
+        } else {
+          console.warn('We do not have permission to send push notifications');
+        }
+      });
+
     const pushObject: PushObject = this.push.init(pushOptions);
 
     // Registration
@@ -139,6 +149,9 @@ export class MyApp {
       (registration: any) => {
         this.saveToken(registration.registrationId);
         console.log('Token saved:', registration.registrationId);
+      },
+      (error) => {
+        console.error(error);
       });
 
     // Notification
@@ -154,6 +167,9 @@ export class MyApp {
           this.nav.setRoot(ArticleCardListComponent);
         }
       });
+
+    // Error
+    pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
   }
 
   private saveToken(token: string) {
