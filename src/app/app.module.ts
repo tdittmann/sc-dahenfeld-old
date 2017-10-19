@@ -43,6 +43,8 @@ import {BirthdayService} from "../services/birthday.service";
 import {SuperTabsModule} from "ionic2-super-tabs";
 import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {LeadImageComponent} from "../components/leadimage/leadimage.component";
+import {SmallCardComponent} from "../components/smallCard/smallCard.component";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import {LeadImageComponent} from "../components/leadimage/leadimage.component";
     BirthdaysComponent,
     FrontPageComponent,
     LeadImageComponent,
+    SmallCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,6 +111,7 @@ import {LeadImageComponent} from "../components/leadimage/leadimage.component";
     BirthdaysComponent,
     FrontPageComponent,
     LeadImageComponent,
+    SmallCardComponent,
   ],
   providers: [
     StatusBar,
@@ -122,6 +126,7 @@ import {LeadImageComponent} from "../components/leadimage/leadimage.component";
     FilterMatchdayPipe,
     OrderPositionPipe,
     Push,
+    DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: "de-DE"},
   ]

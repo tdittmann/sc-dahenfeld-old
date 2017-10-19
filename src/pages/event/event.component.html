@@ -5,20 +5,16 @@
     </button>
     <ion-title>{{ event.title }}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content no-padding>
   <ion-card>
     <ion-item>
       <ion-avatar item-left *ngIf="event.image">
-        <img src="http://sc-dahenfeld.de/{{ event.image }}">
+        <img src="{{ event.getImageUrl() }}">
       </ion-avatar>
       <h2>{{ event.title }}</h2>
-      <p *ngIf="event.end == '0'">am {{ event.start | date : 'longDate' }}</p>
-      <p *ngIf="event.end != '0'">
-        von {{ event.start | date : "dd" }}.
-        bis {{ event.end | date : 'longDate' }}</p>
+      <p>{{ event.getFormattedDate() }}</p>
     </ion-item>
     <ion-card-content [innerHtml]="event.text"></ion-card-content>
   </ion-card>

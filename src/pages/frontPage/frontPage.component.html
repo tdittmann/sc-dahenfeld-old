@@ -31,20 +31,11 @@
   <!-- Event -->
   <div *ngIf="event">
     <h5 class="sectionHeading">Veranstaltung</h5>
-    <ion-card (click)="openEvent(event)">
-      <ion-item class="card-event">
-        <ion-avatar item-left>
-          <img src="http://sc-dahenfeld.de/{{ event.image }}">
-        </ion-avatar>
-
-        <h2><b>{{ event.title }}</b></h2>
-        <p *ngIf="event.end == '0'">am {{ event.start | date : 'longDate' }}</p>
-        <p *ngIf="event.end != '0'">
-          von {{ event.start | date : "dd" }}.
-          bis {{ event.end | date : 'longDate' }}
-        </p>
-      </ion-item>
-    </ion-card>
+    <smallCard (click)="openEvent(event)"
+               [img]="event.getImageUrl()"
+               [title]="event.title"
+               [subTitle]="event.getFormattedDate()">
+    </smallCard>
     <div class="separator"></div>
   </div>
 

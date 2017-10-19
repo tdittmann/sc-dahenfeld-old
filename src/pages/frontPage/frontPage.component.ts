@@ -6,7 +6,7 @@ import {EventService} from "../../services/event.service";
 import {ArticleDetailComponent} from "../articleDetail/articleDetail.component";
 import {EventComponent} from "../event/event.component";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
-import {EventEntry} from "../../entities/Event";
+import {EventEntry} from "../../entities/EventEntry";
 
 @Component({
   selector: "frontPage",

@@ -4,7 +4,7 @@ import {ArticleService} from "../../services/article.service";
 import {NavController, NavParams} from "ionic-angular";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {ArticleDetailComponent} from "../articleDetail/articleDetail.component";
-import {EventEntry} from "../../entities/Event";
+import {EventEntry} from "../../entities/EventEntry";
 import {EventComponent} from "../event/event.component";
 
 @Component({

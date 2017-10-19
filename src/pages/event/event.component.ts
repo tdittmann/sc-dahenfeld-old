@@ -1,12 +1,13 @@
 import {Component, OnInit} from "@angular/core";
 import {NavParams} from "ionic-angular";
+import {EventEntry} from "../../entities/EventEntry";
 
 @Component({
   templateUrl: "event.component.html"
 })
 export class EventComponent implements OnInit {
 
-  event: Event;
+  event: EventEntry;
 
   constructor(private navParams: NavParams) {
 
