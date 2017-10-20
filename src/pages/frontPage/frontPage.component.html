@@ -1,5 +1,5 @@
 <ion-header no-border>
-  <ion-navbar transparent class="">
+  <ion-navbar transparent class="navBar-color-onScroll-transition">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -29,26 +29,24 @@
   </ion-slides>
 
   <!-- Event -->
-  <div *ngIf="event">
+  <div *ngIf="eventEntry">
     <h5 class="sectionHeading">Veranstaltung</h5>
-    <smallCard (click)="openEvent(event)"
-               [img]="event.getImageUrl()"
-               [title]="event.title"
-               [subTitle]="event.getFormattedDate()">
-    </smallCard>
+    <!-- TODO: Hier funktioniert der Aufruf der Methode noch nicht -->
+    <!--<smallCard (click)="openEvent(eventEntry)"-->
+    <!--[img]="eventEntry.getImageUrl()"-->
+    <!--[title]="eventEntry.title"-->
+    <!--[subTitle]="eventEntry.getFormattedDate()">-->
+    <!--</smallCard>-->
     <div class="separator"></div>
   </div>
 
   <!-- Articles -->
   <h5 class="sectionHeading">Neues vom SCD</h5>
-  <ion-card *ngFor="let article of articles" (click)="openArticle(article)">
-
-    <div *ngIf="article.image" class="card-image" [ngStyle]="{'background-image' : article.image}"></div>
-
-    <ion-card-content>
-      <h2 class="headingTop">{{ article.kategorie }}</h2>
-      <h1 class="headingSmall">{{ article.titel }}</h1>
-    </ion-card-content>
-  </ion-card>
+  <big-card [img]="article.image"
+            [category]="article.kategorie"
+            [title]="article.titel"
+            *ngFor="let article of articles"
+            (click)="openArticle(article)">
+  </big-card>
 
 </ion-content>

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
+import {Component, OnInit, ViewChild} from "@angular/core";
 import {Article} from "../../entities/News";
 import {ArticleService} from "../../services/article.service";
 import {Content, Navbar, NavController} from "ionic-angular";
@@ -17,7 +17,7 @@ export class FrontPageComponent implements OnInit {
   @ViewChild(Content) content: Content;
   @ViewChild(Navbar) navbar: Navbar;
 
-  event: EventEntry;
+  eventEntry: EventEntry;
   featureArticles: Article[] = [];
   articles: Article[] = [];
   categoryId: number = 0;
@@ -72,7 +72,7 @@ export class FrontPageComponent implements OnInit {
   private loadEvents() {
     this.eventService.loadAllEvents().subscribe(
       (events) => {
-        this.event = events[0];
+        this.eventEntry = events[0];
       },
       (error) => {
         this.isError = true;

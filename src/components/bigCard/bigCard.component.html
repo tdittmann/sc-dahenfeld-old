@@ -1,0 +1,13 @@
+<ion-card>
+
+  <!-- Image -->
+  <div *ngIf="image" class="card-image" [ngStyle]="{'background-image' : image}"></div>
+
+  <!-- Category + Heading -->
+  <ion-card-content>
+    <h2 class="headingTop" *ngIf="category">{{ category }}</h2>
+    <h1 class="headingSmall" *ngIf="title">{{ title }}</h1>
+    <p *ngIf="content">{{ content }}</p>
+  </ion-card-content>
+
+</ion-card>

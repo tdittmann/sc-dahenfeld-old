@@ -47,6 +47,8 @@ import {SmallCardComponent} from "../components/smallCard/smallCard.component";
 import {DatePipe} from "@angular/common";
 import {environment} from "../environments/environment";
 import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
+import {PhotoViewer} from "@ionic-native/photo-viewer";
+import {BigCardComponent} from "../components/bigCard/bigCard.component";
 
 @NgModule({
   declarations: [
@@ -78,6 +80,7 @@ import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
     LeadImageComponent,
     SmallCardComponent,
     ScdNavbarComponent,
+    BigCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,6 +119,7 @@ import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
     LeadImageComponent,
     SmallCardComponent,
     ScdNavbarComponent,
+    BigCardComponent,
   ],
   providers: [
     StatusBar,
@@ -131,6 +135,7 @@ import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
     OrderPositionPipe,
     Push,
     DatePipe,
+    PhotoViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: environment.locale},
   ]
