@@ -1,12 +1,5 @@
 <ion-header no-shadow no-border>
-
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{ soccerService.soccer.team.toString() }}</ion-title>
-  </ion-navbar>
-
+  <scd-navbar [heading]="soccerService.soccer.team.toString()"></scd-navbar>
 </ion-header>
 
 <ion-content class="grayBackground">

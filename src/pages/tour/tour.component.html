@@ -1,7 +1,6 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>SC Dahenfeld 1946 e.V.</ion-title>
-  </ion-navbar>
+  <scd-navbar heading="SC Dahenfeld 1946 e.V."
+              [showMenu]="false"></scd-navbar>
 </ion-header>
 
 <ion-slides pager class="tutorial-page">
@@ -14,7 +13,7 @@
     <img src="assets/img/logo.png" class="slide-image"/>
     <p>Danke, dass Du die App des SC Dahenfeld heruntergeladen hast. Wir wünschen Dir viel Spaß!</p>
     <button ion-button large clear (click)="redirectToNewsList()">
-      Los geht's!
+      Los geht's
     </button>
   </ion-slide>
 </ion-slides>

@@ -45,6 +45,8 @@ import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {LeadImageComponent} from "../components/leadimage/leadimage.component";
 import {SmallCardComponent} from "../components/smallCard/smallCard.component";
 import {DatePipe} from "@angular/common";
+import {environment} from "../environments/environment";
+import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
 
 @NgModule({
   declarations: [
@@ -75,6 +77,7 @@ import {DatePipe} from "@angular/common";
     FrontPageComponent,
     LeadImageComponent,
     SmallCardComponent,
+    ScdNavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +115,7 @@ import {DatePipe} from "@angular/common";
     FrontPageComponent,
     LeadImageComponent,
     SmallCardComponent,
+    ScdNavbarComponent,
   ],
   providers: [
     StatusBar,
@@ -128,7 +132,7 @@ import {DatePipe} from "@angular/common";
     Push,
     DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    {provide: LOCALE_ID, useValue: "de-DE"},
+    {provide: LOCALE_ID, useValue: environment.locale},
   ]
 })
 export class AppModule {
