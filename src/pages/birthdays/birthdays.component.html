@@ -4,6 +4,9 @@
 
 <ion-content no-padding>
 
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
   <ion-item-group>
     <div *ngFor="let birthday of birthdays | orderBy : 'daysUntilBirthday'">
 
