@@ -3,7 +3,7 @@ import {Nav, Platform} from "ionic-angular";
 import {StatusBar} from "@ionic-native/status-bar";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {NavigationItem} from "../entities/NavigationItem";
-import {ArticleCardListComponent} from "../pages/articleCardList/articleCardList.component";
+import {OldiesComponent} from "../pages/oldies/oldies.component";
 import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
 import {AboutComponent} from "../pages/about/about.component";
 import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
@@ -18,6 +18,7 @@ import {Push, PushObject, PushOptions} from "@ionic-native/push";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
+import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -29,58 +30,26 @@ export class MyApp {
 
   /* NAVIGATION */
   vereinNavigation: NavigationItem[] = [
-    {title: 'News', component: FrontPageComponent, parameter: "", icon: "paper", active: true},
-    {
-      title: 'Chronik',
-      component: ArticleCardListComponent,
-      parameter: "155",
-      heading: "Chronik",
-      icon: "time",
-      active: false
-    },
-    {title: 'Vereinskalender', component: VereinskalenderComponent, parameter: "", icon: "calendar", active: false},
-    {
-      title: 'Sportheim',
-      component: ArticleDetailCardComponent,
-      parameter: "830",
-      icon: "restaurant",
-      active: false
-    },
+    {title: 'News', component: FrontPageComponent, icon: "paper", active: true},
+    {title: 'Chronik', component: ChronicleComponent, heading: "Chronik", icon: "time"},
+    {title: 'Vereinskalender', component: VereinskalenderComponent, icon: "calendar"},
+    {title: 'Sportheim', component: ArticleDetailCardComponent, parameter: "830", icon: "restaurant"},
   ];
   fussballNavigation: NavigationItem[] = [
-    {
-      title: '1. Mannschaft',
-      component: TeamDetailComponent,
-      parameter: Mannschaftsart.ERSTE_MANNSCHAFT,
-      icon: "football",
-      active: false
-    },
-    {
-      title: '2. Mannschaft',
-      component: TeamDetailComponent,
-      parameter: Mannschaftsart.ZWEITE_MANNSCHAFT,
-      icon: "football",
-      active: false
-    },
-    {
-      title: 'Alte Herren',
-      component: ArticleCardListComponent,
-      parameter: "109",
-      heading: "Alte Herren",
-      icon: "football",
-      active: false
-    },
-    {title: 'Jugend', component: YouthComponent, parameter: "", icon: "football", active: false},
+    {title: '1. Mannschaft', component: TeamDetailComponent, parameter: Mannschaftsart.ERSTE_MANNSCHAFT, icon: "football"},
+    {title: '2. Mannschaft', component: TeamDetailComponent, parameter: Mannschaftsart.ZWEITE_MANNSCHAFT, icon: "football"},
+    {title: 'Alte Herren',component: OldiesComponent, icon: "football"},
+    {title: 'Jugend', component: YouthComponent, icon: "football"},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [
-    {title: 'Turnen', component: ArticleDetailLeadImageComponent, parameter: "733", icon: "body", active: false},
-    {title: 'Tischtennis', component: ArticleDetailLeadImageComponent, parameter: "755", icon: "walk", active: false},
+    {title: 'Turnen', component: ArticleDetailLeadImageComponent, parameter: "733", icon: "body"},
+    {title: 'Tischtennis', component: ArticleDetailLeadImageComponent, parameter: "755", icon: "walk"},
   ];
   developmentNavigation: NavigationItem[] = [
-    {title: 'Geburtstage', component: BirthdaysComponent, parameter: "", icon: "time", active: false},
+    {title: 'Geburtstage', component: BirthdaysComponent, icon: "time"},
   ];
   appNavigation: NavigationItem[] = [
-    {title: 'Impressum', component: AboutComponent, parameter: "", icon: "information-circle", active: false}
+    {title: 'Impressum', component: AboutComponent, icon: "information-circle"}
   ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
@@ -171,7 +140,7 @@ export class MyApp {
         } else if (notification.additionalData.page == "vereinskalender") {
           this.nav.setRoot(VereinskalenderComponent);
         } else {
-          this.nav.setRoot(ArticleCardListComponent);
+          this.nav.setRoot(FrontPageComponent);
         }
       });
 

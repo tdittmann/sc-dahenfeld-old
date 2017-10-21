@@ -6,7 +6,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {IonicStorageModule} from "@ionic/storage";
 
 import {MyApp} from "./app.component";
-import {ArticleCardListComponent} from "../pages/articleCardList/articleCardList.component";
+import {OldiesComponent} from "../pages/oldies/oldies.component";
 import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
 import {ArticleService} from "../services/article.service";
@@ -52,11 +52,12 @@ import {BigCardComponent} from "../components/bigCard/bigCard.component";
 import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
+import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 
 @NgModule({
   declarations: [
     MyApp,
-    ArticleCardListComponent,
+    OldiesComponent,
     ArticleDetailLeadImageComponent,
     FirstImagePipe,
     LimitHtmlText,
@@ -87,6 +88,7 @@ import {ArticleInformationComponent} from "../components/articleInformation/arti
     ShareButtonComponent,
     ArticleDetailCardComponent,
     ArticleInformationComponent,
+    ChronicleComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +105,7 @@ import {ArticleInformationComponent} from "../components/articleInformation/arti
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ArticleCardListComponent,
+    OldiesComponent,
     ArticleDetailLeadImageComponent,
     VereinskalenderComponent,
     AboutComponent,
@@ -129,6 +131,7 @@ import {ArticleInformationComponent} from "../components/articleInformation/arti
     ShareButtonComponent,
     ArticleDetailCardComponent,
     ArticleInformationComponent,
+    ChronicleComponent,
   ],
   providers: [
     StatusBar,

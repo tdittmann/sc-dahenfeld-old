@@ -8,13 +8,13 @@ import {EventComponent} from "../event/event.component";
 import {ArticleDetailCardComponent} from "../articleDetail/card/articleDetailCard.component";
 
 @Component({
-  templateUrl: "articleCardList.component.html"
+  templateUrl: "oldies.component.html"
 })
-export class ArticleCardListComponent implements OnInit {
+export class OldiesComponent implements OnInit {
 
   articles: Article[] = [];
-  categoryId: number;
-  heading: string = "";
+  categoryId: number = 109;
+  heading: string = "Alte Herren";
 
   isLoading: boolean = true;
   isError: boolean = false;
@@ -40,10 +40,6 @@ export class ArticleCardListComponent implements OnInit {
     this.nav.push(ArticleDetailCardComponent, {
       parameter: pArticle
     });
-  }
-
-  openEvent(event: EventEntry) {
-    this.nav.push(EventComponent, {parameter: event});
   }
 
   private loadArticles() {

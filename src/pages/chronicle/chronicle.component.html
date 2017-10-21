@@ -1,0 +1,16 @@
+<ion-header>
+  <scd-navbar [heading]="heading"></scd-navbar>
+</ion-header>
+
+<ion-content no-padding class="grayBackground">
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <big-card *ngFor="let article of articles"
+            (click)="openArticle(article)"
+            [title]="article.titel"
+            [img]="article.image">
+  </big-card>
+
+</ion-content>

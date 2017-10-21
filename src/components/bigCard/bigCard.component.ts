@@ -8,7 +8,9 @@ export class BigCardComponent {
 
   @Input('img') image: string;
   @Input('category') category: string;
+  @Input('date') date: string;
   @Input('title') title: string;
+  @Input('text') text: string;
 
   constructor() {
 

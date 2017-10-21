@@ -6,8 +6,9 @@
   <!-- Category + Heading -->
   <ion-card-content>
     <h2 class="headingTop" *ngIf="category">{{ category }}</h2>
+    <h2 class="headingTop" *ngIf="date">{{ date | date: 'longDate' }}</h2>
     <h1 class="headingSmall" *ngIf="title">{{ title }}</h1>
-    <p *ngIf="content">{{ content }}</p>
+    <p *ngIf="text">{{ text }}</p>
   </ion-card-content>
 
 </ion-card>
