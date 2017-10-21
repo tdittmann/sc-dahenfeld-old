@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
-import {Article} from "../../entities/News";
+import {Article} from "../../entities/Article";
 import {ArticleService} from "../../services/article.service";
 import {Content, Navbar, NavController} from "ionic-angular";
 import {EventService} from "../../services/event.service";
-import {ArticleDetailComponent} from "../articleDetail/articleDetail.component";
+import {ArticleDetailLeadImageComponent} from "../articleDetail/leadImage/articleDetailLeadImage.component";
 import {EventComponent} from "../event/event.component";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {EventEntry} from "../../entities/EventEntry";
@@ -93,7 +93,7 @@ export class FrontPageComponent implements OnInit {
   }
 
   openArticle(pArticle: Article) {
-    this.nav.push(ArticleDetailComponent, {
+    this.nav.push(ArticleDetailLeadImageComponent, {
       parameter: pArticle
     });
   }

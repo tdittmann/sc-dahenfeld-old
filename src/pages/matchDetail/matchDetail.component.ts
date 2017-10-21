@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {Article} from "../../entities/News";
+import {Article} from "../../entities/Article";
 import {MatchDetail} from "../../entities/MatchDetail";
 import {NavParams, ViewController} from "ionic-angular";
 import {MatchService} from "../../services/match.service";

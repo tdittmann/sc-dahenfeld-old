@@ -14,6 +14,7 @@ export class LeadImageComponent {
   }
 
   openImageInViewer(): void {
+    // This regex only uses the link to the image instead of complete css
     this.photoViewer.show(this.imageSrc.match(/"(.*?)"/)[1], "", {share: false});
   }
 

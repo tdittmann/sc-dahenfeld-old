@@ -1,11 +1,11 @@
 import {Component, OnInit} from "@angular/core";
-import {Article} from "../../entities/News";
+import {Article} from "../../entities/Article";
 import {ArticleService} from "../../services/article.service";
 import {NavController, NavParams} from "ionic-angular";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
-import {ArticleDetailComponent} from "../articleDetail/articleDetail.component";
 import {EventEntry} from "../../entities/EventEntry";
 import {EventComponent} from "../event/event.component";
+import {ArticleDetailCardComponent} from "../articleDetail/card/articleDetailCard.component";
 
 @Component({
   templateUrl: "articleCardList.component.html"
@@ -37,7 +37,7 @@ export class ArticleCardListComponent implements OnInit {
   }
 
   openArticle(pArticle: Article) {
-    this.nav.push(ArticleDetailComponent, {
+    this.nav.push(ArticleDetailCardComponent, {
       parameter: pArticle
     });
   }
@@ -52,10 +52,10 @@ export class ArticleCardListComponent implements OnInit {
         this.articles = news;
 
         // Get first image
-        for (let n of this.articles) {
+        for (let article of this.articles) {
           // This is needed, because sometimes it can happen that an imagename contains special chars
           // and escaping these does not work in frontend
-          n.image = 'url("' + FirstImagePipe.transform(n.text) + '")';
+          article.image = 'url("' + FirstImagePipe.transform(article.text) + '")';
         }
 
         this.isLoading = false;

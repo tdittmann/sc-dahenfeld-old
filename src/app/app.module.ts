@@ -11,7 +11,7 @@ import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
 import {ArticleService} from "../services/article.service";
 import {HttpModule} from "@angular/http";
-import {ArticleDetailComponent} from "../pages/articleDetail/articleDetail.component";
+import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
 import {RemoveFirstImagePipe} from "../pipes/removeFirstImage.pipe";
 import {EventService} from "../services/event.service";
 import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
@@ -49,12 +49,15 @@ import {environment} from "../environments/environment";
 import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {BigCardComponent} from "../components/bigCard/bigCard.component";
+import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
+import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
+import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
 
 @NgModule({
   declarations: [
     MyApp,
     ArticleCardListComponent,
-    ArticleDetailComponent,
+    ArticleDetailLeadImageComponent,
     FirstImagePipe,
     LimitHtmlText,
     RemoveFirstImagePipe,
@@ -81,6 +84,9 @@ import {BigCardComponent} from "../components/bigCard/bigCard.component";
     SmallCardComponent,
     ScdNavbarComponent,
     BigCardComponent,
+    ShareButtonComponent,
+    ArticleDetailCardComponent,
+    ArticleInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +104,7 @@ import {BigCardComponent} from "../components/bigCard/bigCard.component";
   entryComponents: [
     MyApp,
     ArticleCardListComponent,
-    ArticleDetailComponent,
+    ArticleDetailLeadImageComponent,
     VereinskalenderComponent,
     AboutComponent,
     LoadingComponent,
@@ -120,6 +126,9 @@ import {BigCardComponent} from "../components/bigCard/bigCard.component";
     SmallCardComponent,
     ScdNavbarComponent,
     BigCardComponent,
+    ShareButtonComponent,
+    ArticleDetailCardComponent,
+    ArticleInformationComponent,
   ],
   providers: [
     StatusBar,

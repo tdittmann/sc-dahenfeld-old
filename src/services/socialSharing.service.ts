@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {SocialSharing} from "@ionic-native/social-sharing";
-import {Article} from "../entities/News";
+import {Article} from "../entities/Article";
 import {ToastController} from "ionic-angular";
 import {Birthday} from "../entities/Birthday";
 

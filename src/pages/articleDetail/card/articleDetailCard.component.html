@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <scd-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="shareArticle()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </scd-navbar>
+</ion-header>
+
+<ion-content>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <article-info [title]="article?.titel"
+                [author]="article.ersteller"
+                [date]="article?.erstellungsdatum"
+                [subHeading]="article?.kategorie"
+                [showDetails]="showInformation(article?.id)"></article-info>
+
+  <div padding [innerHtml]="article?.text" class="htmlContent"></div>
+
+  <share-button (click)="shareArticle()"></share-button>
+
+</ion-content>

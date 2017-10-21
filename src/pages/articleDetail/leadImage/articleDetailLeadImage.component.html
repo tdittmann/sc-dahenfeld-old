@@ -1,0 +1,34 @@
+<ion-header no-border>
+  <ion-navbar transparent class="navBar-color-onScroll-transition">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title></ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="shareArticle()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <leadimage [src]="article?.image"></leadimage>
+
+  <article-info [title]="article?.titel"
+                [author]="article?.ersteller"
+                [date]="article?.erstellungsdatum"
+                [subHeading]="article?.kategorie"
+                [showDetails]="showInformation(article?.id)"></article-info>
+
+  <div padding [innerHtml]="article?.text" class="htmlContent"></div>
+
+  <share-button (click)="shareArticle()"></share-button>
+
+</ion-content>
