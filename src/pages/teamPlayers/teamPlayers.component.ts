@@ -1,21 +1,42 @@
 import {Component, OnInit} from "@angular/core";
-import {SoccerService} from "../../services/soccer.service";
-import {ModalController} from "ionic-angular";
+import {ModalController, NavParams} from "ionic-angular";
 import {PlayerComponent} from "../player/player.component";
 import {Player} from "../../entities/Player";
+import {PlayerService} from "../../services/player.service";
+import {Mannschaftsart} from "../../entities/Mannschaftsart";
 
 @Component({
+  selector: 'team-players',
   templateUrl: "teamPlayers.component.html"
 })
 export class TeamPlayersComponent implements OnInit {
 
+  team: Mannschaftsart;
+  players: Player[] = [];
   currentPosition: string = "";
 
-  constructor(public soccerService: SoccerService, private modalCtrl: ModalController) {
+  isLoading: boolean = true;
+  isError: boolean = false;
+
+  constructor(private playerService: PlayerService, private modalCtrl: ModalController,
+              private navParams: NavParams) {
 
   }
 
   ngOnInit(): void {
+    this.team = this.navParams.data.id;
+
+    this.playerService.loadPlayers(this.team).subscribe(
+      (players) => {
+        this.players = players;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error(error);
+        this.isLoading = false;
+        this.isError = true;
+      }
+    );
   }
 
   checkHeaderPosition(position: string) {

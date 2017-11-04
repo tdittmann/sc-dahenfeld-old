@@ -57,6 +57,8 @@ import {RankingService} from "../services/ranking.service";
 import {ScdTabComponent} from "../components/scdTab/scdTab.component";
 import {MatchOverviewCardComponent} from "../components/matchOverviewCard/matchOverviewCard.component";
 import {ClubImageComponent} from "../components/clubImage/clubImage.component";
+import {PlayerService} from "../services/player.service";
+import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
 
 @NgModule({
   declarations: [
@@ -96,6 +98,7 @@ import {ClubImageComponent} from "../components/clubImage/clubImage.component";
     ScdTabComponent,
     MatchOverviewCardComponent,
     ClubImageComponent,
+    PlayerImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -142,6 +145,7 @@ import {ClubImageComponent} from "../components/clubImage/clubImage.component";
     ScdTabComponent,
     MatchOverviewCardComponent,
     ClubImageComponent,
+    PlayerImageComponent,
   ],
   providers: [
     StatusBar,
@@ -159,6 +163,7 @@ import {ClubImageComponent} from "../components/clubImage/clubImage.component";
     DatePipe,
     PhotoViewer,
     RankingService,
+    PlayerService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: environment.locale},
   ]

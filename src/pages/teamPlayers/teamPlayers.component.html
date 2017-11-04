@@ -1,33 +1,21 @@
-<ion-header no-shadow no-border>
-  <scd-navbar [heading]="soccerService.soccer.team.toString()"></scd-navbar>
-</ion-header>
-
 <ion-content>
 
-  <ion-item-group
-    *ngFor="let p of soccerService.soccer.players | orderPosition: ['Torhüter', 'Abwehr', 'Mittelfeld', 'Sturm']">
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
 
-    <ng-template [ngIf]="checkHeaderPosition(p.position)">
-      <ion-item-divider light style="position: static;">{{ p.position }}</ion-item-divider>
+  <ng-template ngFor let-player [ngForOf]="players | orderPosition: ['Torhüter', 'Abwehr', 'Mittelfeld', 'Sturm']">
+
+    <ng-template [ngIf]="checkHeaderPosition(player.position)">
+      <div class="positionHeader">
+        {{ player.position }}
+      </div>
     </ng-template>
 
-    <button ion-item (click)="openPlayer(p)">
-      <ion-avatar item-left>
-        <img *ngIf="p.bild" src="http://sc-dahenfeld.de/{{ p.bild }}" width="100%"/>
-        <img *ngIf="!p.bild" src="assets/img/platzhalter_kader.png" width="100%"/>
-      </ion-avatar>
+    <div class="player" (click)="openPlayer(player)">
+      <player-image [img]="player.bild"></player-image>
+      <b>{{ player.vorname }} {{ player.nachname }}</b>
+    </div>
 
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <h2>{{ p.vorname | shorten : 1}}. {{ p.nachname }}</h2>
-            <p>{{ p.age }} Jahre</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-
-    </button>
-  </ion-item-group>
+  </ng-template>
 
 </ion-content>

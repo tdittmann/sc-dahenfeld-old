@@ -14,10 +14,7 @@
 <ion-content>
 
   <!-- Image -->
-  <div class="playerImage">
-    <img *ngIf="player.bild" src="http://sc-dahenfeld.de/{{ player.bild }}"/>
-    <img *ngIf="!player.bild" src="assets/img/platzhalter_kader.png"/>
-  </div>
+  <player-image [img]="player.bild"></player-image>
 
   <!-- Segment -->
   <ion-toolbar>

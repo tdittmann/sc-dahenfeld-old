@@ -1,0 +1,18 @@
+team-players {
+
+  .player {
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin: 8px 0px;
+  }
+
+  .positionHeader {
+    background: $heading-dark;
+    color: $white-color;
+    border-bottom: 1px solid $separator-gray;
+    padding: 16px;
+    clear: both;
+  }
+
+}
