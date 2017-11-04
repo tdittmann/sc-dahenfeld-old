@@ -20,6 +20,22 @@ import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 
+/**
+ * TODOs:
+ *
+ * [] Kader: wenn keiner vorhanden -> Text
+ * [] SpielerView überarbeiten
+ * [] MatchView überarbeiten
+ * [] Vereinskalender überarbeiten (inkl. Veranstaltungen?)
+ * [] PlayerImageComponent: Trikotnummer hinzufügen
+ * [] FixturesComponent: Automatisch zum aktuellen Spieltag springen
+ *
+ * Backend:
+ * [] MatchLocations importieren
+ * [] Spieler Trikotnummern pflegen
+ */
+
+
 @Component({
   templateUrl: 'app.html'
 })

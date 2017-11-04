@@ -3,7 +3,6 @@ import {NavParams} from "ionic-angular";
 import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {RankingService} from "../../services/ranking.service";
 import {RankingTeam} from "../../entities/RankingTeam";
-import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'table',

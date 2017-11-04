@@ -11,8 +11,6 @@ import {Mannschaftsart} from "../../entities/Mannschaftsart";
 })
 export class TeamPlayersComponent implements OnInit {
 
-  // TODO: Meldung falls keine Spieler vorhanden
-
   team: Mannschaftsart;
   players: Player[] = [];
   currentPosition: string = "";

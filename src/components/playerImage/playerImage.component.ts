@@ -6,8 +6,6 @@ import {Component, Input} from "@angular/core";
 })
 export class PlayerImageComponent {
 
-  // TODO: Spielernummer mit hinzufügen
-
   @Input() img: string;
 
   constructor() {

@@ -6,11 +6,10 @@ import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {Match} from "../../entities/Match";
 
 @Component({
+  selector: 'fixtures-view',
   templateUrl: "fixtures.component.html"
 })
-export class SpielplanComponent implements OnInit {
-
-  // TODO: Automatisch zum aktuellen Spieltag springen
+export class FixturesComponent implements OnInit {
 
   team: Mannschaftsart;
   matches: Match[] = [];

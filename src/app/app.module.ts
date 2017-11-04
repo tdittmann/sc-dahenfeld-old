@@ -20,7 +20,7 @@ import {LoadingComponent} from "../pages/loading/loading.component";
 import {ErrorComponent} from "../pages/error/error.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {NgPipesModule} from "ngx-pipes";
-import {SpielplanComponent} from "../pages/fixtures/fixtures.component";
+import {FixturesComponent} from "../pages/fixtures/fixtures.component";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {TableComponent} from "../pages/table/table.component";
 import {Ng2FilterPipeModule} from "ng2-filter-pipe";
@@ -73,7 +73,7 @@ import {RankingComponent} from "../components/ranking/ranking.component";
     LoadingComponent,
     ErrorComponent,
     TeamDetailComponent,
-    SpielplanComponent,
+    FixturesComponent,
     TableComponent,
     TeamPlayersComponent,
     FilterMatchdayPipe,
@@ -123,7 +123,7 @@ import {RankingComponent} from "../components/ranking/ranking.component";
     LoadingComponent,
     ErrorComponent,
     TeamDetailComponent,
-    SpielplanComponent,
+    FixturesComponent,
     TableComponent,
     TeamPlayersComponent,
     TourComponent,
