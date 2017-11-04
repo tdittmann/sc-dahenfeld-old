@@ -8,23 +8,22 @@
   <error [isError]="isError"></error>
 
   <div *ngFor="let team of teams">
-    <ng-template [ngIf]="team.ranking">
+    <h4 class="teamHeading">{{ team.team.toString() }}</h4>
 
-      <h4>{{ team.team.toString() }}</h4>
+    <ion-card>
+      <ranking [teams]="team.ranking"
+               [showMatches]="false"
+               [showTeamImage]="false">
+      </ranking>
 
-      <ion-card>
-        <ranking [teams]="team.ranking"></ranking>
-
-        <ion-row no-padding>
-          <ion-col text-center>
-            <button ion-button clear full color="primary" (click)="openTeamDetails(team.team)">
-              Mehr zur {{ team.team.toString() }}
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-card>
-
-    </ng-template>
+      <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-button clear full color="primary" (click)="openTeamDetails(team.team)">
+            Mehr zur {{ team.team.toString() }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
 
   </div>
 </ion-content>

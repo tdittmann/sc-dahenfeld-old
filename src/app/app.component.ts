@@ -36,9 +36,19 @@ export class MyApp {
     {title: 'Sportheim', component: ArticleDetailCardComponent, parameter: "830", icon: "restaurant"},
   ];
   fussballNavigation: NavigationItem[] = [
-    {title: '1. Mannschaft', component: TeamDetailComponent, parameter: Mannschaftsart.ERSTE_MANNSCHAFT, icon: "football"},
-    {title: '2. Mannschaft', component: TeamDetailComponent, parameter: Mannschaftsart.ZWEITE_MANNSCHAFT, icon: "football"},
-    {title: 'Alte Herren',component: OldiesComponent, icon: "football"},
+    {
+      title: '1. Mannschaft',
+      component: TeamDetailComponent,
+      parameter: Mannschaftsart.ERSTE_MANNSCHAFT,
+      icon: "football"
+    },
+    {
+      title: '2. Mannschaft',
+      component: TeamDetailComponent,
+      parameter: Mannschaftsart.ZWEITE_MANNSCHAFT,
+      icon: "football"
+    },
+    {title: 'Alte Herren', component: OldiesComponent, icon: "football"},
     {title: 'Jugend', component: YouthComponent, icon: "football"},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [
@@ -84,6 +94,7 @@ export class MyApp {
     this.resetPageActiveState(this.vereinNavigation);
     this.resetPageActiveState(this.fussballNavigation);
     this.resetPageActiveState(this.turnenTischtennisNavigation);
+    this.resetPageActiveState(this.developmentNavigation);
     this.resetPageActiveState(this.appNavigation);
   }
 

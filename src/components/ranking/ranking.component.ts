@@ -9,6 +9,11 @@ import {environment} from "../../environments/environment";
 export class RankingComponent {
 
   @Input() teams: RankingTeam[];
+  @Input() showPoints: boolean = true;
+  @Input() showDiff: boolean = true;
+  @Input() showMatches: boolean = true;
+  @Input() showTeamImage: boolean = true;
+
   favTeam: string = environment.teamName;
 
   constructor() {

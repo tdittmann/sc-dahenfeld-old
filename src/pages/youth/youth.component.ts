@@ -14,7 +14,6 @@ import {YouthRanking} from "../../entities/YouthRanking";
 export class YouthComponent implements OnInit {
 
   teams: YouthRanking[] = [];
-  favTeam: string = environment.teamName;
 
   isError: boolean = false;
 
@@ -31,7 +30,9 @@ export class YouthComponent implements OnInit {
           youthRanking.team = team;
           youthRanking.ranking = teamRanking;
 
-          this.teams.push(youthRanking)
+          if (teamRanking.length > 0) {
+            this.teams.push(youthRanking)
+          }
         },
         (error) => {
           this.isError = true;

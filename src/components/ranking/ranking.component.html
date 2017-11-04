@@ -2,10 +2,10 @@
 
   <ion-row class="rankingHeader">
     <ion-col col-1 class="rankingCol rankingPlace">#</ion-col>
-    <ion-col col-8 class="rankingCol rankingTeam">Verein</ion-col>
-    <ion-col col-1 class="rankingCol rankingTextCenter">Sp</ion-col>
-    <ion-col col-1 class="rankingCol rankingTextCenter">+/-</ion-col>
-    <ion-col col-1 class="rankingCol rankingTextCenter">Pkt</ion-col>
+    <ion-col class="rankingCol rankingTeam">Verein</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showMatches">Sp</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showDiff">+/-</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showPoints">Pkt</ion-col>
   </ion-row>
 
   <ion-row *ngFor="let team of teams | orderBy : ['-points', '-goalsDiff']; let i = index"
@@ -13,13 +13,13 @@
            class="rankingBody">
 
     <ion-col col-1 class="rankingCol rankingPlace">{{ i + 1 }}</ion-col>
-    <ion-col col-8 class="rankingCol rankingTeam">
-      <club-image [clubId]="team.teamId" cssClass="logoSmall"></club-image>
+    <ion-col class="rankingCol rankingTeam">
+      <club-image [clubId]="team.teamId" cssClass="logoSmall" *ngIf="showTeamImage"></club-image>
       <span>{{ team.teamName }}</span>
     </ion-col>
-    <ion-col col-1 class="rankingCol rankingTextCenter">{{ team.matches }}</ion-col>
-    <ion-col col-1 class="rankingCol rankingTextCenter">{{ team.goalsDiff }}</ion-col>
-    <ion-col col-1 class="rankingCol rankingTextCenter">{{ team.points }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showMatches">{{ team.matches }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showDiff">{{ team.goalsDiff }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showPoints">{{ team.points }}</ion-col>
 
   </ion-row>
 
