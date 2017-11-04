@@ -59,6 +59,7 @@ import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 import {PlayerService} from "../services/player.service";
 import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
 import {RankingComponent} from "../components/ranking/ranking.component";
+import {NoContentComponent} from "../components/noContent/noContent.component";
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import {RankingComponent} from "../components/ranking/ranking.component";
     ClubImageComponent,
     PlayerImageComponent,
     RankingComponent,
+    NoContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -148,6 +150,7 @@ import {RankingComponent} from "../components/ranking/ranking.component";
     ClubImageComponent,
     PlayerImageComponent,
     RankingComponent,
+    NoContentComponent,
   ],
   providers: [
     StatusBar,

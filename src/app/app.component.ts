@@ -23,7 +23,7 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 /**
  * TODOs:
  *
- * [] Kader: wenn keiner vorhanden -> Text
+ * [X] Kader: wenn keiner vorhanden -> Text
  * [] SpielerView überarbeiten
  * [] MatchView überarbeiten
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen?)

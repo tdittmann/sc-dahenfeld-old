@@ -106,12 +106,10 @@
 
       <!-- Aufstellung -->
       <div *ngSwitchCase="'lineup'">
-        <ng-template [ngIf]="match.lineup.length <= 0">
-          <div class="loadingSpinner">
-            Leider ist aktuell keine Aufstellung vorhanden<br/>
-            <ion-icon name="football"></ion-icon>
-          </div>
-        </ng-template>
+        <no-content *ngIf="match.lineup.length <= 0"
+                    message="Leider ist aktuell keine Aufstellung vorhanden"
+                    icon="football">
+        </no-content>
 
         <ng-template [ngIf]="match.lineup.length > 0">
           <ng-template [ngIf]="match.matchInformation">
@@ -178,12 +176,10 @@
 
       <!-- Spielbericht -->
       <div *ngSwitchCase="'scoresheet'">
-        <ng-template [ngIf]="!news">
-          <div class="loadingSpinner">
-            Leider ist aktuell kein Spielbericht vorhanden<br/>
-            <ion-icon name="document"></ion-icon>
-          </div>
-        </ng-template>
+        <no-content *ngIf="!news"
+                    message="Leider ist aktuell kein Spielbericht vorhanden"
+                    icon="document">
+        </no-content>
 
         <ng-template [ngIf]="news">
           <div padding>

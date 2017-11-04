@@ -3,6 +3,11 @@
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
+  <no-content *ngIf="players.length == 0"
+              icon="sad"
+              message="Es konnten keine Spieler für diese Mannschaft gefunden werden">
+  </no-content>
+
   <ng-template ngFor let-player [ngForOf]="players | orderPosition: ['Torhüter', 'Abwehr', 'Mittelfeld', 'Sturm']">
 
     <ng-template [ngIf]="checkHeaderPosition(player.position)">
