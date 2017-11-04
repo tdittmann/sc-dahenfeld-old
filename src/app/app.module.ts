@@ -19,7 +19,6 @@ import {AboutComponent} from "../pages/about/about.component";
 import {LoadingComponent} from "../pages/loading/loading.component";
 import {ErrorComponent} from "../pages/error/error.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
-import {SoccerService} from "../services/soccer.service";
 import {NgPipesModule} from "ngx-pipes";
 import {SpielplanComponent} from "../pages/fixtures/fixtures.component";
 import {SocialSharing} from "@ionic-native/social-sharing";
@@ -59,6 +58,7 @@ import {MatchOverviewCardComponent} from "../components/matchOverviewCard/matchO
 import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 import {PlayerService} from "../services/player.service";
 import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
+import {RankingComponent} from "../components/ranking/ranking.component";
 
 @NgModule({
   declarations: [
@@ -99,6 +99,7 @@ import {PlayerImageComponent} from "../components/playerImage/playerImage.compon
     MatchOverviewCardComponent,
     ClubImageComponent,
     PlayerImageComponent,
+    RankingComponent,
   ],
   imports: [
     BrowserModule,
@@ -146,13 +147,13 @@ import {PlayerImageComponent} from "../components/playerImage/playerImage.compon
     MatchOverviewCardComponent,
     ClubImageComponent,
     PlayerImageComponent,
+    RankingComponent,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ArticleService,
     EventService,
-    SoccerService,
     MatchService,
     BirthdayService,
     SocialSharing,

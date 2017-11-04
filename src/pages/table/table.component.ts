@@ -6,14 +6,13 @@ import {RankingTeam} from "../../entities/RankingTeam";
 import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'ranking',
+  selector: 'table',
   templateUrl: "table.component.html"
 })
 export class TableComponent implements OnInit {
 
   ranking: RankingTeam[];
   team: Mannschaftsart;
-  favTeam: string = environment.teamName;
 
   isLoading: boolean = true;
   isError: boolean = false;

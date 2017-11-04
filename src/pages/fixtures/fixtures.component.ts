@@ -10,6 +10,8 @@ import {Match} from "../../entities/Match";
 })
 export class SpielplanComponent implements OnInit {
 
+  // TODO: Automatisch zum aktuellen Spieltag springen
+
   team: Mannschaftsart;
   matches: Match[] = [];
 
