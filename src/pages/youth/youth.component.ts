@@ -1,11 +1,11 @@
 import {Component, OnInit} from "@angular/core";
-import {SoccerService} from "../../services/soccer.service";
 import {Soccer} from "../../entities/Soccer";
 import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {NavController} from "ionic-angular";
 import {TeamDetailComponent} from "../teamDetail/teamDetail.component";
 import {environment} from "../../environments/environment";
 import {RankingService} from "../../services/ranking.service";
+import {YouthRanking} from "../../entities/YouthRanking";
 
 @Component({
   selector: 'youth',
@@ -13,6 +13,7 @@ import {RankingService} from "../../services/ranking.service";
 })
 export class YouthComponent implements OnInit {
 
+  teams: YouthRanking[] = [];
   favTeam: string = environment.teamName;
 
   isError: boolean = false;
@@ -24,15 +25,19 @@ export class YouthComponent implements OnInit {
   ngOnInit(): void {
 
     for (let team of Mannschaftsart.JUGEND) {
-      // this.soccerService.loadTeamDataWithoutSaving(team).then(
-      //   (teamData) => {
-      //     this.teams.push(teamData);
-      //   },
-      //   (error) => {
-      //     this.isError = true;
-      //     console.error("Can not load teamdata for " + team.toString(), error);
-      //   }
-      // )
+      this.rankingService.loadRanking(team).subscribe(
+        (teamRanking) => {
+          let youthRanking: YouthRanking = new YouthRanking();
+          youthRanking.team = team;
+          youthRanking.ranking = teamRanking;
+
+          this.teams.push(youthRanking)
+        },
+        (error) => {
+          this.isError = true;
+          console.error("Can not load teamdata for " + team.toString(), error);
+        }
+      );
     }
 
   }
