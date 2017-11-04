@@ -3,4 +3,5 @@ export const environment = {
   backendUrl: "http://app.sc-dahenfeld.de/v6/",
   locale: 'de-DE',
   hideInformationArticles: ['733', '755', '830'],
+  teamName: 'SC Dahenfeld',
 };

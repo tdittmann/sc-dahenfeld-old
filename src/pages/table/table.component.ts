@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {SoccerUtils} from "../../utils/SoccerUtils";
 import {NavParams} from "ionic-angular";
 import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {RankingService} from "../../services/ranking.service";
 import {RankingTeam} from "../../entities/RankingTeam";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'ranking',
@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
 
   ranking: RankingTeam[];
   team: Mannschaftsart;
-  favTeam: string = SoccerUtils.TEAM_NAME;
+  favTeam: string = environment.teamName;
 
   isLoading: boolean = true;
   isError: boolean = false;
