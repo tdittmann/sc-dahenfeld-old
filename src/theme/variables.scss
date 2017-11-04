@@ -12,20 +12,21 @@ $font-path: "../assets/fonts";
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 $primary-color: #e00001;
-$gray-color: gray;
-$text-color: #3e3e3e;
-$active-color: #dadada;
-$blue-dark: #007aff;
+$white-color: #fff;
+
+$separator-gray: #e4e7ed;
+$heading-dark: #31404b;
+
 $background-color: #fff;
 $ionic-content-bg-color: #e1e6ea;
 $toolbar-background: $primary-color;
-$toolbar-border-color: white;
-$toolbar-text-color: white;
-$toolbar-active-color: white;
-$toolbar-inactive-color: white;
+$toolbar-border-color: $white-color;
+$toolbar-text-color: $white-color;
+$toolbar-active-color: $white-color;
+$toolbar-inactive-color: $white-color;
 
 $leadimage-height: 60vh;
-$leadimage-shadow: 0px 1px 20px grey;
+$leadimage-shadow: 0px 1px 20px $heading-dark;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -37,18 +38,14 @@ $leadimage-shadow: 0px 1px 20px grey;
 
 $colors: (
   primary: $primary-color,
-  secondary: #32db64,
-  danger: #c03636,
-  light: $gray-color,
-  dark: #222,
-  favorite: #69BB7B,
+  lighter: $white-color,
 );
 
 $tabs-background: $primary-color;
-$tabs-tab-color-active: #fff;
+$tabs-tab-color-active: $white-color;
 
-$tabs-ios-tab-color-inactive: #fff;
-$tabs-md-tab-color-inactive: #fff;
+$tabs-ios-tab-color-inactive: $white-color;
+$tabs-md-tab-color-inactive: $white-color;
 $tabs-md-tab-font-weight: bold;
 
 // App iOS Variables

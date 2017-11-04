@@ -21,7 +21,7 @@ import {ErrorComponent} from "../pages/error/error.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {SoccerService} from "../services/soccer.service";
 import {NgPipesModule} from "ngx-pipes";
-import {SpielplanComponent} from "../pages/spielplan/spielplan.component";
+import {SpielplanComponent} from "../pages/fixtures/fixtures.component";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {TableComponent} from "../pages/table/table.component";
 import {Ng2FilterPipeModule} from "ng2-filter-pipe";
@@ -53,6 +53,10 @@ import {ShareButtonComponent} from "../components/shareButton/shareButton.compon
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
+import {RankingService} from "../services/ranking.service";
+import {ScdTabComponent} from "../components/scdTab/scdTab.component";
+import {MatchOverviewCardComponent} from "../components/matchOverviewCard/matchOverviewCard.component";
+import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 
 @NgModule({
   declarations: [
@@ -89,6 +93,9 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
     ArticleDetailCardComponent,
     ArticleInformationComponent,
     ChronicleComponent,
+    ScdTabComponent,
+    MatchOverviewCardComponent,
+    ClubImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,6 +139,9 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
     ArticleDetailCardComponent,
     ArticleInformationComponent,
     ChronicleComponent,
+    ScdTabComponent,
+    MatchOverviewCardComponent,
+    ClubImageComponent,
   ],
   providers: [
     StatusBar,
@@ -148,6 +158,7 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
     Push,
     DatePipe,
     PhotoViewer,
+    RankingService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: environment.locale},
   ]

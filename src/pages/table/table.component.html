@@ -1,28 +1,32 @@
-<ion-header no-shadow no-border>
-  <scd-navbar [heading]="soccerService.soccer.team.toString()"></scd-navbar>
-</ion-header>
-
 <ion-content>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6></ion-col>
-      <ion-col col-2 class="rankingStats">Sp</ion-col>
-      <ion-col col-2 class="rankingStats">+/-</ion-col>
-      <ion-col col-2 class="rankingStats">Pk</ion-col>
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ion-grid no-padding *ngIf="ranking">
+
+    <ion-row class="rankingHeader">
+      <ion-col col-1 class="rankingCol rankingPlace">#</ion-col>
+      <ion-col col-8 class="rankingCol rankingTeam">Verein</ion-col>
+      <ion-col col-1 class="rankingCol rankingTextCenter">Sp</ion-col>
+      <ion-col col-1 class="rankingCol rankingTextCenter">+/-</ion-col>
+      <ion-col col-1 class="rankingCol rankingTextCenter">Pkt</ion-col>
     </ion-row>
 
-    <ion-row *ngFor="let t of soccerService.soccer.table | orderBy : ['-punkte', '-diff']; let i = index"
-             [ngClass]="{ rankingFav : (t.name == favTeam) }"
-             class="rankingRow">
-      <ion-col col-1 class="rankingPlaceCol">
-        <div class="rankingPlace">{{ i + 1 }}</div>
+    <ion-row *ngFor="let team of ranking | orderBy : ['-points', '-goalsDiff']; let i = index"
+             [ngClass]="{ rankingFavorite : (team.teamName == favTeam) }"
+             class="rankingBody">
+
+      <ion-col col-1 class="rankingCol rankingPlace">{{ i + 1 }}</ion-col>
+      <ion-col col-8 class="rankingCol rankingTeam">
+        <club-image [clubId]="team.teamId" cssClass="logoSmall"></club-image>
+        <span>{{ team.teamName }}</span>
       </ion-col>
-      <ion-col col-5 class="rankingTeam">{{ t.name }}</ion-col>
-      <ion-col col-2 class="rankingStats">{{ t.spiele }}</ion-col>
-      <ion-col col-2 class="rankingStats">{{ t.diff }}</ion-col>
-      <ion-col col-2 class="rankingStats">{{ t.punkte }}</ion-col>
-    </ion-row>
-  </ion-grid>
+      <ion-col col-1 class="rankingCol rankingTextCenter">{{ team.matches }}</ion-col>
+      <ion-col col-1 class="rankingCol rankingTextCenter">{{ team.goalsDiff }}</ion-col>
+      <ion-col col-1 class="rankingCol rankingTextCenter">{{ team.points }}</ion-col>
 
+    </ion-row>
+
+  </ion-grid>
 </ion-content>

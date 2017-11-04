@@ -2,39 +2,44 @@ import {MatchDetail} from "../entities/MatchDetail";
 import {Http} from "@angular/http";
 import {environment} from "../environments/environment";
 import {Injectable} from "@angular/core";
+import {Mannschaftsart} from "../entities/Mannschaftsart";
+import {Observable} from "rxjs/Observable";
+import {Match} from "../entities/Match";
 
 @Injectable()
 export class MatchService {
-
-  matchDetail: MatchDetail;
 
   constructor(private http: Http) {
 
   }
 
-  public loadMatch(matchId: string): Promise<MatchDetail> {
-    this.matchDetail = new MatchDetail();
+  public loadMatches(team: Mannschaftsart): Observable<Match[]> {
+    return this.http.get(environment.backendUrl + "matches?team=" + team.toString())
+      .map(response => response.json());
+  }
 
-    this.http.get(environment.backendUrl + "spiel.php?matchId=" + matchId)
+  public loadMatch(matchId: string): Promise<MatchDetail> {
+    let matchDetail: MatchDetail = new MatchDetail();
+
+    this.http.get(environment.backendUrl + "match.php?matchId=" + matchId)
       .subscribe(
         response => {
           let data = response.json();
 
-          this.matchDetail.matchInformation = data.spielinfos;
-          this.matchDetail.events = data.ereignisse;
-          this.matchDetail.overview = data.ereignisse.concat(data.auswechslungen)
+          matchDetail.matchInformation = data.spielinfos;
+          matchDetail.events = data.ereignisse;
+          matchDetail.overview = data.ereignisse.concat(data.auswechslungen)
             .sort((a, b) => a.zeit > b.zeit);
-          this.matchDetail.substitutions = data.auswechslungen;
-          this.matchDetail.lineup = data.startaufstellung;
+          matchDetail.substitutions = data.auswechslungen;
+          matchDetail.lineup = data.startaufstellung;
         },
         error => {
-          console.log(error);
-          this.matchDetail.isError = true;
+          matchDetail.isError = true;
+          console.error(error);
         }
       );
 
-    return Promise.resolve(this.matchDetail);
-
+    return Promise.resolve(matchDetail);
   }
 
 }

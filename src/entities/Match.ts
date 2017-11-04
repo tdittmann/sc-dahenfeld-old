@@ -4,6 +4,7 @@ export class Match {
   mannschaftsart: string;
   date: number;
   round_number: number;
+  location: string;
 
   home_id: number;
   home_name: string;

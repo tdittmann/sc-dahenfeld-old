@@ -51,15 +51,6 @@ hr {
   font-size: 1.2em;
 }
 
-.rankingStats {
-  color: $gray-color;
-  text-align: center;
-}
-
-.rankingRow {
-  padding-top: 10px;
-}
-
 /* CLUB LOGOS */
 .logoSmall,
 .logoMiddle,
@@ -78,36 +69,6 @@ hr {
 
 .logoBig {
   height: 75px;
-}
-
-/* Tabelle */
-.rankingFav {
-  font-weight: bold !important;
-}
-
-.tabelleErster {
-  background: #00ab00 !important;
-  color: #fff !important;
-}
-
-.tabelleRelegationAufstieg {
-  background: #a7de39 !important;
-  color: #fff !important;
-}
-
-.tabelleMittelfeld {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-.tabelleRelegationAbstieg {
-  background: #ff3800 !important;
-  color: #fff !important;
-}
-
-.tabelleAbstieg {
-  background: #dc000d !important;
-  color: #fff !important;
 }
 
 .outer {
@@ -166,7 +127,7 @@ hr {
 
   .navigationItemIsActive {
     color: $primary-color;
-    background-color: $active-color;
+    background-color: $separator-gray;
   }
 
   ion-list-header {
@@ -217,6 +178,6 @@ hr {
 }
 
 .subHeading {
-  color: $gray-color;
+  color: $heading-dark;
   font-size: 12px !important;
 }

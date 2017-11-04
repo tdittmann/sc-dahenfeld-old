@@ -1,0 +1,40 @@
+ranking {
+
+  .rankingHeader {
+    border-bottom: 1px solid $separator_gray;
+    font-weight: 700;
+    color: $heading-dark;
+    text-transform: uppercase;
+  }
+
+  .rankingPlace {
+    background: $heading-dark;
+    text-align: center;
+    color: #fff;
+  }
+
+  .rankingCol {
+    padding: 8px 0px !important;
+  }
+
+  .rankingBody .rankingCol {
+    line-height: 30px;
+  }
+
+  .rankingBody img {
+    vertical-align: middle;
+  }
+
+  .rankingTeam {
+    padding-left: 8px !important;
+  }
+
+  .rankingTextCenter {
+    text-align: center;
+  }
+
+  .rankingFavorite {
+    color: $primary-color;
+  }
+
+}

@@ -36,8 +36,7 @@
         <div class="matchInfos" *ngIf="match.matchInformation">
 
           <div class="matchInfosHome">
-            <img src="assets/img/clubs/{{ match.matchInformation.home_id }}.png"
-                 onError="this.src='assets/img/defaultLogo.png'"/>
+            <club-image [clubId]="match.matchInformation.home_id"></club-image>
             <br/>
             {{ match.matchInformation.home_name }}
           </div>
@@ -50,8 +49,7 @@
           </div>
 
           <div class="matchInfosAway">
-            <img src="assets/img/clubs/{{ match.matchInformation.away_id }}.png"
-                 onError="this.src='assets/img/defaultLogo.png'"/>
+            <club-image [clubId]="match.matchInformation.away_id"></club-image>
             <br/>
             {{ match.matchInformation.away_name }}
           </div>

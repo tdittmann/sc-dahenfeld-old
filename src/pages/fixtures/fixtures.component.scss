@@ -1,0 +1,67 @@
+.spieltagDatum {
+  font-weight: bold;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.spielContainer {
+  display: table;
+  width: 100%
+}
+
+.spielHeim,
+.spielErgebnis,
+.spielDatum,
+.spielGast,
+.spielHeimLogo,
+.spielGastLogo {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.spielHeim {
+  text-align: left;
+  width: 35%;
+}
+
+.spielErgebnis,
+.spielDatum {
+  text-align: center;
+  width: 10%;
+  font-weight: bold;
+}
+
+.spielErgebnis {
+  text-decoration: underline;
+}
+
+.spielHeimLogo,
+.spielGastLogo {
+  width: 10%;
+  text-align: center;
+}
+
+.spielHeimLogo img,
+.spielGastLogo img {
+  max-height: 50px;
+  width: auto;
+}
+
+.spielGast {
+  text-align: right;
+  width: 35%;
+}
+
+.spielplanIonCardContent {
+  padding: 0;
+}
+
+.spielplanIonCard {
+  margin: 0px 10px 0px 10px;
+}
+
+.actualMatchday {
+  line-height: 35px;
+  text-align: center;
+}

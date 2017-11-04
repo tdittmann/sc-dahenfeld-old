@@ -14,7 +14,7 @@
   <error [isError]="isError"></error>
 
   <article-info [title]="article?.titel"
-                [author]="article.ersteller"
+                [author]="article?.ersteller"
                 [date]="article?.erstellungsdatum"
                 [subHeading]="article?.kategorie"
                 [showDetails]="showInformation(article?.id)"></article-info>
