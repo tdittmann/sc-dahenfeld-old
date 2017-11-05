@@ -27,7 +27,7 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
  * [] SpielerView überarbeiten
  * [] MatchView überarbeiten
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen?)
- * [] PlayerImageComponent: Trikotnummer hinzufügen
+ * [X] PlayerImageComponent: Trikotnummer hinzufügen
  * [] FixturesComponent: Automatisch zum aktuellen Spieltag springen
  *
  * Backend:

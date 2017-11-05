@@ -3,7 +3,7 @@
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
-  <no-content *ngIf="players.length == 0"
+  <no-content *ngIf="!isLoading && players.length == 0"
               icon="sad"
               message="Es konnten keine Spieler für diese Mannschaft gefunden werden">
   </no-content>
@@ -17,7 +17,7 @@
     </ng-template>
 
     <div class="player" (click)="openPlayer(player)">
-      <player-image [img]="player.bild"></player-image>
+      <player-image [img]="player.bild" [number]="player.jerseynumber"></player-image>
       <b>{{ player.vorname }} {{ player.nachname }}</b>
     </div>
 

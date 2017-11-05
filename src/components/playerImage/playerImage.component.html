@@ -1,4 +1,10 @@
-<div class="image">
-  <img *ngIf="img" src="http://sc-dahenfeld.de/{{ img }}"/>
-  <img *ngIf="!img" src="assets/img/platzhalter_kader.png"/>
+<div class="playerImageContainer">
+  <ion-badge class="badge" *ngIf="number > 0">
+    {{ number }}
+  </ion-badge>
+
+  <div class="image">
+    <img *ngIf="img" src="http://sc-dahenfeld.de/{{ img }}"/>
+    <img *ngIf="!img" src="assets/img/platzhalter_kader.png"/>
+  </div>
 </div>

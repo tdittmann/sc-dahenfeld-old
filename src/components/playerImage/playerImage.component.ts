@@ -7,6 +7,7 @@ import {Component, Input} from "@angular/core";
 export class PlayerImageComponent {
 
   @Input() img: string;
+  @Input() number: string;
 
   constructor() {
 
