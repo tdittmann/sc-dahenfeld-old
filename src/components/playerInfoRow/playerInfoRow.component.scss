@@ -1,0 +1,17 @@
+player-info-row {
+
+  .playerInfoValue,
+  .playerInfoText {
+    margin: 0;
+  }
+
+  .playerInfoText {
+    text-transform: uppercase;
+  }
+
+  .playerInfoValue {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+}

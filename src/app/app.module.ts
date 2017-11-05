@@ -35,7 +35,6 @@ import {SocialSharingService} from "../services/socialSharing.service";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {EventComponent} from "../pages/event/event.component";
 import {Push} from "@ionic-native/push";
-import {PlayerInfoComponent} from "../pages/playerInfo/playerInfo.component";
 import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {BirthdayService} from "../services/birthday.service";
@@ -60,6 +59,7 @@ import {PlayerService} from "../services/player.service";
 import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
 import {RankingComponent} from "../components/ranking/ranking.component";
 import {NoContentComponent} from "../components/noContent/noContent.component";
+import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.component";
 
 @NgModule({
   declarations: [
@@ -81,7 +81,6 @@ import {NoContentComponent} from "../components/noContent/noContent.component";
     OrderPositionPipe,
     TourComponent,
     PlayerComponent,
-    PlayerInfoComponent,
     PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
@@ -102,6 +101,7 @@ import {NoContentComponent} from "../components/noContent/noContent.component";
     PlayerImageComponent,
     RankingComponent,
     NoContentComponent,
+    PlayerInfoRowComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,7 +130,6 @@ import {NoContentComponent} from "../components/noContent/noContent.component";
     TeamPlayersComponent,
     TourComponent,
     PlayerComponent,
-    PlayerInfoComponent,
     PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
@@ -151,6 +150,7 @@ import {NoContentComponent} from "../components/noContent/noContent.component";
     PlayerImageComponent,
     RankingComponent,
     NoContentComponent,
+    PlayerInfoRowComponent,
   ],
   providers: [
     StatusBar,

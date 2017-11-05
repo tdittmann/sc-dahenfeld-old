@@ -3,6 +3,7 @@ import {SocialSharing} from "@ionic-native/social-sharing";
 import {Article} from "../entities/Article";
 import {ToastController} from "ionic-angular";
 import {Birthday} from "../entities/Birthday";
+import {environment} from "../environments/environment";
 
 @Injectable()
 export class SocialSharingService {
@@ -14,7 +15,7 @@ export class SocialSharingService {
   shareNews(news: Article): void {
     let options = {
       subject: news.titel,
-      message: 'http://sc-dahenfeld.de/index.php?option=com_content&view=article&id=' + news.id
+      message: environment.siteUrl + '/index.php?option=com_content&view=article&id=' + news.id
     }
 
     this.socialSharing.shareWithOptions(options).then(

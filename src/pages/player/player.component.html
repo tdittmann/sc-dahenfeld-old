@@ -1,50 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ player.vorname }} {{ player.nachname }}</ion-title>
+    <ion-title></ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
-        <span showWhen="ios">Zurück</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
 
-  <!-- Image -->
-  <player-image [img]="player.bild"></player-image>
+  <div class="imageContainer">
+    <leadimage [src]="getPlayerImage(player.bild)"
+               imgPosition="Top">
+    </leadimage>
 
-  <!-- Segment -->
-  <ion-toolbar>
-    <ion-segment [(ngModel)]="segmentType">
-      <ion-segment-button value="playerInfo">
-        Spielerinfo
-      </ion-segment-button>
-      <ion-segment-button value="seasonStats">
-        Akt. Saison
-      </ion-segment-button>
-      <ion-segment-button value="careerStats">
-        Karriere
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+    <div class="playerName">
+      <h1>{{player.nachname}}</h1>
+      <h2>{{player.vorname}}</h2>
+    </div>
 
-  <div [ngSwitch]="segmentType">
-    <!-- Player Info -->
-    <playerInfo *ngSwitchCase="'playerInfo'" [player]="player"></playerInfo>
+    <ion-grid class="playerInfo">
+      <player-info-row text="Alter" [value]="player.age"></player-info-row>
+      <player-info-row text="Trikotnummer" [value]="player.jerseynumber"
+                       *ngIf="player.jerseynumber > 0"></player-info-row>
+      <player-info-row text="Position" [value]="player.position"></player-info-row>
+    </ion-grid>
+  </div>
 
-    <!-- Season -->
-    <playerStats *ngSwitchCase="'seasonStats'"
-                 [stats]="player.seasonStats"
-                 heading="Statistiken der aktuellen Saison"></playerStats>
-
-    <!-- Career -->
-    <playerStats *ngSwitchCase="'careerStats'"
-                 [stats]="player.careerStats"
-                 heading="Statistiken der Karriere*"
-                 information="* seit der Saison 2013/2014"></playerStats>
+  <div class="statisticsHeader">
+    Statistiken
   </div>
 
 </ion-content>

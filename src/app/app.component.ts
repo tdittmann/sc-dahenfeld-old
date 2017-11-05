@@ -22,17 +22,14 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 
 /**
  * TODOs:
- *
- * [X] Kader: wenn keiner vorhanden -> Text
  * [] SpielerView überarbeiten
  * [] MatchView überarbeiten
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen?)
- * [X] PlayerImageComponent: Trikotnummer hinzufügen
  * [] FixturesComponent: Automatisch zum aktuellen Spieltag springen
+ * [] Push Notification
  *
  * Backend:
  * [] MatchLocations importieren
- * [] Spieler Trikotnummern pflegen
  */
 
 

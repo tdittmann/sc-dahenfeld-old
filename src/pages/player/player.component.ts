@@ -1,16 +1,33 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {NavParams, ViewController} from "ionic-angular";
+import {Player} from "../../entities/Player";
+import {environment} from "../../environments/environment";
 
 @Component({
+  selector: 'player-detail',
   templateUrl: 'player.component.html'
 })
-export class PlayerComponent {
+export class PlayerComponent implements OnInit {
 
-  player: any = [];
-  segmentType: string = "playerInfo";
+  player: Player;
 
-  constructor(private navParams: NavParams, public viewCtrl: ViewController) {
-    this.player = navParams.data.params;
+  constructor(private navParams: NavParams, private viewCtrl: ViewController) {
+
+  }
+
+  ngOnInit(): void {
+    this.player = this.navParams.data.params;
+  }
+
+  getPlayerImage(image: string): string {
+    let prefix: string = 'url("';
+    let suffix: string = '")';
+
+    if (image) {
+      return prefix + environment.siteUrl + '/' + image + suffix;
+    }
+
+    return prefix + environment.placeholderPlayer + suffix;
   }
 
   dismiss() {

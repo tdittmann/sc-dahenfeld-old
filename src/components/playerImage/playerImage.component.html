@@ -4,7 +4,7 @@
   </ion-badge>
 
   <div class="image">
-    <img *ngIf="img" src="http://sc-dahenfeld.de/{{ img }}"/>
-    <img *ngIf="!img" src="assets/img/platzhalter_kader.png"/>
+    <img *ngIf="img" src="{{ siteUrl }}/{{ img }}"/>
+    <img *ngIf="!img" src="{{ placeholderPlayer }}"/>
   </div>
 </div>

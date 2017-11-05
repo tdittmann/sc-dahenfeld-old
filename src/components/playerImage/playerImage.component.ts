@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'player-image',
@@ -8,6 +9,9 @@ export class PlayerImageComponent {
 
   @Input() img: string;
   @Input() number: string;
+
+  placeholderPlayer: string = environment.placeholderPlayer;
+  siteUrl: string = environment.siteUrl;
 
   constructor() {
 
