@@ -17,6 +17,7 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit(): void {
     this.player = this.navParams.data.params;
+    console.log(this.player);
   }
 
   getPlayerImage(image: string): string {

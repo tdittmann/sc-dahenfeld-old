@@ -22,7 +22,6 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 
 /**
  * TODOs:
- * [] SpielerView überarbeiten
  * [] MatchView überarbeiten
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen?)
  * [] FixturesComponent: Automatisch zum aktuellen Spieltag springen

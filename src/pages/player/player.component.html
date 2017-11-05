@@ -33,4 +33,49 @@
     Statistiken
   </div>
 
+  <player-statistic text="Spiele"
+                    [seasonValue]="player.seasonStats.matches"
+                    [careerValue]="player.careerStats.matches">
+  </player-statistic>
+
+  <player-statistic text="Startelf"
+                    [seasonValue]="player.seasonStats.starting"
+                    [careerValue]="player.careerStats.starting">
+  </player-statistic>
+
+  <player-statistic text="Spielminuten"
+                    [seasonValue]="player.seasonStats.playingMinutes"
+                    [careerValue]="player.careerStats.playingMinutes">
+  </player-statistic>
+
+  <player-statistic text="Tore"
+                    [seasonValue]="player.seasonStats.goals"
+                    [careerValue]="player.careerStats.goals">
+  </player-statistic>
+
+  <player-statistic text="Einwechslungen"
+                    [seasonValue]="player.seasonStats.cameIn"
+                    [careerValue]="player.careerStats.cameIn">
+  </player-statistic>
+
+  <player-statistic text="Auswechslungen"
+                    [seasonValue]="player.seasonStats.cameOut"
+                    [careerValue]="player.careerStats.cameOut">
+  </player-statistic>
+
+  <player-statistic text="Gelbe Karten"
+                    [seasonValue]="player.seasonStats.yellowCards"
+                    [careerValue]="player.careerStats.yellowCards">
+  </player-statistic>
+
+  <player-statistic text="Gelb-Rote Karten"
+                    [seasonValue]="player.seasonStats.yellowRedCards"
+                    [careerValue]="player.careerStats.yellowRedCards">
+  </player-statistic>
+
+  <player-statistic text="Rote Karten"
+                    [seasonValue]="player.seasonStats.redCards"
+                    [careerValue]="player.careerStats.redCards">
+  </player-statistic>
+
 </ion-content>

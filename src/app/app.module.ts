@@ -60,6 +60,7 @@ import {PlayerImageComponent} from "../components/playerImage/playerImage.compon
 import {RankingComponent} from "../components/ranking/ranking.component";
 import {NoContentComponent} from "../components/noContent/noContent.component";
 import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.component";
+import {PlayerStatisticComponent} from "../components/playerStatistic/playerStatistic.component";
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.
     RankingComponent,
     NoContentComponent,
     PlayerInfoRowComponent,
+    PlayerStatisticComponent,
   ],
   imports: [
     BrowserModule,
@@ -151,6 +153,7 @@ import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.
     RankingComponent,
     NoContentComponent,
     PlayerInfoRowComponent,
+    PlayerStatisticComponent,
   ],
   providers: [
     StatusBar,

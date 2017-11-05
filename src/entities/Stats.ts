@@ -1,13 +1,13 @@
 export class Stats {
 
-  gelbeKarten: number;
-  gelbRoteKarten: number;
-  roteKarten: number;
-  tore: number;
-  spiele: number;
-  startelf: number;
-  einwechslungen: number;
-  auswechslungen: number;
-  spielminuten: number;
+  yellowCards: number;
+  yellowRedCards: number;
+  redCards: number;
+  goals: number;
+  matches: number;
+  starting: number;
+  cameIn: number;
+  cameOut: number;
+  playingMinutes: number;
 
 }
