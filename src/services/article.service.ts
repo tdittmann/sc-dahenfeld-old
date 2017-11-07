@@ -1,26 +1,25 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
 import {environment} from "../environments/environment";
 import {Article} from "../entities/Article";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class ArticleService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
 
   loadArticles(categoryId: number): Observable<Article[]> {
-    return this.http.get(environment.backendUrl + "news?categoryId=" + categoryId)
-      .map(response => response.json());
+    return this.http.get<Article[]>(environment.backendUrl + "news?categoryId=" + categoryId);
   }
 
   loadArticle(newsId: string): Observable<Article> {
-    return this.http.get(environment.backendUrl + "news?id=" + newsId)
+    return this.http.get<Article[]>(environment.backendUrl + "news?id=" + newsId)
       .map(response => {
-        return response.json()[0];
+        return response[0];
       });
   }
 

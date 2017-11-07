@@ -10,7 +10,7 @@
   <div *ngFor="let team of teams">
     <h4 class="teamHeading">{{ team.team.toString() }}</h4>
 
-    <ion-card>
+    <ion-card (click)="openTeamDetails(team.team)">
       <ranking [teams]="team.ranking"
                [showMatches]="false"
                [showTeamImage]="false">
@@ -18,7 +18,7 @@
 
       <ion-row no-padding>
         <ion-col text-center>
-          <button ion-button clear full color="primary" (click)="openTeamDetails(team.team)">
+          <button ion-button clear full color="primary">
             Mehr zur {{ team.team.toString() }}
           </button>
         </ion-col>

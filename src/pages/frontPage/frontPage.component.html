@@ -42,11 +42,16 @@
 
   <!-- Articles -->
   <h5 class="sectionHeading">Neues vom SCD</h5>
-  <big-card [img]="article.image"
-            [category]="article.kategorie"
-            [title]="article.titel"
-            *ngFor="let article of articles"
-            (click)="openArticle(article)">
-  </big-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let article of articles" col-12 col-lg-6>
+        <big-card [img]="article.image"
+                  [category]="article.kategorie"
+                  [title]="article.titel"
+                  (click)="openArticle(article)">
+        </big-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

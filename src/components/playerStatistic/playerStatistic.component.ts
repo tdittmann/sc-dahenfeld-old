@@ -4,11 +4,7 @@ import {Component, Input, OnInit} from "@angular/core";
   selector: 'player-statistic',
   templateUrl: 'playerStatistic.component.html'
 })
-export class PlayerStatisticComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(this.seasonValue);
-    console.log(this.careerValue);
-  }
+export class PlayerStatisticComponent {
 
   @Input() text: string;
   @Input() seasonValue: number;

@@ -10,7 +10,6 @@ import {OldiesComponent} from "../pages/oldies/oldies.component";
 import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
 import {ArticleService} from "../services/article.service";
-import {HttpModule} from "@angular/http";
 import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
 import {RemoveFirstImagePipe} from "../pipes/removeFirstImage.pipe";
 import {EventService} from "../services/event.service";
@@ -35,7 +34,6 @@ import {SocialSharingService} from "../services/socialSharing.service";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {EventComponent} from "../pages/event/event.component";
 import {Push} from "@ionic-native/push";
-import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {BirthdayService} from "../services/birthday.service";
 import {SuperTabsModule} from "ionic2-super-tabs";
@@ -61,6 +59,7 @@ import {RankingComponent} from "../components/ranking/ranking.component";
 import {NoContentComponent} from "../components/noContent/noContent.component";
 import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.component";
 import {PlayerStatisticComponent} from "../components/playerStatistic/playerStatistic.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -82,7 +81,6 @@ import {PlayerStatisticComponent} from "../components/playerStatistic/playerStat
     OrderPositionPipe,
     TourComponent,
     PlayerComponent,
-    PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
@@ -107,7 +105,7 @@ import {PlayerStatisticComponent} from "../components/playerStatistic/playerStat
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     NgPipesModule,
     Ng2FilterPipeModule,
     IonicStorageModule.forRoot(),
@@ -132,7 +130,6 @@ import {PlayerStatisticComponent} from "../components/playerStatistic/playerStat
     TeamPlayersComponent,
     TourComponent,
     PlayerComponent,
-    PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,

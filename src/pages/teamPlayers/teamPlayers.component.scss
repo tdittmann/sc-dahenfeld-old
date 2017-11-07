@@ -1,7 +1,20 @@
 team-players {
 
+  // Small screens
+  @media (min-width: 0px) {
+    .player {
+      width: 50%;
+    }
+  }
+
+  // Large screens
+  @media (min-width: 768px) {
+    .player {
+      width: 33%;
+    }
+  }
+
   .player {
-    width: 50%;
     float: left;
     text-align: center;
     margin: 8px 0px;

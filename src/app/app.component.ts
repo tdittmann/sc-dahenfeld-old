@@ -11,7 +11,6 @@ import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {Mannschaftsart} from "../entities/Mannschaftsart";
 import {Storage} from "@ionic/storage";
 import {TourComponent} from "../pages/tour/tour.component";
-import {Http} from "@angular/http";
 import {environment} from "../environments/environment";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {Push, PushObject, PushOptions} from "@ionic-native/push";
@@ -19,13 +18,18 @@ import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
+import {HttpClient} from "@angular/common/http";
 
 /**
  * TODOs:
  * [] MatchView überarbeiten
- * [] Vereinskalender überarbeiten (inkl. Veranstaltungen?)
- * [] FixturesComponent: Automatisch zum aktuellen Spieltag springen
+ * [] Vereinskalender überarbeiten (inkl. Veranstaltungen & Turnangebot? Google Kalender? https://github.com/twinssbc/Ionic2-Calendar)
+ * [] FixturesComponent: Automatisch zum letzten gespielten Spieltag springen
  * [] Push Notification
+ * [] Veranstaltungen Frontpage fix
+ * [] Farbe im Android Taskmanager (Statusbar?) anpassen
+ * [] iOS: StatusBar fix
+ * [X] Http durch HttpClient ersetzen
  *
  * Backend:
  * [] MatchLocations importieren
@@ -75,7 +79,7 @@ export class MyApp {
   ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-              private push: Push, private storage: Storage, private http: Http) {
+              private push: Push, private storage: Storage, private http: HttpClient) {
     platform.ready().then(() => {
 
       // Check if tour already showed
@@ -121,7 +125,7 @@ export class MyApp {
     // Init the push service
     const pushOptions: PushOptions = {
       android: {
-        forceShow: "true",
+        forceShow: "true"
       },
       ios: {
         alert: "true",

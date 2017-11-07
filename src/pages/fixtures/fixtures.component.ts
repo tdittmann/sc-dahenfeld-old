@@ -42,6 +42,10 @@ export class FixturesComponent implements OnInit {
 
   }
 
+  ionViewDidLoad() {
+    console.log("TODO: jump to latest match with result");
+  }
+
   // private getActualMatchday(): number {
   //   let actualMatchday: number;
   //   let lastMatchday: number;
