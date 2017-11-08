@@ -6,10 +6,10 @@
   <ion-card>
     <ion-item>
       <ion-avatar item-left *ngIf="event.image">
-        <img src="{{ event.getImageUrl() }}">
+        <img src="{{ getImageUrl(event.image) }}">
       </ion-avatar>
       <h2>{{ event.title }}</h2>
-      <p>{{ event.getFormattedDate() }}</p>
+      <p>{{ getFormattedDate(event.start, event.end) }}</p>
     </ion-item>
     <ion-card-content [innerHtml]="event.text"></ion-card-content>
   </ion-card>

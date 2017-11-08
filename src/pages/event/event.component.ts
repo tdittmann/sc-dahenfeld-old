@@ -17,4 +17,12 @@ export class EventComponent implements OnInit {
     this.event = this.navParams.data.parameter;
   }
 
+  getImageUrl(image: string): string {
+    return EventEntry.getImageUrl(image);
+  }
+
+  getFormattedDate(start: string, end: string): string {
+    return EventEntry.getFormattedDate(start, end);
+  }
+
 }

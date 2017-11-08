@@ -1,5 +1,5 @@
-import {DatePipe} from "@angular/common";
 import {environment} from "../environments/environment";
+import {DatePipe} from "@angular/common";
 
 export class EventEntry {
 
@@ -9,21 +9,22 @@ export class EventEntry {
   end: string;
   text: string;
 
-  getImageUrl(): string {
-    if (this.image) {
-      return environment.siteUrl + this.image;
+  public static getImageUrl(image: string): string {
+    if (image) {
+      return environment.siteUrl + image;
     }
 
     return '';
   }
 
-  getFormattedDate(): string {
+  public static getFormattedDate(start: string, end: string): string {
     let datePipe: DatePipe = new DatePipe(environment.locale);
 
-    if (parseInt(this.end) > 0) {
-      return 'von ' + datePipe.transform(this.start, 'bb') + '. bis ' + datePipe.transform(this.end, 'longDate')
+    if (parseInt(end) > 0) {
+      return 'von ' + datePipe.transform(start, 'bb') + '. bis ' + datePipe.transform(end, 'longDate')
     }
 
-    return 'am ' + datePipe.transform(this.start, 'longDate');
+    return 'am ' + datePipe.transform(start, 'longDate');
   }
+
 }

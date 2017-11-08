@@ -31,12 +31,11 @@
   <!-- Event -->
   <div *ngIf="eventEntry">
     <h5 class="sectionHeading">Veranstaltung</h5>
-    <!-- TODO: Hier funktioniert der Aufruf der Methode noch nicht -->
-    <!--<smallCard (click)="openEvent(eventEntry)"-->
-    <!--[img]="eventEntry.getImageUrl()"-->
-    <!--[title]="eventEntry.title"-->
-    <!--[subTitle]="eventEntry.getFormattedDate()">-->
-    <!--</smallCard>-->
+    <smallCard (click)="openEvent(eventEntry)"
+               [img]="getImageUrl(eventEntry.image)"
+               [title]="eventEntry.title"
+               [subTitle]="getFormattedDate(eventEntry.start, eventEntry.end)">
+    </smallCard>
     <div class="separator"></div>
   </div>
 

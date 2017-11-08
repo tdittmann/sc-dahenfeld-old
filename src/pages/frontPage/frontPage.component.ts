@@ -102,4 +102,12 @@ export class FrontPageComponent implements OnInit {
     this.nav.push(EventComponent, {parameter: event});
   }
 
+  getImageUrl(image: string): string {
+    return EventEntry.getImageUrl(image);
+  }
+
+  getFormattedDate(start: string, end: string): string {
+    return EventEntry.getFormattedDate(start, end);
+  }
+
 }
