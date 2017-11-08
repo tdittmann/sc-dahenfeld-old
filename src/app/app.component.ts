@@ -25,11 +25,8 @@ import {HttpClient} from "@angular/common/http";
  * [] MatchView überarbeiten
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen & Turnangebot? Google Kalender? https://github.com/twinssbc/Ionic2-Calendar)
  * [] FixturesComponent: Automatisch zum letzten gespielten Spieltag springen
- * [] Push Notification
  * [] Veranstaltungen Frontpage fix
- * [] Farbe im Android Taskmanager (Statusbar?) anpassen
  * [] iOS: StatusBar fix
- * [X] Http durch HttpClient ersetzen
  *
  * Backend:
  * [] MatchLocations importieren

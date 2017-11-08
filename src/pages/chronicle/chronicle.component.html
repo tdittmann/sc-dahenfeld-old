@@ -7,10 +7,12 @@
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
-  <big-card *ngFor="let article of articles"
-            (click)="openArticle(article)"
-            [title]="article.titel"
-            [img]="article.image">
-  </big-card>
+  <div class="maxWidthContainer">
+    <big-card *ngFor="let article of articles"
+              (click)="openArticle(article)"
+              [title]="article.titel"
+              [img]="article.image">
+    </big-card>
+  </div>
 
 </ion-content>

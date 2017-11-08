@@ -3,11 +3,10 @@ import {Article} from "../../entities/Article";
 import {ArticleService} from "../../services/article.service";
 import {NavController, NavParams} from "ionic-angular";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
-import {EventEntry} from "../../entities/EventEntry";
-import {EventComponent} from "../event/event.component";
 import {ArticleDetailCardComponent} from "../articleDetail/card/articleDetailCard.component";
 
 @Component({
+  selector: 'oldies',
   templateUrl: "oldies.component.html"
 })
 export class OldiesComponent implements OnInit {

@@ -25,14 +25,7 @@ export class ArticleService {
 
   incrementMobileHitForArticle(pArticle: Article) {
     this.http.post(environment.backendUrl + "news", JSON.stringify(pArticle))
-      .subscribe(
-        (response) => {
-          // Do nothing
-        },
-        (err) => {
-          console.error(err);
-        }
-      );
+      .subscribe();
   }
 
 }
