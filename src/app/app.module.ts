@@ -50,7 +50,6 @@ import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDet
 import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {RankingService} from "../services/ranking.service";
-import {ScdTabComponent} from "../components/scdTab/scdTab.component";
 import {MatchOverviewCardComponent} from "../components/matchOverviewCard/matchOverviewCard.component";
 import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 import {PlayerService} from "../services/player.service";
@@ -94,7 +93,6 @@ import {HttpClientModule} from "@angular/common/http";
     ArticleDetailCardComponent,
     ArticleInformationComponent,
     ChronicleComponent,
-    ScdTabComponent,
     MatchOverviewCardComponent,
     ClubImageComponent,
     PlayerImageComponent,
@@ -143,7 +141,6 @@ import {HttpClientModule} from "@angular/common/http";
     ArticleDetailCardComponent,
     ArticleInformationComponent,
     ChronicleComponent,
-    ScdTabComponent,
     MatchOverviewCardComponent,
     ClubImageComponent,
     PlayerImageComponent,

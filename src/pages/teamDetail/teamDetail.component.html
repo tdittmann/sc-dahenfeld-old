@@ -5,9 +5,9 @@
 <ion-content>
 
   <super-tabs *ngIf="team" toolbarColor="lighter" indicatorColor="lighter">
-    <scd-tab [tab]="tableTab" title="Tabelle" [team]="team"></scd-tab>
-    <scd-tab [tab]="fixturesTab" title="Spiele" [team]="team"></scd-tab>
-    <scd-tab [tab]="teamTab" title="Kader" [team]="team"></scd-tab>
+    <super-tab [root]="tableTab" title="Tabelle" [rootParams]="{'id': team}"></super-tab>
+    <super-tab [root]="fixturesTab" title="Spiele" [rootParams]="{'id': team}"></super-tab>
+    <super-tab [root]="teamTab" title="Kader" [rootParams]="{'id': team}"></super-tab>
   </super-tabs>
 
 </ion-content>
