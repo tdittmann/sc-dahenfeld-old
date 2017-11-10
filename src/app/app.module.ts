@@ -50,7 +50,7 @@ import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDet
 import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {RankingService} from "../services/ranking.service";
-import {MatchOverviewCardComponent} from "../components/matchOverviewCard/matchOverviewCard.component";
+import {MatchOverviewComponent} from "../components/matchOverview/matchOverview.component";
 import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 import {PlayerService} from "../services/player.service";
 import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
@@ -99,7 +99,7 @@ import {MatchEventsComponent} from "../components/matchEvents/matchEvents.compon
     ArticleDetailCardComponent,
     ArticleInformationComponent,
     ChronicleComponent,
-    MatchOverviewCardComponent,
+    MatchOverviewComponent,
     ClubImageComponent,
     PlayerImageComponent,
     RankingComponent,
@@ -152,7 +152,7 @@ import {MatchEventsComponent} from "../components/matchEvents/matchEvents.compon
     ArticleDetailCardComponent,
     ArticleInformationComponent,
     ChronicleComponent,
-    MatchOverviewCardComponent,
+    MatchOverviewComponent,
     ClubImageComponent,
     PlayerImageComponent,
     RankingComponent,

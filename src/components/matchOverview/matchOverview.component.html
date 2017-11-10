@@ -1,0 +1,44 @@
+<ion-grid no-padding>
+
+  <ion-row class="matchRoundNumber" *ngIf="showRoundNumber">
+    <ion-col>{{ match.round_number }}. Spieltag</ion-col>
+  </ion-row>
+
+  <ion-row class="matchDate" *ngIf="showMatchDate">
+    <ion-col>{{ match.date | date: 'dd. MMM y, HH:mm' }}</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <club-image [clubId]="match.home_id" cssClass="logoMiddle"></club-image>
+    </ion-col>
+
+    <ion-col class="matchResult">
+      <ng-template [ngIf]="match.home_result && match.away_result">
+        {{ match.home_result }}:{{ match.away_result }}
+      </ng-template>
+
+      <ng-template [ngIf]="!match.home_result && !match.away_result">
+        - : -
+      </ng-template>
+    </ion-col>
+
+    <ion-col>
+      <club-image [clubId]="match.away_id" cssClass="logoMiddle"></club-image>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="matchTeamNames" *ngIf="showTeamName">
+    <ion-col>{{ match.home_name }}</ion-col>
+    <ion-col></ion-col>
+    <ion-col>{{ match.away_name }}</ion-col>
+  </ion-row>
+
+  <ion-row class="matchLocation" *ngIf="showLocation && match.location">
+    <ion-col>
+      <ion-icon name="pin"></ion-icon>
+      <span>{{ match.location }}</span>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
