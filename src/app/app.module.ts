@@ -59,6 +59,12 @@ import {NoContentComponent} from "../components/noContent/noContent.component";
 import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.component";
 import {PlayerStatisticComponent} from "../components/playerStatistic/playerStatistic.component";
 import {HttpClientModule} from "@angular/common/http";
+import {GameReportComponent} from "../pages/gameReport/gameReport.component";
+import {LineupService} from "../services/lineup.service";
+import {LineupComponent} from "../pages/lineup/lineup.component";
+import {SeparatorComponent} from "../components/separator/separator.component";
+import {JerseyComponent} from "../components/jersey/jersey.component";
+import {MatchEventsComponent} from "../components/matchEvents/matchEvents.component";
 
 @NgModule({
   declarations: [
@@ -100,6 +106,11 @@ import {HttpClientModule} from "@angular/common/http";
     NoContentComponent,
     PlayerInfoRowComponent,
     PlayerStatisticComponent,
+    GameReportComponent,
+    LineupComponent,
+    SeparatorComponent,
+    JerseyComponent,
+    MatchEventsComponent,
   ],
   imports: [
     BrowserModule,
@@ -148,6 +159,11 @@ import {HttpClientModule} from "@angular/common/http";
     NoContentComponent,
     PlayerInfoRowComponent,
     PlayerStatisticComponent,
+    GameReportComponent,
+    LineupComponent,
+    SeparatorComponent,
+    JerseyComponent,
+    MatchEventsComponent,
   ],
   providers: [
     StatusBar,
@@ -165,6 +181,7 @@ import {HttpClientModule} from "@angular/common/http";
     PhotoViewer,
     RankingService,
     PlayerService,
+    LineupService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: environment.locale},
   ]

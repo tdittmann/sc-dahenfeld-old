@@ -1,0 +1,21 @@
+<ng-template [ngIf]="showGoals && player.goals > 0">
+  <img src="assets/img/icons/yellowCard.png"/>
+  <span *ngIf="showEventValue">{{ player.goals }}</span>
+</ng-template>
+
+<ng-template [ngIf]="yellowCard && player.yellowCard">
+  <img src="assets/img/icons/yellowCard.png"/>
+</ng-template>
+
+<ng-template [ngIf]="showYellowRedCard && player.yellowRedCard">
+  <img src="assets/img/icons/yellowRedCard.png"/>
+</ng-template>
+
+<ng-template [ngIf]="showRedCard && player.redCard">
+  <img src="assets/img/icons/redCard.png"/>
+</ng-template>
+
+<ng-template [ngIf]="showSubstitution && player.substitution">
+  <img src="assets/img/icons/substitution.png"/>
+  <span *ngIf="showEventValue">{{ player.cameInTime }}'</span>
+</ng-template>

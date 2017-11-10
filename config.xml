@@ -93,7 +93,8 @@
     </feature>
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <allow-navigation href="http://10.252.25.194:8100" />
-    <engine name="android" spec="^6.3.0" />
+    <engine name="android" spec="^6.4.0" />
+    <engine name="ios" spec="^4.5.3" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-plugin-console" spec="~1.1.0" />
     <plugin name="cordova-plugin-device" spec="~1.1.6" />

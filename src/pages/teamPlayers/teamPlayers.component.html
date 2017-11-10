@@ -9,12 +9,8 @@
   </no-content>
 
   <ng-template ngFor let-player [ngForOf]="players | orderPosition: ['Torhüter', 'Abwehr', 'Mittelfeld', 'Sturm']">
-
-    <ng-template [ngIf]="checkHeaderPosition(player.position)">
-      <div class="positionHeader">
-        {{ player.position }}
-      </div>
-    </ng-template>
+    <separator [text]="player.position"
+               *ngIf="checkHeaderPosition(player.position)"></separator>
 
     <div class="player" (click)="openPlayer(player)">
       <player-image [img]="player.bild"></player-image>

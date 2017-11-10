@@ -39,9 +39,11 @@ export class FixturesComponent implements OnInit {
 
   }
 
-  openMatch(matchId: string) {
-    let modal = this.modalCtrl.create(MatchDetailComponent, {params: matchId});
-    modal.present();
+  openMatch(match: Match) {
+    if (match.home_result && match.away_result) {
+      let modal = this.modalCtrl.create(MatchDetailComponent, {params: match.match_id});
+      modal.present();
+    }
   }
 
 }

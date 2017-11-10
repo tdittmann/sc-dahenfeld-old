@@ -6,7 +6,7 @@
   <ng-template ngFor let-match [ngForOf]="matches">
     <div class="maxWidthContainer">
       <match-overview-card [match]="match"
-                           (click)="openMatch(match.match_id)">
+                           (click)="openMatch(match)">
       </match-overview-card>
     </div>
   </ng-template>
