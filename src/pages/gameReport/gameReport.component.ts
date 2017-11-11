@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
-import {ArticleService} from "../../services/article.service";
 import {Article} from "../../entities/Article";
 import {NavParams} from "ionic-angular";
+import {MatchService} from "../../services/match.service";
 
 @Component({
   selector: 'game-report',
@@ -15,14 +15,14 @@ export class GameReportComponent implements OnInit {
   isLoading: boolean = true;
   isError: boolean = false;
 
-  constructor(private articleService: ArticleService, private navParams: NavParams) {
+  constructor(private matchService: MatchService, private navParams: NavParams) {
 
   }
 
   ngOnInit(): void {
     this.matchId = this.navParams.data.id;
 
-    this.articleService.loadGameReport(this.matchId).subscribe(
+    this.matchService.loadGameReport(this.matchId).subscribe(
       (article) => {
         this.gameReport = article;
         this.isLoading = false;

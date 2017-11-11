@@ -23,13 +23,6 @@ export class ArticleService {
       });
   }
 
-  loadGameReport(matchId: string): Observable<Article> {
-    return this.http.get<Article[]>(environment.backendUrl + "gameReport?matchId=" + matchId)
-      .map(response => {
-        return response[0];
-      });
-  }
-
   incrementMobileHitForArticle(pArticle: Article) {
     this.http.post(environment.backendUrl + "news", JSON.stringify(pArticle))
       .subscribe();

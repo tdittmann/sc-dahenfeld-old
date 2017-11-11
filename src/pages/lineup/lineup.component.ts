@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {NavParams} from "ionic-angular";
-import {LineupService} from "../../services/lineup.service";
 import {environment} from "../../environments/environment";
 import {Lineup} from "../../entities/Lineup";
 import {LineupPlayer} from "../../entities/LineupPlayer";
+import {MatchService} from "../../services/match.service";
 
 @Component({
   selector: 'lineup',
@@ -18,14 +18,14 @@ export class LineupComponent implements OnInit {
   isLoading: boolean = true;
   isError: boolean = false;
 
-  constructor(private navParams: NavParams, private lineupService: LineupService) {
+  constructor(private navParams: NavParams, private matchService: MatchService) {
 
   }
 
   ngOnInit(): void {
     let matchId = this.navParams.data.id;
 
-    this.lineupService.loadLineup(matchId).subscribe(
+    this.matchService.loadLineup(matchId).subscribe(
       (lineup) => {
         this.lineup = lineup;
 

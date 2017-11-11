@@ -1,0 +1,50 @@
+<ion-content>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ng-template [ngIf]="match && events">
+
+    <match-overview
+      [showRoundNumber]="true"
+      [showMatchDate]="true"
+      [showTeamName]="true"
+      [match]="match">
+    </match-overview>
+
+    <div class="eventsContainer">
+      <div class="events">
+
+        <ng-template ngFor let-event [ngForOf]="events">
+          <div class="event">
+
+            <div class="{{ getCssClass(event.clubId) }}">
+              <!-- Event -->
+              <ng-template [ngIf]="event.firstname">
+                {{ event.firstname }} {{ event.lastname }}
+                <img src="{{ getImageForEvent(event.event) }}"/>
+              </ng-template>
+
+              <!-- Substitution -->
+              <ng-template [ngIf]="!event.firstname">
+                <img src="assets/img/icons/substitution.png"/>
+                <div class="substitution">
+                  <div>{{ event.cameInFirstname }} {{ event.cameInLastname }}</div>
+                  <div class="cameInFor">{{ event.cameInForFirstname }} {{ event.cameInForLastname }}</div>
+                </div>
+              </ng-template>
+            </div>
+
+            <div class="eventTime">
+              {{ event.time }}
+            </div>
+
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+
+  </ng-template>
+
+</ion-content>

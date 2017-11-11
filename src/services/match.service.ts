@@ -4,6 +4,9 @@ import {Mannschaftsart} from "../entities/Mannschaftsart";
 import {Observable} from "rxjs/Observable";
 import {Match} from "../entities/Match";
 import {HttpClient} from "@angular/common/http";
+import {Lineup} from "../entities/Lineup";
+import {Article} from "../entities/Article";
+import {MatchOverview} from "../entities/MatchOverview";
 
 @Injectable()
 export class MatchService {
@@ -14,6 +17,21 @@ export class MatchService {
 
   public loadMatches(team: Mannschaftsart): Observable<Match[]> {
     return this.http.get<Match[]>(environment.backendUrl + "matches?team=" + team.toString());
+  }
+
+  loadLineup(matchId: string): Observable<Lineup> {
+    return this.http.get<Lineup>(environment.backendUrl + "lineup?matchId=" + matchId);
+  }
+
+  loadMatchOverview(matchId: string): Observable<MatchOverview> {
+    return this.http.get<MatchOverview>(environment.backendUrl + "matchOverview?matchId=" + matchId);
+  }
+
+  loadGameReport(matchId: string): Observable<Article> {
+    return this.http.get<Article[]>(environment.backendUrl + "gameReport?matchId=" + matchId)
+      .map(response => {
+        return response[0];
+      });
   }
 
 }

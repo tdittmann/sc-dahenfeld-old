@@ -12,97 +12,9 @@
 <ion-content>
 
   <super-tabs toolbarColor="lighter" indicatorColor="lighter">
-    <!--<super-tab [root]="overviewTab" title="Übersicht" [rootParams]="{'id': matchId}"></super-tab>-->
+    <super-tab [root]="overviewTab" title="Übersicht" [rootParams]="{'id': matchId}"></super-tab>
     <super-tab [root]="lineupTab" title="Aufstellung" [rootParams]="{'id': matchId}"></super-tab>
     <super-tab [root]="gameReportTab" title="Spielbericht" [rootParams]="{'id': matchId}"></super-tab>
   </super-tabs>
 
-  <!--
-  Tabs
-  Spielinfos (Spieltag + Datum)
-  Logos + Ergebnis
-  Hightlights
-  -->
-
-
-
-  <!--<ng-template [ngIf]="match.matchInformation && !isError">-->
-    <!--<div [ngSwitch]="type">-->
-
-      <!--&lt;!&ndash; Uebersicht &ndash;&gt;-->
-      <!--<div *ngSwitchCase="'overview'">-->
-        <!--<div class="matchInfos" *ngIf="match.matchInformation">-->
-
-          <!--<div class="matchInfosHome">-->
-            <!--<club-image [clubId]="match.matchInformation.home_id"></club-image>-->
-            <!--<br/>-->
-            <!--{{ match.matchInformation.home_name }}-->
-          <!--</div>-->
-
-          <!--<div class="matchInfosResult">-->
-            <!--<ng-template [ngIf]="match.matchInformation.home_result != null">-->
-              <!--{{ match.matchInformation.home_result }} : {{ match.matchInformation.away_result }}-->
-            <!--</ng-template>-->
-            <!--<ng-template [ngIf]="match.matchInformation.home_result == null">- : -</ng-template>-->
-          <!--</div>-->
-
-          <!--<div class="matchInfosAway">-->
-            <!--<club-image [clubId]="match.matchInformation.away_id"></club-image>-->
-            <!--<br/>-->
-            <!--{{ match.matchInformation.away_name }}-->
-          <!--</div>-->
-
-          <!--<div style="clear: both;"></div>-->
-        <!--</div>-->
-
-        <!--<ng-template [ngIf]="match.overview && match.overview.length > 0">-->
-          <!--<h4 class="statsHeading uebersichtHeading">Übersicht</h4>-->
-          <!--<ion-card class="uebersicht">-->
-            <!--<ion-list>-->
-              <!--<ion-item *ngFor="let e of match.overview">-->
-
-                <!--<div style="width: 40px;"-->
-                     <!--[ngClass]="{ floatLeft : e.clubId == match.matchInformation.home_id, floatRight : e.clubId == match.matchInformation.away_id }">-->
-                  <!--<b>{{ e.zeit }}'</b> <br/>-->
-                  <!--<img src="assets/img/icons/{{ e.ereignisIcon }}" style="height: 20px; width: auto;"/>-->
-                <!--</div>-->
-
-                <!--<div style="display: table; height: 43px; overflow: hidden;"-->
-                     <!--[ngClass]="{ floatLeft : e.clubId == match.matchInformation.home_id, floatRight : e.clubId == match.matchInformation.away_id }">-->
-                  <!--<div style="display: table-cell; vertical-align: middle;">-->
-                    <!--<h2>{{ e.name }}</h2>-->
-                    <!--<p *ngIf="e.name1">{{ e.name1 }}</p>-->
-                  <!--</div>-->
-                <!--</div>-->
-
-              <!--</ion-item>-->
-            <!--</ion-list>-->
-          <!--</ion-card>-->
-        <!--</ng-template>-->
-
-        <!--<h4 class="statsHeading">Spielinformationen</h4>-->
-        <!--<ng-template [ngIf]="match.matchInformation">-->
-          <!--<ion-card style="text-align: center;">-->
-            <!--<ion-card-content>-->
-              <!--<span class="smallDescription">Anstoß</span><br/>-->
-              <!--<span class="bigValue">{{ match.matchInformation.date | date : 'HH:mm'}} Uhr</span>-->
-              <!--<hr/>-->
-
-              <!--<div style="float: left; width: 50%;">-->
-                <!--<span class="smallDescription">Datum</span><br/>-->
-                <!--<span class="bigValue">{{ match.matchInformation.date | date : 'longDate'}}</span>-->
-              <!--</div>-->
-
-              <!--<div style="float: left; width: 50%;">-->
-                <!--<span class="smallDescription">Spieltag</span><br/>-->
-                <!--<span class="bigValue">{{ match.matchInformation.round_number }}</span>-->
-              <!--</div>-->
-            <!--</ion-card-content>-->
-          <!--</ion-card>-->
-        <!--</ng-template>-->
-      <!--</div>-->
-
-      <!--</div>-->
-    <!--</div>-->
-  <!--</ng-template>-->
 </ion-content>
