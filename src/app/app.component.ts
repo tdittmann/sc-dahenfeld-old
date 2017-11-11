@@ -22,7 +22,6 @@ import {HttpClient} from "@angular/common/http";
 
 /**
  * TODOs:
- * [] MatchView überarbeiten
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen & Turnangebot? Google Kalender? https://github.com/twinssbc/Ionic2-Calendar)
  * [] FixturesComponent: Automatisch zum letzten gespielten Spieltag springen
  * [] iOS: StatusBar fix

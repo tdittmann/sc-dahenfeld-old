@@ -15,7 +15,7 @@
   <img src="assets/img/icons/redCard.png"/>
 </ng-template>
 
-<ng-template [ngIf]="showSubstitution && player.substitution">
+<ng-template [ngIf]="showSubstitution && player.substitution || player.cameInTime">
   <img src="assets/img/icons/substitution.png"/>
   <span *ngIf="showEventValue">{{ player.cameInTime }}'</span>
 </ng-template>

@@ -3,7 +3,6 @@ import {Soccer} from "../../entities/Soccer";
 import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {NavController} from "ionic-angular";
 import {TeamDetailComponent} from "../teamDetail/teamDetail.component";
-import {environment} from "../../environments/environment";
 import {RankingService} from "../../services/ranking.service";
 import {YouthRanking} from "../../entities/YouthRanking";
 
@@ -31,7 +30,11 @@ export class YouthComponent implements OnInit {
           youthRanking.ranking = teamRanking;
 
           if (teamRanking.length > 0) {
-            this.teams.push(youthRanking)
+            this.teams.push(youthRanking);
+
+            this.teams.sort(function (a, b) {
+              return (a.team > b.team) ? 1 : ((b.team > a.team) ? -1 : 0);
+            });
           }
         },
         (error) => {

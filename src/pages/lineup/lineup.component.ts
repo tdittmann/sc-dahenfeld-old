@@ -29,9 +29,9 @@ export class LineupComponent implements OnInit {
       (lineup) => {
         this.lineup = lineup;
 
-        this.players = Object.keys(this.lineup.lineup).map(function (key) {
-          return lineup.lineup[key];
-        });
+        this.players = Object.keys(this.lineup.lineup)
+          .map(key => lineup.lineup[key])
+          .sort((a, b) => a.jerseynumber - b.jerseynumber);
 
         this.isLoading = false;
       },

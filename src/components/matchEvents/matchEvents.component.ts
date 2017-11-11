@@ -5,7 +5,7 @@ import {LineupPlayer} from "../../entities/LineupPlayer";
   selector: 'match-events',
   templateUrl: 'matchEvents.component.html'
 })
-export class MatchEventsComponent implements OnInit {
+export class MatchEventsComponent {
 
   @Input() showEventValue: boolean;
   @Input() showGoals: boolean;
@@ -17,10 +17,6 @@ export class MatchEventsComponent implements OnInit {
 
   constructor() {
 
-  }
-
-  ngOnInit() {
-    console.log(this.player);
   }
 
 }
