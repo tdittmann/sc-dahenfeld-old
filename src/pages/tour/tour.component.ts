@@ -21,9 +21,9 @@ export class TourComponent {
       image: "assets/img/tour/news.png",
     },
     {
-      title: "Teaminformationen",
-      description: "Für <b>sämtliche Mannschaften</b> des SC Dahenfeld ist der gesamte Spielplan auf Deinem Smartphone! Verpasse kein Spiel und erhalte zusätzlich Informationen zu jedem Spieler. Mit der <b>Tabelle</b> hast du den aktuellen Stand der Mannschaften im Blick.",
-      image: "assets/img/tour/teamDetails.png",
+      title: "Fußball",
+      description: "Für <b>sämtliche Fußballmannschaften</b> des SC Dahenfeld ist der gesamte Spielplan auf Deinem Smartphone! Verpasse kein Spiel und erhalte zusätzlich Informationen zu jedem Spieler. Mit der <b>Tabelle</b> hast du den aktuellen Stand der Mannschaften im Blick.",
+      image: "assets/img/tour/soccer.png",
     },
     {
       title: "Turnen & Tischtennis",
