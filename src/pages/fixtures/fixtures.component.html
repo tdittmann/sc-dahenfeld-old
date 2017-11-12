@@ -1,11 +1,11 @@
-<ion-content class="grayBackground">
+<ion-content class="grayBackground" #content>
 
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
-  <ng-template ngFor let-match [ngForOf]="matches">
-    <div class="maxWidthContainer">
-      <ion-card *ngIf="match">
+  <div class="maxWidthContainer">
+    <ng-template ngFor let-match [ngForOf]="matches">
+      <ion-card *ngIf="match" [id]="getIdForMatch(match.round_number)">
         <ion-card-content no-padding>
           <match-overview [match]="match"
                           [showRoundNumber]="true"
@@ -16,7 +16,7 @@
           </match-overview>
         </ion-card-content>
       </ion-card>
-    </div>
-  </ng-template>
+    </ng-template>
+  </div>
 
 </ion-content>
