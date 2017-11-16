@@ -1,33 +1,29 @@
 import {Component, OnInit} from "@angular/core";
-import {Match} from "../../entities/Match";
 import {EventService} from "../../services/event.service";
-import {ModalController} from "ionic-angular";
-import {MatchDetailComponent} from "../matchDetail/matchDetail.component";
+import {Calendar} from "../../entities/Calendar";
 
 @Component({
-  selector: "app-vereinskalender",
-  templateUrl: "vereinskalender.component.html"
+  selector: "calendar",
+  templateUrl: "calendar.component.html"
 })
-export class VereinskalenderComponent implements OnInit {
+export class CalendarComponent implements OnInit {
 
-  matches: Match[] = [];
+  calendarEvents: Calendar[] = [];
   currentDay: any;
   currentMonth: any;
 
   isLoading: boolean = true;
   isError: boolean = false;
 
-  constructor(private eventService: EventService, private modalCtrl: ModalController) {
+  constructor(private eventService: EventService) {
 
   }
 
 
   ngOnInit(): void {
-
-    // Load all matches
-    this.eventService.loadAllMatches().subscribe(
-      (matches) => {
-        this.matches = matches;
+    this.eventService.loadCalendarEvents().subscribe(
+      (calendarEvents) => {
+        this.calendarEvents = calendarEvents;
         this.isLoading = false;
       },
       (error) => {
@@ -50,11 +46,6 @@ export class VereinskalenderComponent implements OnInit {
     this.currentMonth = month;
 
     return showHeader;
-  }
-
-  openMatch(matchId: string) {
-    let modal = this.modalCtrl.create(MatchDetailComponent, {params: matchId});
-    modal.present();
   }
 
 }

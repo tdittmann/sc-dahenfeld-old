@@ -4,7 +4,7 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {NavigationItem} from "../entities/NavigationItem";
 import {OldiesComponent} from "../pages/oldies/oldies.component";
-import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
+import {CalendarComponent} from "../pages/calendar/calendar.component";
 import {AboutComponent} from "../pages/about/about.component";
 import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
@@ -24,6 +24,7 @@ import {HttpClient} from "@angular/common/http";
  * TODOs:
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen & Turnangebot? Google Kalender? https://github.com/twinssbc/Ionic2-Calendar)
  * [] iOS: StatusBar fix
+ * [] Next Match: Countdown
  */
 
 
@@ -39,7 +40,7 @@ export class MyApp {
   vereinNavigation: NavigationItem[] = [
     {title: 'News', component: FrontPageComponent, icon: "paper", active: true},
     {title: 'Chronik', component: ChronicleComponent, heading: "Chronik", icon: "time"},
-    {title: 'Vereinskalender', component: VereinskalenderComponent, icon: "calendar"},
+    {title: 'Kalender', component: CalendarComponent, icon: "calendar"},
     {title: 'Sportheim', component: ArticleDetailCardComponent, parameter: "830", icon: "restaurant"},
   ];
   fussballNavigation: NavigationItem[] = [
@@ -156,7 +157,7 @@ export class MyApp {
         if (notification.additionalData.page == "newsDetail") {
           this.nav.setRoot(ArticleDetailLeadImageComponent, {parameter: notification.additionalData.id});
         } else if (notification.additionalData.page == "vereinskalender") {
-          this.nav.setRoot(VereinskalenderComponent);
+          this.nav.setRoot(CalendarComponent);
         } else {
           this.nav.setRoot(FrontPageComponent);
         }

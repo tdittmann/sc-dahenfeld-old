@@ -13,7 +13,7 @@ import {ArticleService} from "../services/article.service";
 import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
 import {RemoveFirstImagePipe} from "../pipes/removeFirstImage.pipe";
 import {EventService} from "../services/event.service";
-import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
+import {CalendarComponent} from "../pages/calendar/calendar.component";
 import {AboutComponent} from "../pages/about/about.component";
 import {LoadingComponent} from "../pages/loading/loading.component";
 import {ErrorComponent} from "../pages/error/error.component";
@@ -74,7 +74,7 @@ import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverview
     FirstImagePipe,
     LimitHtmlText,
     RemoveFirstImagePipe,
-    VereinskalenderComponent,
+    CalendarComponent,
     AboutComponent,
     LoadingComponent,
     ErrorComponent,
@@ -130,7 +130,7 @@ import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverview
     MyApp,
     OldiesComponent,
     ArticleDetailLeadImageComponent,
-    VereinskalenderComponent,
+    CalendarComponent,
     AboutComponent,
     LoadingComponent,
     ErrorComponent,
