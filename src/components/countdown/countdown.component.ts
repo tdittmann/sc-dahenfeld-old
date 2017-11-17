@@ -27,6 +27,8 @@ export class CountdownComponent implements OnInit {
     if (actualDateInSeconds <= matchDateInSeconds) {
       this.matchDateIsInFuture = true;
       Observable.timer(0, 1000).subscribe(t => {
+        let matchDateInSeconds = Math.floor(this.dateInMillis / 1000);
+        let actualDateInSeconds = Math.floor(Date.now() / 1000);
 
         this.calculateCountdown(matchDateInSeconds - actualDateInSeconds);
       });
