@@ -18,7 +18,11 @@
         {{ match.home_result }}:{{ match.away_result }}
       </ng-template>
 
-      <ng-template [ngIf]="!match.home_result && !match.away_result">
+      <ng-template [ngIf]="isNextMatch">
+        <countdown [date]="match.date"></countdown>
+      </ng-template>
+
+      <ng-template [ngIf]="!isNextMatch && !match.home_result && !match.away_result">
         - : -
       </ng-template>
     </ion-col>

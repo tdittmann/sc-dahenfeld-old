@@ -12,6 +12,7 @@
                           [showMatchDate]="true"
                           [showTeamName]="true"
                           [showLocation]="true"
+                          [isNextMatch]="getIdForMatch(match.round_number) != ''"
                           (click)="openMatch(match)">
           </match-overview>
         </ion-card-content>

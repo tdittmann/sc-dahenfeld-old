@@ -12,6 +12,7 @@ export class MatchOverviewComponent {
   @Input() showMatchDate: boolean;
   @Input() showTeamName: boolean;
   @Input() showLocation: boolean;
+  @Input() isNextMatch: boolean;
 
   constructor() {
 

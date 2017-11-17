@@ -1,0 +1,8 @@
+<div class="countdownContainer">
+
+  <countdown-time text="T" [value]="days" *ngIf="days > 0"></countdown-time>
+  <countdown-time text="S" [value]="hours"></countdown-time>
+  <countdown-time text="Min" [value]="minutes"></countdown-time>
+  <countdown-time text="Sek" [value]="seconds" *ngIf="days <= 0"></countdown-time>
+
+</div>

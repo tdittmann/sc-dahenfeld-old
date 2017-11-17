@@ -65,6 +65,8 @@ import {SeparatorComponent} from "../components/separator/separator.component";
 import {JerseyComponent} from "../components/jersey/jersey.component";
 import {MatchEventsComponent} from "../components/matchEvents/matchEvents.component";
 import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverviewTab.component";
+import {CountdownComponent} from "../components/countdown/countdown.component";
+import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.component";
 
 @NgModule({
   declarations: [
@@ -112,6 +114,8 @@ import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverview
     JerseyComponent,
     MatchEventsComponent,
     MatchOverviewTabComponent,
+    CountdownComponent,
+    CountdownTimeComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,8 +136,6 @@ import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverview
     ArticleDetailLeadImageComponent,
     CalendarComponent,
     AboutComponent,
-    LoadingComponent,
-    ErrorComponent,
     TeamDetailComponent,
     FixturesComponent,
     TableComponent,
@@ -145,27 +147,10 @@ import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverview
     EventComponent,
     BirthdaysComponent,
     FrontPageComponent,
-    LeadImageComponent,
-    SmallCardComponent,
-    ScdNavbarComponent,
-    BigCardComponent,
-    ShareButtonComponent,
     ArticleDetailCardComponent,
-    ArticleInformationComponent,
     ChronicleComponent,
-    MatchOverviewComponent,
-    ClubImageComponent,
-    PlayerImageComponent,
-    RankingComponent,
-    NoContentComponent,
-    PlayerInfoRowComponent,
-    PlayerStatisticComponent,
     GameReportComponent,
     LineupComponent,
-    SeparatorComponent,
-    JerseyComponent,
-    MatchEventsComponent,
-    MatchOverviewTabComponent,
   ],
   providers: [
     StatusBar,

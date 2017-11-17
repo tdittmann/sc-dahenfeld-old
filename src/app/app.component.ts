@@ -24,7 +24,6 @@ import {HttpClient} from "@angular/common/http";
  * TODOs:
  * [] Vereinskalender überarbeiten (inkl. Veranstaltungen & Turnangebot? Google Kalender? https://github.com/twinssbc/Ionic2-Calendar)
  * [] iOS: StatusBar fix
- * [] Next Match: Countdown
  */
 
 
@@ -173,7 +172,7 @@ export class MyApp {
     this.http.get(environment.backendUrl + "settings?registrationId=" + token + "&os=" + os)
       .subscribe(
         (result) => {
-          console.log("Registration: " + result);
+          console.log("Registration done: " + result);
         }
       );
   }
