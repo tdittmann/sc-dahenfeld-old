@@ -5,6 +5,7 @@ import {EventEntry} from "../entities/EventEntry";
 import {Match} from "../entities/Match";
 import 'rxjs/Rx';
 import {HttpClient} from "@angular/common/http";
+import {Calendar} from "../entities/Calendar";
 
 @Injectable()
 export class EventService {
@@ -14,11 +15,11 @@ export class EventService {
   }
 
   loadAllEvents(): Observable<EventEntry[]> {
-    return this.http.get<EventEntry[]>(environment.backendUrl + "veranstaltungen");
+    return this.http.get<EventEntry[]>(environment.backendUrl + "events");
   }
 
-  loadAllMatches(): Observable<Match[]> {
-    return this.http.get<Match[]>(environment.backendUrl + "vereinskalender");
+  loadCalendarEvents(): Observable<Calendar[]> {
+    return this.http.get<Calendar[]>(environment.backendUrl + "calendar");
   }
 
 }
