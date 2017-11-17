@@ -9,6 +9,8 @@ export class CountdownComponent implements OnInit {
 
   @Input("date") dateInMillis: number;
 
+  matchDateIsInFuture: boolean = false;
+
   days: number;
   hours: number;
   minutes: number;
@@ -19,12 +21,16 @@ export class CountdownComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Observable.timer(0, 1000).subscribe(t => {
-      let matchDateInSeconds = Math.floor(this.dateInMillis / 1000);
-      let actualDateInSeconds = Math.floor(Date.now() / 1000);
+    let matchDateInSeconds = Math.floor(this.dateInMillis / 1000);
+    let actualDateInSeconds = Math.floor(Date.now() / 1000);
 
-      this.calculateCountdown(matchDateInSeconds - actualDateInSeconds);
-    });
+    if (actualDateInSeconds <= matchDateInSeconds) {
+      this.matchDateIsInFuture = true;
+      Observable.timer(0, 1000).subscribe(t => {
+
+        this.calculateCountdown(matchDateInSeconds - actualDateInSeconds);
+      });
+    }
   }
 
   calculateCountdown(inputSeconds: number) {

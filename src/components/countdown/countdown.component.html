@@ -1,4 +1,4 @@
-<div class="countdownContainer">
+<div class="countdownContainer" *ngIf="matchDateIsInFuture">
 
   <countdown-time text="T" [value]="days" *ngIf="days > 0"></countdown-time>
   <countdown-time text="S" [value]="hours"></countdown-time>
