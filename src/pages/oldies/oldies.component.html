@@ -12,7 +12,7 @@
               (click)="openArticle(article)"
               [title]="article.titel"
               [img]="article.image"
-              [date]="article.erstellungsdatum">
+              [date]="article.erstellungsdatum | date: 'longDate'">
     </big-card>
   </div>
 

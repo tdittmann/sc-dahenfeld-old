@@ -1,6 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {EventService} from "../../services/event.service";
 import {Calendar} from "../../entities/Calendar";
+import {DatePipe} from "@angular/common";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: "calendar",
@@ -23,7 +25,10 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
     this.eventService.loadCalendarEvents().subscribe(
       (calendarEvents) => {
-        this.calendarEvents = calendarEvents;
+        this.calendarEvents = calendarEvents.sort(function (a, b) {
+          return (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0);
+        });
+
         this.isLoading = false;
       },
       (error) => {
@@ -35,8 +40,8 @@ export class CalendarComponent implements OnInit {
 
   }
 
-  checkHeader(matchTimestamp: number) {
-    let d = new Date(matchTimestamp);
+  checkHeader(timestamp: number) {
+    let d = new Date(timestamp);
     let day = d.getDate();
     let month = d.getMonth();
 
@@ -46,6 +51,17 @@ export class CalendarComponent implements OnInit {
     this.currentMonth = month;
 
     return showHeader;
+  }
+
+  getCalendarEventDate(date: string): string {
+    let datePipe: DatePipe = new DatePipe(environment.locale);
+
+    let formattedDate: string = datePipe.transform(date, 'HH:mm');
+    if (formattedDate != '00:00') {
+      return formattedDate;
+    }
+
+    return "";
   }
 
 }

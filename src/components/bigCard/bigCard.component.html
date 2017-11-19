@@ -1,14 +1,19 @@
 <ion-card>
 
   <!-- Image -->
-  <div class="card-image" [ngStyle]="{'background-image' : image}"></div>
+  <div *ngIf="image" class="card-image" [ngStyle]="{'background-image' : image}"></div>
 
   <!-- Category + Heading -->
   <ion-card-content>
     <h2 class="headingTop" *ngIf="category">{{ category }}</h2>
-    <h2 class="headingTop" *ngIf="date">{{ date | date: 'longDate' }}</h2>
+    <h2 class="headingTop" *ngIf="date">{{ date }}</h2>
     <h1 class="headingSmall" *ngIf="title">{{ title }}</h1>
     <p *ngIf="text">{{ text }}</p>
   </ion-card-content>
+
+  <div class="location" *ngIf="location">
+    <ion-icon name="pin"></ion-icon>
+    <span>{{ location }}</span>
+  </div>
 
 </ion-card>

@@ -21,9 +21,8 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {HttpClient} from "@angular/common/http";
 
 /**
- * TODOs:
- * [] Vereinskalender überarbeiten (inkl. Veranstaltungen & Turnangebot? Google Kalender? https://github.com/twinssbc/Ionic2-Calendar)
- * [] iOS: StatusBar fix
+ * TODO:
+ * - iOS: StatusBar fix
  */
 
 

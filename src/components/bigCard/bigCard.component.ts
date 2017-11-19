@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
   selector: 'big-card',
@@ -7,10 +7,11 @@ import {Component, Input, OnInit} from "@angular/core";
 export class BigCardComponent {
 
   @Input('img') image: string;
-  @Input('category') category: string;
-  @Input('date') date: string;
-  @Input('title') title: string;
-  @Input('text') text: string;
+  @Input() category: string;
+  @Input() date: string;
+  @Input() title: string;
+  @Input() text: string;
+  @Input() location: string;
 
   constructor() {
 
