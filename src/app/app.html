@@ -8,7 +8,7 @@
     </div>
 
     <ion-list no-lines>
-      <ion-list-header class="list-header"><span class="navigationFront">//</span> Verein</ion-list-header>
+      <ion-list-header><span class="navigationFront">//</span> Verein</ion-list-header>
       <button ion-item menuClose *ngFor="let p of vereinNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">
         <ion-icon item-left [name]="p.icon"></ion-icon>
@@ -34,7 +34,7 @@
       </button>
     </ion-list>
 
-    <ion-list no-lines>
+    <ion-list no-lines *ngIf="false">
       <ion-list-header><span class="navigationFront">//</span> Development</ion-list-header>
       <button ion-item menuClose *ngFor="let p of developmentNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">

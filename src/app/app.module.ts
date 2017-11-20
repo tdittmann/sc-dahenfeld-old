@@ -151,6 +151,7 @@ import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.
     ChronicleComponent,
     GameReportComponent,
     LineupComponent,
+    MatchOverviewTabComponent,
   ],
   providers: [
     StatusBar,

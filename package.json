@@ -30,18 +30,19 @@
     "android-versions": "^1.2.1",
     "com-sarriaroman-photoviewer": "^1.1.11",
     "cordova": "^7.1.0",
-    "cordova-android": "^6.4.0",
+    "cordova-android": "~6.3.0",
     "cordova-ios": "~4.5.3",
-    "cordova-plugin-console": "~1.1.0",
-    "cordova-plugin-device": "~1.1.6",
+    "cordova-plugin-console": "^1.1.0",
+    "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-headercolor": "^1.0.0",
     "cordova-plugin-ionic-webview": "^1.1.16",
-    "cordova-plugin-splashscreen": "~4.0.3",
-    "cordova-plugin-statusbar": "^2.2.3",
-    "cordova-plugin-whitelist": "~1.3.2",
-    "cordova-plugin-x-socialsharing": "~5.2.1",
+    "cordova-plugin-splashscreen": "^4.0.3",
+    "cordova-plugin-statusbar": "^2.3.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-x-socialsharing": "^5.2.1",
+    "es6-promise-plugin": "^4.1.0",
     "ionic-angular": "3.9.2",
-    "ionic-plugin-keyboard": "~2.2.1",
+    "ionic-plugin-keyboard": "^2.2.1",
     "ionic2-super-tabs": "^4.1.4",
     "ionicons": "3.0.0",
     "ng2-filter-pipe": "^0.1.10",
@@ -56,22 +57,6 @@
     "ionic": "3.18.0",
     "typescript": "2.4.2"
   },
-  "cordovaPlugins": [
-    "cordova-plugin-device",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-console",
-    "cordova-plugin-statusbar",
-    "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
-  ],
-  "cordovaPlatforms": [
-    "ios",
-    {
-      "platform": "ios",
-      "version": "",
-      "locator": "ios"
-    }
-  ],
   "description": "Official app of SC Dahenfeld 1946 e.V.",
   "cordova": {
     "plugins": {
@@ -84,11 +69,14 @@
       "ionic-plugin-keyboard": {},
       "com-sarriaroman-photoviewer": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-headercolor": {}
+      "cordova-plugin-headercolor": {},
+      "phonegap-plugin-push": {
+        "FCM_VERSION": "11.0.1"
+      }
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
