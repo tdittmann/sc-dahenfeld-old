@@ -26,7 +26,6 @@
     <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="HeaderColor" value="#a50001" />
     <preference name="StatusBarBackgroundColor" value="#a50001" />
-    <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <platform name="android">
         <resource-file src="google-services.json" target="google-services.json" />

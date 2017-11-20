@@ -85,6 +85,7 @@ export class MyApp {
       this.handlePush();
 
       statusBar.styleDefault();
+      statusBar.styleLightContent();
       splashScreen.hide();
     });
   }
