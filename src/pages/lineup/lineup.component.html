@@ -1,0 +1,64 @@
+<ion-content>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <div class="maxWidthContainer" *ngIf="lineup && players">
+
+    <div class="mannschaftsauswahl">
+      <div class="mannschaftTeam" (click)="changeSelectedClub(lineup.matchInfo.home_name)"
+           [ngClass]="{ mannschaftAktiv : lineup.matchInfo.home_name == selectedTeam}">
+        {{ lineup.matchInfo.home_name }}
+      </div>
+      <div class="mannschaftTeam" (click)="changeSelectedClub(lineup.matchInfo.away_name)"
+           [ngClass]="{ mannschaftAktiv : lineup.matchInfo.away_name == selectedTeam}">
+        {{ lineup.matchInfo.away_name }}
+      </div>
+    </div>
+
+    <ion-list>
+      <ng-template ngFor let-player [ngForOf]="players">
+        <ion-item *ngIf="isPlayerInSelectedTeam(player.clubId) && !player.cameInTime">
+
+          <jersey [jerseyNumber]="player.jerseynumber" item-start></jersey>
+
+          <h2>{{player.firstname}} {{player.lastname}}</h2>
+
+          <match-events item-end
+                        [player]="player"
+                        [showGoals]="true"
+                        [showYellowCard]="true"
+                        [showYellowRedCard]="true"
+                        [showRedCard]="true"
+                        [showSubstitution]="true">
+          </match-events>
+
+        </ion-item>
+      </ng-template>
+    </ion-list>
+
+    <ng-template [ngIf]="areThereSubstitutions()">
+      <separator text="Auswechslungen"></separator>
+      <ion-list>
+        <ng-template ngFor let-player [ngForOf]="players">
+          <ion-item *ngIf="isPlayerInSelectedTeam(player.clubId) && player.cameInTime > 0">
+
+            <jersey [jerseyNumber]="player.jerseynumber" item-start></jersey>
+
+            <h3>{{player.firstname}} {{player.lastname}}</h3>
+            <p class="substitionCameInFor">für {{ getPlayerNameById(player.cameInFor) }}</p>
+
+            <match-events item-end
+                          [player]="player"
+                          [showSubstitution]="true"
+                          [showEventValue]="true">
+            </match-events>
+
+          </ion-item>
+        </ng-template>
+      </ion-list>
+    </ng-template>
+
+  </div>
+
+</ion-content>

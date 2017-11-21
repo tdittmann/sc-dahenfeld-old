@@ -1,12 +1,41 @@
-.playerImage {
-  margin: 10px auto;
-  width: 200px;
-  overflow: hidden;
-  position: relative;
-  border-radius: 50%;
-  height: 200px;
-}
+player-detail {
 
-.playerInfosText {
-  text-transform: uppercase;
+  .imageContainer {
+    position: relative;
+  }
+
+  .playerName {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: $white-color;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+
+  .playerName h1,
+  .playerName h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .playerName h1 {
+    font-weight: bold;
+    font-size: 3em;
+  }
+
+  .playerInfo {
+    position: absolute;
+    bottom: 15px;
+    text-align: right;
+    color: $white-color;
+  }
+
+  .statisticsHeader {
+    background: $heading-dark;
+    color: $white-color;
+    text-align: center;
+    padding: 16px;
+  }
+
 }

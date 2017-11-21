@@ -1,0 +1,15 @@
+big-card {
+
+  .card-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .location {
+    border-top: 1px solid $separator-light;
+    padding: 8px;
+    text-align: center;
+  }
+
+}

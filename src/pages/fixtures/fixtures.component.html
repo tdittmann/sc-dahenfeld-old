@@ -1,0 +1,23 @@
+<ion-content class="grayBackground" #content>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <div class="maxWidthContainer">
+    <ng-template ngFor let-match [ngForOf]="matches">
+      <ion-card *ngIf="match" [id]="getIdForMatch(match.round_number)">
+        <ion-card-content no-padding>
+          <match-overview [match]="match"
+                          [showRoundNumber]="true"
+                          [showMatchDate]="true"
+                          [showTeamName]="true"
+                          [showLocation]="true"
+                          [isNextMatch]="getIdForMatch(match.round_number) != ''"
+                          (click)="openMatch(match)">
+          </match-overview>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+  </div>
+
+</ion-content>

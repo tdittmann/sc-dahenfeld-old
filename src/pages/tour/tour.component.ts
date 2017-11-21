@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {Storage} from "@ionic/storage";
 import {NavController} from "ionic-angular";
-import {NewsListComponent} from "../newsList/newsList.component";
+import {FrontPageComponent} from "../frontPage/frontPage.component";
 
 @Component({
   templateUrl: "tour.component.html",
@@ -12,7 +12,7 @@ export class TourComponent {
   slides = [
     {
       title: "Willkommen in der SCD-App!",
-      description: "Erfahre <b>alles</b> über den SC Dahenfeld und sei hautnah dabei. Auf den folgenden Seiten erfährst Du alles, was diese App Dir bietet. <br/> Wische, um auf die nächste Seite zu gelangen. <b>Zum Überspringen klicke auf das SCD-Logo</b>",
+      description: "Erfahre <b>alles</b> über den SC Dahenfeld und sei hautnah dabei. Auf den folgenden Seiten erfährst Du alles, was diese App Dir bietet. <br/> Wische, um auf die nächste Seite zu gelangen.",
       image: "assets/img/logo.png",
     },
     {
@@ -21,15 +21,10 @@ export class TourComponent {
       image: "assets/img/tour/news.png",
     },
     {
-      title: "Teaminformationen",
-      description: "Für <b>sämtliche Mannschaften</b> des SC Dahenfeld ist der gesamte Spielplan auf Deinem Smartphone! Verpasse kein Spiel und erhalte zusätzlich Informationen zu jedem Spieler. Mit der <b>Tabelle</b> hast du den aktuellen Stand der Mannschaften im Blick.",
-      image: "assets/img/tour/teamDetails.png",
+      title: "Fußball",
+      description: "Für <b>sämtliche Fußballmannschaften</b> des SC Dahenfeld ist der gesamte Spielplan auf Deinem Smartphone! Verpasse kein Spiel und erhalte zusätzlich Informationen zu jedem Spieler. Mit der <b>Tabelle</b> hast du den aktuellen Stand der Mannschaften im Blick.",
+      image: "assets/img/tour/soccer.png",
     },
-    // {
-    //   title: "Vereinskalender",
-    //   description: "Verpasse kein Spiel des SCD: mit dem Vereinskalender werden <b>sämtliche Spiele (inkl. Jugend) in den kommenden 2 Wochen</b> angezeigt.",
-    //   image: "assets/img/tour/vereinskalender.png",
-    // },
     {
       title: "Turnen & Tischtennis",
       description: "Das Angebot der Turn- und Tischtennisabteilung kannst Du jederzeit über die App abrufen. Neben <b>Trainingszeiten</b> findest Du auch <b>Ansprechpartner</b> für die jeweiligen Angebote!",
@@ -43,7 +38,7 @@ export class TourComponent {
 
   redirectToNewsList() {
     this.storage.set("tour", "1");
-    this.nav.setRoot(NewsListComponent);
+    this.nav.setRoot(FrontPageComponent);
   }
 
 }

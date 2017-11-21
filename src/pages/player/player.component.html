@@ -1,53 +1,81 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ player.vorname }} {{ player.nachname }}</ion-title>
+    <ion-title></ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
-        <span showWhen="ios">Zurück</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        <ion-icon name="md-close" showWhen="android,windows,ios"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
 
-  <!-- Image -->
-  <div class="playerImage">
-    <img *ngIf="player.bild" src="http://sc-dahenfeld.de/{{ player.bild }}"/>
-    <img *ngIf="!player.bild" src="assets/img/platzhalter_kader.png"/>
+  <div class="imageContainer">
+    <leadimage [src]="getPlayerImage(player.bild)"
+               imgPosition="Top">
+    </leadimage>
+
+    <div class="playerName">
+      <h1>{{player.nachname}}</h1>
+      <h2>{{player.vorname}}</h2>
+    </div>
+
+    <ion-grid class="playerInfo">
+      <player-info-row text="Alter" [value]="player.age"></player-info-row>
+      <player-info-row text="Trikotnummer" [value]="player.jerseynumber"
+                       *ngIf="player.jerseynumber > 0"></player-info-row>
+      <player-info-row text="Position" [value]="player.position"></player-info-row>
+    </ion-grid>
   </div>
 
-  <!-- Segment -->
-  <ion-toolbar>
-    <ion-segment [(ngModel)]="segmentType">
-      <ion-segment-button value="playerInfo">
-        Spielerinfo
-      </ion-segment-button>
-      <ion-segment-button value="seasonStats">
-        Akt. Saison
-      </ion-segment-button>
-      <ion-segment-button value="careerStats">
-        Karriere
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
-
-  <div [ngSwitch]="segmentType">
-    <!-- Player Info -->
-    <playerInfo *ngSwitchCase="'playerInfo'" [player]="player"></playerInfo>
-
-    <!-- Season -->
-    <playerStats *ngSwitchCase="'seasonStats'"
-                 [stats]="player.seasonStats"
-                 heading="Statistiken der aktuellen Saison"></playerStats>
-
-    <!-- Career -->
-    <playerStats *ngSwitchCase="'careerStats'"
-                 [stats]="player.careerStats"
-                 heading="Statistiken der Karriere*"
-                 information="* seit der Saison 2013/2014"></playerStats>
+  <div class="statisticsHeader">
+    Statistiken
   </div>
+
+  <player-statistic text="Spiele"
+                    [seasonValue]="player.seasonStats.matches"
+                    [careerValue]="player.careerStats.matches">
+  </player-statistic>
+
+  <player-statistic text="Startelf"
+                    [seasonValue]="player.seasonStats.starting"
+                    [careerValue]="player.careerStats.starting">
+  </player-statistic>
+
+  <player-statistic text="Spielminuten"
+                    [seasonValue]="player.seasonStats.playingMinutes"
+                    [careerValue]="player.careerStats.playingMinutes">
+  </player-statistic>
+
+  <player-statistic text="Tore"
+                    [seasonValue]="player.seasonStats.goals"
+                    [careerValue]="player.careerStats.goals">
+  </player-statistic>
+
+  <player-statistic text="Einwechslungen"
+                    [seasonValue]="player.seasonStats.cameIn"
+                    [careerValue]="player.careerStats.cameIn">
+  </player-statistic>
+
+  <player-statistic text="Auswechslungen"
+                    [seasonValue]="player.seasonStats.cameOut"
+                    [careerValue]="player.careerStats.cameOut">
+  </player-statistic>
+
+  <player-statistic text="Gelbe Karten"
+                    [seasonValue]="player.seasonStats.yellowCards"
+                    [careerValue]="player.careerStats.yellowCards">
+  </player-statistic>
+
+  <player-statistic text="Gelb-Rote Karten"
+                    [seasonValue]="player.seasonStats.yellowRedCards"
+                    [careerValue]="player.careerStats.yellowRedCards">
+  </player-statistic>
+
+  <player-statistic text="Rote Karten"
+                    [seasonValue]="player.seasonStats.redCards"
+                    [careerValue]="player.careerStats.redCards">
+  </player-statistic>
 
 </ion-content>

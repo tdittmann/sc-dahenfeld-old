@@ -1,9 +1,8 @@
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-
 export const environment = {
-  production: false,
-  backendUrl: "http://app.sc-dahenfeld.de/v6/"
+  siteUrl: "http://sc-dahenfeld.de",
+  backendUrl: "http://app.sc-dahenfeld.de/v7/",
+  locale: 'de',
+  hideInformationArticles: ['733', '755', '830'],
+  teamName: 'SC Dahenfeld',
+  placeholderPlayer: 'assets/img/platzhalter_kader.png',
 };

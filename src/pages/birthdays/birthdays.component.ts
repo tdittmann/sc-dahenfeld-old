@@ -26,9 +26,9 @@ export class BirthdaysComponent implements OnInit {
           this.isLoading = false;
         },
         (error) => {
-          console.error(error);
           this.isError = true;
           this.isLoading = false;
+          console.error(error);
         }
       )
   }
@@ -41,8 +41,8 @@ export class BirthdaysComponent implements OnInit {
       let day: Date = new Date(pBirthday.date);
       let today: Date = new Date();
 
-      var ageDifMs = Date.now() - day.getTime();
-      var ageDate = new Date(ageDifMs); // miliseconds from epoch
+      let ageDifMs = Date.now() - day.getTime();
+      let ageDate = new Date(ageDifMs); // miliseconds from epoch
       pBirthday.age = Math.abs(ageDate.getUTCFullYear() - 1970);
 
       //Set current year or the next year if you already had birthday this year

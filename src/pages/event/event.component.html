@@ -1,24 +1,15 @@
 <ion-header>
-  <ion-navbar>
-    <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{ event.title }}</ion-title>
-  </ion-navbar>
-
+  <scd-navbar [heading]="event.title"></scd-navbar>
 </ion-header>
 
 <ion-content no-padding>
   <ion-card>
     <ion-item>
       <ion-avatar item-left *ngIf="event.image">
-        <img src="http://sc-dahenfeld.de/{{ event.image }}">
+        <img src="{{ getImageUrl(event.image) }}">
       </ion-avatar>
       <h2>{{ event.title }}</h2>
-      <p *ngIf="event.end == '0'">am {{ event.start | date : 'longDate' }}</p>
-      <p *ngIf="event.end != '0'">
-        von {{ event.start | date : "dd" }}.
-        bis {{ event.end | date : 'longDate' }}</p>
+      <p>{{ getFormattedDate(event.start, event.end) }}</p>
     </ion-item>
     <ion-card-content [innerHtml]="event.text"></ion-card-content>
   </ion-card>

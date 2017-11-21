@@ -1,0 +1,25 @@
+jersey {
+
+  .jersey {
+    width: 10%;
+    min-width: 30px;
+    float: left;
+    position: relative;
+    text-align: center;
+  }
+
+  .jersey img {
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    width: auto;
+  }
+
+  .jerseyNumber {
+    position: absolute;
+    font-size: 0.9em;
+    top: 10px;
+    width: 100%
+  }
+
+}

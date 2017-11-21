@@ -1,11 +1,11 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app.module';
+import {AppModule} from './app.module';
 import {enableProdMode} from "@angular/core";
-import {environment} from "../environments/environment";
+import {registerLocaleData} from "@angular/common";
+import localeDe from '@angular/common/locales/de';
 
-if (environment.production) {
-  enableProdMode();
-}
+enableProdMode();
+registerLocaleData(localeDe);
 
 platformBrowserDynamic().bootstrapModule(AppModule);

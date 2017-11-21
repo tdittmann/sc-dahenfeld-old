@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
 import {SocialSharing} from "@ionic-native/social-sharing";
-import {News} from "../entities/News";
+import {Article} from "../entities/Article";
 import {ToastController} from "ionic-angular";
 import {Birthday} from "../entities/Birthday";
+import {environment} from "../environments/environment";
 
 @Injectable()
 export class SocialSharingService {
@@ -11,10 +12,10 @@ export class SocialSharingService {
 
   }
 
-  shareNews(news: News): void {
+  shareNews(news: Article): void {
     let options = {
       subject: news.titel,
-      message: 'Hey, schau dir den folgenden Artikel "' + news.titel + '" auf http://sc-dahenfeld.de/index.php?option=com_content&view=article&id=' + news.id + ' an!'
+      message: environment.siteUrl + '/index.php?option=com_content&view=article&id=' + news.id
     }
 
     this.socialSharing.shareWithOptions(options).then(

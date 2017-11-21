@@ -1,0 +1,55 @@
+<ion-header no-border>
+  <ion-navbar transparent class="navBar-color-onScroll-transition">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ heading }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="grayBackground">
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ion-slides class="articlesSlider" pager loop autoplay="5000" *ngIf="featureArticles.length">
+
+    <ng-template ngFor let-article [ngForOf]="featureArticles">
+      <ion-slide [ngStyle]="{'background-image' : article.image}"
+                 class="sliderBackgroundImage"
+                 (click)="openArticle(article)">
+
+        <div class="slideContent">
+          <p class="noMargin">{{ article.kategorie }}</p>
+          <h3 class="noMargin">{{ article.titel }}</h3>
+        </div>
+      </ion-slide>
+
+    </ng-template>
+  </ion-slides>
+
+  <!-- Event -->
+  <div *ngIf="eventEntry">
+    <h5 class="sectionHeading">Veranstaltung</h5>
+    <smallCard (click)="openEvent(eventEntry)"
+               [img]="getImageUrl(eventEntry.image)"
+               [title]="eventEntry.title"
+               [subTitle]="getFormattedDate(eventEntry.start, eventEntry.end)">
+    </smallCard>
+  </div>
+
+  <!-- Articles -->
+  <h5 class="sectionHeading">Neues vom SCD</h5>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let article of articles" col-12 col-lg-6>
+        <big-card [img]="article.image"
+                  [category]="article.kategorie"
+                  [title]="article.titel"
+                  (click)="openArticle(article)">
+        </big-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,11 +1,13 @@
+<ion-header no-shadow no-border>
+  <scd-navbar [heading]="team.toString()"></scd-navbar>
+</ion-header>
+
 <ion-content>
 
-  <ion-tabs tabsPlacement="top">
-    <ion-tab tabTitle="Tabelle" [root]="tableTab"></ion-tab>
-    <ion-tab tabTitle="Spielplan" [root]="fixturesTab"></ion-tab>
-    <ion-tab tabTitle="Kader" [root]="teamTab" *ngIf="soccer?.players?.length > 0"></ion-tab>
-    <!--<ion-tab tabTitle="Statistiken" [root]="statsTab" *ngIf="soccer?.matches?.length > 0"></ion-tab>-->
-  </ion-tabs>
+  <super-tabs *ngIf="team" toolbarColor="lighter" indicatorColor="lighter">
+    <super-tab [root]="tableTab" title="Tabelle" [rootParams]="{'id': team}"></super-tab>
+    <super-tab [root]="fixturesTab" title="Spiele" [rootParams]="{'id': team}"></super-tab>
+    <super-tab [root]="teamTab" title="Kader" [rootParams]="{'id': team}"></super-tab>
+  </super-tabs>
 
 </ion-content>
-

@@ -1,26 +1,24 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {environment} from "../environments/environment";
-import {Event} from "../entities/Event";
-import {Match} from "../entities/Match";
+import {EventEntry} from "../entities/EventEntry";
 import 'rxjs/Rx';
+import {HttpClient} from "@angular/common/http";
+import {Calendar} from "../entities/Calendar";
 
 @Injectable()
 export class EventService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
 
-  loadAllEvents(): Observable<Event[]> {
-    return this.http.get(environment.backendUrl + "veranstaltungen")
-      .map(response => response.json());
+  loadAllEvents(): Observable<EventEntry[]> {
+    return this.http.get<EventEntry[]>(environment.backendUrl + "events");
   }
 
-  loadAllMatches(): Observable<Match[]> {
-    return this.http.get(environment.backendUrl + "vereinskalender")
-      .map(response => response.json());
+  loadCalendarEvents(): Observable<Calendar[]> {
+    return this.http.get<Calendar[]>(environment.backendUrl + "calendar");
   }
 
 }

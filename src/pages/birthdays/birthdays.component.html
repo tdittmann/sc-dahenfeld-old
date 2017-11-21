@@ -1,13 +1,11 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Geburtstage</ion-title>
-  </ion-navbar>
+  <scd-navbar heading="Geburtstage"></scd-navbar>
 </ion-header>
 
 <ion-content no-padding>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
 
   <ion-item-group>
     <div *ngFor="let birthday of birthdays | orderBy : 'daysUntilBirthday'">

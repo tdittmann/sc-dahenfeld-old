@@ -1,57 +1,29 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Jugend</ion-title>
-  </ion-navbar>
+  <scd-navbar heading="Jugend"></scd-navbar>
 </ion-header>
 
 <ion-content class="grayBackground">
 
-  <loading [isLoading]="teams.length == 0"></loading>
+  <loading [isLoading]="teams.size == 0"></loading>
   <error [isError]="isError"></error>
 
   <div *ngFor="let team of teams">
-    <ng-template [ngIf]="team.matches.length > 0">
+    <h4 class="teamHeading">{{ team.team.toString() }}</h4>
 
+    <ion-card (click)="openTeamDetails(team.team)">
+      <ranking [teams]="team.ranking"
+               [showMatches]="false"
+               [showTeamImage]="false">
+      </ranking>
 
-      <h4 class="statsHeading">{{ team.team.toString() }}</h4>
-
-      <ion-card>
-        <!-- Table -->
-        <ion-grid>
-          <ion-row>
-            <ion-col col-8></ion-col>
-            <ion-col col-2 class="rankingStats">Sp</ion-col>
-            <ion-col col-2 class="rankingStats">Pk</ion-col>
-          </ion-row>
-
-          <ion-row *ngFor="let t of team.table | orderBy : ['-punkte', '-diff', '-name']; let i = index"
-                   [ngClass]="{ rankingFav : (t.name == favTeam) }">
-            <ion-col col-2 class="rankingPlaceCol">
-              <div *ngIf="param == 'erste'" class="rankingPlace"
-                   [ngClass]="{ tabelleErster : (i == 0), tabelleRelegationAufstieg : (i == 1), tabelleMittelfeld : (i > 1 && i < j.tabelle.length-3), tabelleRelegationAbstieg : (i == j.tabelle.length-3), tabelleAbstieg : (i > j.tabelle.length-3) }">
-                {{ i + 1 }}
-              </div>
-              <div *ngIf="param != 'erste'" class="rankingPlace">{{ i + 1 }}</div>
-            </ion-col>
-            <ion-col col-6 class="rankingTeam">{{ t.name }}</ion-col>
-            <ion-col col-2 class="rankingStats">{{ t.spiele }}</ion-col>
-            <ion-col col-2 class="rankingStats">{{ t.punkte }}</ion-col>
-          </ion-row>
-        </ion-grid>
-
-        <ion-row no-padding>
-          <ion-col text-center>
-            <button ion-button clear full color="danger" (click)="openTeamDetails(team.team)">
-              Mehr zur {{ team.team.toString() }}
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-card>
-
-    </ng-template>
+      <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-button clear full color="primary">
+            Mehr zur {{ team.team.toString() }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
 
   </div>
 </ion-content>

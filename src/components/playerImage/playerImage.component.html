@@ -1,0 +1,10 @@
+<div class="playerImageContainer">
+  <ion-badge class="badge" *ngIf="number > 0">
+    {{ number }}
+  </ion-badge>
+
+  <div class="image">
+    <img *ngIf="img" src="{{ siteUrl }}/{{ img }}"/>
+    <img *ngIf="!img" src="{{ placeholderPlayer }}"/>
+  </div>
+</div>

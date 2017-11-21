@@ -1,0 +1,40 @@
+frontPage {
+
+  ion-content > .scroll-content {
+    padding-top: 0px !important;
+  }
+
+  .sliderBackgroundImage {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .articlesSlider {
+    height: $leadimage-height;
+    text-transform: uppercase;
+    box-shadow: $leadimage-shadow;
+  }
+
+  .articlesSlider .swiper-slide {
+    align-items: flex-end !important;
+  }
+
+  .slideContent {
+    margin-bottom: 25px;
+  }
+
+  .sectionHeading {
+    text-transform: uppercase;
+    color: $primary-color;
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  ion-slide {
+    color: #fff;
+  }
+
+}

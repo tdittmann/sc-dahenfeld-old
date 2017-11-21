@@ -6,22 +6,20 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {IonicStorageModule} from "@ionic/storage";
 
 import {MyApp} from "./app.component";
-import {NewsListComponent} from "../pages/newsList/newsList.component";
+import {OldiesComponent} from "../pages/oldies/oldies.component";
 import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
-import {NewsService} from "../services/news.service";
-import {HttpModule} from "@angular/http";
-import {NewsDetailComponent} from "../pages/newsDetail/newsDetail.component";
+import {ArticleService} from "../services/article.service";
+import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
 import {RemoveFirstImagePipe} from "../pipes/removeFirstImage.pipe";
 import {EventService} from "../services/event.service";
-import {VereinskalenderComponent} from "../pages/vereinskalender/vereinskalender.component";
+import {CalendarComponent} from "../pages/calendar/calendar.component";
 import {AboutComponent} from "../pages/about/about.component";
 import {LoadingComponent} from "../pages/loading/loading.component";
 import {ErrorComponent} from "../pages/error/error.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
-import {SoccerService} from "../services/soccer.service";
 import {NgPipesModule} from "ngx-pipes";
-import {SpielplanComponent} from "../pages/spielplan/spielplan.component";
+import {FixturesComponent} from "../pages/fixtures/fixtures.component";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {TableComponent} from "../pages/table/table.component";
 import {Ng2FilterPipeModule} from "ng2-filter-pipe";
@@ -36,76 +34,130 @@ import {SocialSharingService} from "../services/socialSharing.service";
 import {YouthComponent} from "../pages/youth/youth.component";
 import {EventComponent} from "../pages/event/event.component";
 import {Push} from "@ionic-native/push";
-import {PlayerInfoComponent} from "../pages/playerInfo/playerInfo.component";
-import {PlayerStatsComponent} from "../pages/playerStats/playerStats.component";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {BirthdayService} from "../services/birthday.service";
+import {SuperTabsModule} from "ionic2-super-tabs";
+import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
+import {LeadImageComponent} from "../components/leadimage/leadimage.component";
+import {SmallCardComponent} from "../components/smallCard/smallCard.component";
+import {DatePipe} from "@angular/common";
+import {environment} from "../environments/environment";
+import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
+import {PhotoViewer} from "@ionic-native/photo-viewer";
+import {BigCardComponent} from "../components/bigCard/bigCard.component";
+import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
+import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
+import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
+import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
+import {RankingService} from "../services/ranking.service";
+import {MatchOverviewComponent} from "../components/matchOverview/matchOverview.component";
+import {ClubImageComponent} from "../components/clubImage/clubImage.component";
+import {PlayerService} from "../services/player.service";
+import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
+import {RankingComponent} from "../components/ranking/ranking.component";
+import {NoContentComponent} from "../components/noContent/noContent.component";
+import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.component";
+import {PlayerStatisticComponent} from "../components/playerStatistic/playerStatistic.component";
+import {HttpClientModule} from "@angular/common/http";
+import {GameReportComponent} from "../pages/gameReport/gameReport.component";
+import {LineupComponent} from "../pages/lineup/lineup.component";
+import {SeparatorComponent} from "../components/separator/separator.component";
+import {JerseyComponent} from "../components/jersey/jersey.component";
+import {MatchEventsComponent} from "../components/matchEvents/matchEvents.component";
+import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverviewTab.component";
+import {CountdownComponent} from "../components/countdown/countdown.component";
+import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.component";
 
 @NgModule({
   declarations: [
     MyApp,
-    NewsListComponent,
-    NewsDetailComponent,
+    OldiesComponent,
+    ArticleDetailLeadImageComponent,
     FirstImagePipe,
     LimitHtmlText,
     RemoveFirstImagePipe,
-    VereinskalenderComponent,
+    CalendarComponent,
     AboutComponent,
     LoadingComponent,
     ErrorComponent,
     TeamDetailComponent,
-    SpielplanComponent,
+    FixturesComponent,
     TableComponent,
     TeamPlayersComponent,
     FilterMatchdayPipe,
     OrderPositionPipe,
     TourComponent,
     PlayerComponent,
-    PlayerInfoComponent,
-    PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
     BirthdaysComponent,
+    FrontPageComponent,
+    LeadImageComponent,
+    SmallCardComponent,
+    ScdNavbarComponent,
+    BigCardComponent,
+    ShareButtonComponent,
+    ArticleDetailCardComponent,
+    ArticleInformationComponent,
+    ChronicleComponent,
+    MatchOverviewComponent,
+    ClubImageComponent,
+    PlayerImageComponent,
+    RankingComponent,
+    NoContentComponent,
+    PlayerInfoRowComponent,
+    PlayerStatisticComponent,
+    GameReportComponent,
+    LineupComponent,
+    SeparatorComponent,
+    JerseyComponent,
+    MatchEventsComponent,
+    MatchOverviewTabComponent,
+    CountdownComponent,
+    CountdownTimeComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     NgPipesModule,
     Ng2FilterPipeModule,
     IonicStorageModule.forRoot(),
+    SuperTabsModule.forRoot(),
     IonicModule.forRoot(MyApp, {
-      backButtonText: 'Zurück',
+      activator: 'ripple',
+      backButtonText: '',
     }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    NewsListComponent,
-    NewsDetailComponent,
-    VereinskalenderComponent,
+    OldiesComponent,
+    ArticleDetailLeadImageComponent,
+    CalendarComponent,
     AboutComponent,
-    LoadingComponent,
-    ErrorComponent,
     TeamDetailComponent,
-    SpielplanComponent,
+    FixturesComponent,
     TableComponent,
     TeamPlayersComponent,
     TourComponent,
     PlayerComponent,
-    PlayerInfoComponent,
-    PlayerStatsComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
     BirthdaysComponent,
+    FrontPageComponent,
+    ArticleDetailCardComponent,
+    ChronicleComponent,
+    GameReportComponent,
+    LineupComponent,
+    MatchOverviewTabComponent,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    NewsService,
+    ArticleService,
     EventService,
-    SoccerService,
     MatchService,
     BirthdayService,
     SocialSharing,
@@ -113,8 +165,12 @@ import {BirthdayService} from "../services/birthday.service";
     FilterMatchdayPipe,
     OrderPositionPipe,
     Push,
+    DatePipe,
+    PhotoViewer,
+    RankingService,
+    PlayerService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    {provide: LOCALE_ID, useValue: "de-DE"},
+    {provide: LOCALE_ID, useValue: environment.locale},
   ]
 })
 export class AppModule {

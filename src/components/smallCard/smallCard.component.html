@@ -1,0 +1,10 @@
+<ion-card>
+  <ion-item class="card-event">
+    <ion-avatar item-left *ngIf="image">
+      <img src="{{ image }}">
+    </ion-avatar>
+
+    <h2><b>{{ title }}</b></h2>
+    <p *ngIf="subTitle">{{ subTitle }}</p>
+  </ion-item>
+</ion-card>

@@ -1,0 +1,17 @@
+<div padding>
+  <h2 class="headingTop" *ngIf="showDetails">{{ subHeading }}</h2>
+  <h1 class="headingBig">{{ title }}</h1>
+
+  <ion-grid *ngIf="showDetails" class="subHeading">
+    <ion-row>
+      <ion-col text-left>
+        {{ date | date : 'longDate'}}
+      </ion-col>
+      <ion-col text-right>
+        {{ author }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<hr/>

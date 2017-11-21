@@ -1,0 +1,30 @@
+<ion-header>
+  <scd-navbar heading="Kalender"></scd-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <no-content icon="sad"
+              *ngIf="!isLoading && calendarEvents.length == 0"
+              text="In den nächsten Wochen stehen leider keine Termine des SCD an">
+  </no-content>
+
+  <ng-template ngFor let-calendarEvent [ngForOf]="calendarEvents">
+
+    <separator [text]="calendarEvent.date | date : 'longDate'"
+               *ngIf="checkHeader(calendarEvent.date)">
+    </separator>
+
+    <big-card [title]="calendarEvent.title"
+              [category]="getCalendarEventDate(calendarEvent.date)"
+              [location]="calendarEvent.location"
+              [text]="calendarEvent.category">
+    </big-card>
+
+  </ng-template>
+
+
+</ion-content>

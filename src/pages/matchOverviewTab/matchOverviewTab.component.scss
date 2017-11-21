@@ -1,0 +1,69 @@
+match-overview-tab {
+
+  .eventsContainer {
+    position: relative;
+    margin-top: 8px;
+  }
+
+  .events::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    bottom: 0;
+    width: 2px;
+    background-color: $separator-light;
+  }
+
+  .event {
+    position: relative;
+    min-height: 26px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .eventTime {
+    width: 26px;
+    height: 26px;
+    line-height: 24px;
+    border: 1px solid $separator-light;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 9px;
+    background-color: $white-color;
+    font-weight: 700;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cameInFor {
+    font-size: 0.75em;
+  }
+
+  .homeTeam {
+    float: left;
+    width: 50%;
+    padding-right: 30px;
+    text-align: right;
+  }
+
+  .awayTeam {
+    float: right;
+    width: 50%;
+    padding-left: 30px;
+  }
+
+  .homeTeam img {
+    padding-left: 8px;
+    float: right;
+  }
+
+  .awayTeam img {
+    padding-right: 8px;
+    float: left;
+  }
+
+}

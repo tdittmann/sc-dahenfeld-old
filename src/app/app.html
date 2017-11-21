@@ -1,15 +1,14 @@
-<ion-menu [content]="content">
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Navigation</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-menu [content]="content" id="menu-material">
 
   <ion-content>
 
-    <ion-list>
-      <ion-list-header>Verein</ion-list-header>
+    <div class="menu-header">
+      <img class="user-avatar" src="assets/img/logo.png"/>
+      <p class="name">SC Dahenfeld</p>
+    </div>
+
+    <ion-list no-lines>
+      <ion-list-header><span class="navigationFront">//</span> Verein</ion-list-header>
       <button ion-item menuClose *ngFor="let p of vereinNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">
         <ion-icon item-left [name]="p.icon"></ion-icon>
@@ -17,8 +16,8 @@
       </button>
     </ion-list>
 
-    <ion-list>
-      <ion-list-header>Fußball</ion-list-header>
+    <ion-list no-lines>
+      <ion-list-header><span class="navigationFront">//</span> Fußball</ion-list-header>
       <button ion-item menuClose *ngFor="let p of fussballNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">
         <ion-icon item-left [name]="p.icon"></ion-icon>
@@ -26,8 +25,8 @@
       </button>
     </ion-list>
 
-    <ion-list>
-      <ion-list-header>Turnen & Tischtennis</ion-list-header>
+    <ion-list no-lines>
+      <ion-list-header><span class="navigationFront">//</span> Turnen & Tischtennis</ion-list-header>
       <button ion-item menuClose *ngFor="let p of turnenTischtennisNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">
         <ion-icon item-left [name]="p.icon"></ion-icon>
@@ -35,8 +34,8 @@
       </button>
     </ion-list>
 
-    <ion-list *ngIf="!isProduction()">
-      <ion-list-header>Development</ion-list-header>
+    <ion-list no-lines *ngIf="false">
+      <ion-list-header><span class="navigationFront">//</span> Development</ion-list-header>
       <button ion-item menuClose *ngFor="let p of developmentNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">
         <ion-icon item-left [name]="p.icon"></ion-icon>
@@ -44,8 +43,8 @@
       </button>
     </ion-list>
 
-    <ion-list>
-      <ion-list-header>Die SCD-App</ion-list-header>
+    <ion-list no-lines>
+      <ion-list-header><span class="navigationFront">//</span> Die SCD-App</ion-list-header>
       <button ion-item menuClose *ngFor="let p of appNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">
         <ion-icon item-left [name]="p.icon"></ion-icon>

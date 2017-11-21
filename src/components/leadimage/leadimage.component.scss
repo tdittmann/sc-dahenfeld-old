@@ -1,0 +1,21 @@
+leadimage {
+
+  .container {
+    height: $leadimage-height;
+    box-shadow: $leadimage-shadow;
+    background-size: cover;
+  }
+
+  .imgPositionTop {
+    background-position: top;
+  }
+
+  .imgPositionCenter {
+    background-position: center;
+  }
+
+  .imgPositionBottom {
+    background-position: bottom;
+  }
+
+}
