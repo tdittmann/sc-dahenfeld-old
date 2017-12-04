@@ -20,12 +20,6 @@ import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDet
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {HttpClient} from "@angular/common/http";
 
-/**
- * TODO:
- * - iOS: StatusBar fix
- */
-
-
 @Component({
   templateUrl: 'app.html'
 })
