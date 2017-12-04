@@ -30,6 +30,7 @@
     "android-versions": "^1.2.1",
     "com-sarriaroman-photoviewer": "^1.1.11",
     "cordova": "^7.1.0",
+    "cordova-android": "~6.3.0",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-headercolor": "^1.0.0",
@@ -45,16 +46,14 @@
     "ionicons": "3.0.0",
     "ng2-filter-pipe": "^0.1.10",
     "ngx-pipes": "^2.0.1",
-    "phonegap-plugin-push": "^2.1.0",
+    "phonegap-plugin-push": "^2.1.1",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "^0.8.18",
-    "cordova-android": "~6.3.0",
-    "cordova-ios": "~4.5.4"
+    "zone.js": "^0.8.18"
   },
   "devDependencies": {
     "@angular/tsc-wrapped": "^4.4.6",
-    "ionic": "3.18.0",
+    "ionic": "3.19.0",
     "typescript": "2.4.2"
   },
   "description": "Official app of SC Dahenfeld 1946 e.V.",
