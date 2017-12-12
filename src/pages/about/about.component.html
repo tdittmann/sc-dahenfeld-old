@@ -2,10 +2,10 @@
   <scd-navbar heading="Impressum"></scd-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <div class="maxWidthContainer">
-    <div text-center class="padding-top">
-      <img src="assets/img/logo.png" class="aboutImage"/>
+    <div text-center>
+      <img src="assets/img/logo.png" class="aboutImage" (click)="activateDevMode()"/>
       <p>
         <b>SC Dahenfeld 1946 e.V.</b><br/>
         In den Prügelwiesen<br/>
@@ -23,6 +23,12 @@
         <p item-right>{{ developer }}</p>
       </ion-item>
     </ion-item-group>
+
+    <div text-center>
+      <button ion-button *ngIf="isDevModeEnabled()" (click)="deactivateDevMode()">
+        Entwickler-Modus deaktivieren
+      </button>
+    </div>
   </div>
 
 </ion-content>

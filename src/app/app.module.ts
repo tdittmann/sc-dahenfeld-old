@@ -67,6 +67,9 @@ import {MatchEventsComponent} from "../components/matchEvents/matchEvents.compon
 import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverviewTab.component";
 import {CountdownComponent} from "../components/countdown/countdown.component";
 import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.component";
+import {ToastService} from "../services/toast.service";
+import {StorageService} from "../services/storage.service";
+import {DevModeService} from "../services/devMode.service";
 
 @NgModule({
   declarations: [
@@ -169,6 +172,8 @@ import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.
     PhotoViewer,
     RankingService,
     PlayerService,
+    ToastService,
+    DevModeService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: environment.locale},
   ]

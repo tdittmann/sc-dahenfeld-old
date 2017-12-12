@@ -34,7 +34,7 @@
       </button>
     </ion-list>
 
-    <ion-list no-lines *ngIf="false">
+    <ion-list no-lines *ngIf="isDevModeEnabled()">
       <ion-list-header><span class="navigationFront">//</span> Development</ion-list-header>
       <button ion-item menuClose *ngFor="let p of developmentNavigation" (click)="openPage(p)"
               [ngClass]="{'navigationItemIsActive' : p.active}">

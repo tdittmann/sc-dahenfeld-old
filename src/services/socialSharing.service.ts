@@ -1,14 +1,14 @@
 import {Injectable} from "@angular/core";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {Article} from "../entities/Article";
-import {ToastController} from "ionic-angular";
 import {Birthday} from "../entities/Birthday";
 import {environment} from "../environments/environment";
+import {ToastService} from "./toast.service";
 
 @Injectable()
 export class SocialSharingService {
 
-  constructor(private socialSharing: SocialSharing, private toastCtrl: ToastController) {
+  constructor(private socialSharing: SocialSharing, private toastService: ToastService) {
 
   }
 
@@ -24,7 +24,7 @@ export class SocialSharingService {
         console.log(result);
       },
       (error) => {
-        this.showErrorToast('Beim Teilen des Artikels ist etwas schief gelaufen');
+        this.toastService.showToast('Beim Teilen des Artikels ist etwas schief gelaufen');
         console.error(error);
       }
     );
@@ -42,19 +42,10 @@ export class SocialSharingService {
         console.log(result);
       },
       (error) => {
-        this.showErrorToast('Beim Teilen ist etwas schief gelaufen');
+        this.toastService.showToast('Beim Teilen ist etwas schief gelaufen');
         console.error(error);
       }
     )
-  }
-
-  private showErrorToast(pMessage: string): void {
-    let toast = this.toastCtrl.create({
-      message: pMessage,
-      duration: 3000
-    });
-
-    toast.present();
   }
 
 }

@@ -9,7 +9,6 @@ import {AboutComponent} from "../pages/about/about.component";
 import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {Mannschaftsart} from "../entities/Mannschaftsart";
-import {Storage} from "@ionic/storage";
 import {TourComponent} from "../pages/tour/tour.component";
 import {environment} from "../environments/environment";
 import {YouthComponent} from "../pages/youth/youth.component";
@@ -19,6 +18,8 @@ import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {HttpClient} from "@angular/common/http";
+import {Storage} from "@ionic/storage";
+import {DevModeService} from "../services/devMode.service";
 
 @Component({
   templateUrl: 'app.html'
@@ -63,17 +64,21 @@ export class MyApp {
   ];
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-              private push: Push, private storage: Storage, private http: HttpClient) {
+              private push: Push, private storage: Storage, private http: HttpClient,
+              private devModeService: DevModeService) {
     platform.ready().then(() => {
 
       // Check if tour already showed
       this.storage.get("tour").then(
-        (result) => {
-          if (result != "1") {
+        (tourDone) => {
+          if (!tourDone) {
             this.rootPage = TourComponent;
           }
         }
       );
+
+      // Load devMode in service
+      this.devModeService.loadDevModeFromDb();
 
       // Push Notifications
       this.handlePush();
@@ -89,6 +94,10 @@ export class MyApp {
 
     page.active = true;
     this.nav.setRoot(page.component, {parameter: page.parameter, heading: page.heading});
+  }
+
+  isDevModeEnabled() {
+    return this.devModeService.isDevModeEnabled();
   }
 
   private resetPageActiveStates() {
