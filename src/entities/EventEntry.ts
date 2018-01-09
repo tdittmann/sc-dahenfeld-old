@@ -21,7 +21,7 @@ export class EventEntry {
     let datePipe: DatePipe = new DatePipe(environment.locale);
 
     if (parseInt(end) > 0) {
-      return 'von ' + datePipe.transform(start, 'bb') + '. bis ' + datePipe.transform(end, 'longDate')
+      return 'von ' + datePipe.transform(start, 'dd') + '. bis ' + datePipe.transform(end, 'longDate')
     }
 
     return 'am ' + datePipe.transform(start, 'longDate');
