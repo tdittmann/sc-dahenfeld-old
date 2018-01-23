@@ -20,6 +20,7 @@ import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {HttpClient} from "@angular/common/http";
 import {Storage} from "@ionic/storage";
 import {DevModeService} from "../services/devMode.service";
+import {ProfileComponent} from "../pages/profile/profile.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -58,6 +59,7 @@ export class MyApp {
   ];
   developmentNavigation: NavigationItem[] = [
     {title: 'Geburtstage', component: BirthdaysComponent, icon: "time"},
+    {title: 'Profil', component: ProfileComponent, icon: "person"},
   ];
   appNavigation: NavigationItem[] = [
     {title: 'Impressum', component: AboutComponent, icon: "information-circle"}
@@ -172,12 +174,23 @@ export class MyApp {
   private saveToken(token: string) {
     let os: string = this.getOperationSystem();
 
+    // Save in backend
     this.http.get(environment.backendUrl + "settings?registrationId=" + token + "&os=" + os)
       .subscribe(
         (result) => {
           console.log("Registration done: " + result);
         }
       );
+
+    // Save in local storage
+    this.storage.set("pushToken", token).then(
+      (result) => {
+        console.log("Push token saved in local storage: " + result);
+      },
+      (error) => {
+        console.error("Saving token failed: " + error);
+      }
+    )
   }
 
   /**

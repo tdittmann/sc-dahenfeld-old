@@ -1,0 +1,31 @@
+<ion-header>
+  <scd-navbar heading="Profil bearbeiten"></scd-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Push Token</ion-label>
+      <ion-input disabled [(ngModel)]="profile.pushToken"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="profile.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Push Notification Geburtstage</ion-label>
+      <ion-checkbox [(ngModel)]="profile.pushBirthdays"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block (click)="saveProfile()">Speichern</button>
+
+</ion-content>

@@ -70,6 +70,8 @@ import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.
 import {ToastService} from "../services/toast.service";
 import {StorageService} from "../services/storage.service";
 import {DevModeService} from "../services/devMode.service";
+import {ProfileService} from "../services/profile.service";
+import {ProfileComponent} from "../pages/profile/profile.component";
 
 @NgModule({
   declarations: [
@@ -119,6 +121,7 @@ import {DevModeService} from "../services/devMode.service";
     MatchOverviewTabComponent,
     CountdownComponent,
     CountdownTimeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -155,6 +158,7 @@ import {DevModeService} from "../services/devMode.service";
     GameReportComponent,
     LineupComponent,
     MatchOverviewTabComponent,
+    ProfileComponent,
   ],
   providers: [
     StatusBar,
@@ -174,6 +178,7 @@ import {DevModeService} from "../services/devMode.service";
     PlayerService,
     ToastService,
     DevModeService,
+    ProfileService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: environment.locale},
   ]
