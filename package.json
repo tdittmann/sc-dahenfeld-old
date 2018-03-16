@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@angular/tsc-wrapped": "^4.4.6",
-    "ionic": "3.19.1",
+    "ionic": "3.20.0",
     "typescript": "2.4.2"
   },
   "description": "Official app of SC Dahenfeld 1946 e.V.",

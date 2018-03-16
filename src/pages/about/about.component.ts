@@ -7,7 +7,7 @@ import {DevModeService} from "../../services/devMode.service";
 })
 export class AboutComponent implements OnInit {
 
-  version: string = "4.2.0";
+  version: string = "4.3.0";
   developer: string = "Timo Dittmann";
 
   private counter: number = 0;
