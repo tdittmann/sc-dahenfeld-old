@@ -7,6 +7,10 @@
   <loading [isLoading]="isLoading"></loading>
   <error [isError]="isError"></error>
 
+  <ion-searchbar (ionInput)="filterName($event)"
+                 placeholder="Person suchen">
+  </ion-searchbar>
+
   <ion-item-group>
     <div *ngFor="let birthday of birthdays | orderBy : 'daysUntilBirthday'">
 

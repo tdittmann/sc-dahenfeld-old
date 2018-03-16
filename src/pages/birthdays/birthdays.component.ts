@@ -8,6 +8,7 @@ import {SocialSharingService} from "../../services/socialSharing.service";
 })
 export class BirthdaysComponent implements OnInit {
 
+  birthdayBackup: Birthday[] = [];
   birthdays: Birthday[] = [];
 
   isLoading: boolean = true;
@@ -21,8 +22,9 @@ export class BirthdaysComponent implements OnInit {
     this.birthdayService.loadAllBirthdays()
       .subscribe(
         (response) => {
-          this.birthdays = response;
-          this.calculate(this.birthdays);
+          this.birthdayBackup = response;
+          this.calculate(this.birthdayBackup);
+          this.initializeBirthdays(this.birthdayBackup);
           this.isLoading = false;
         },
         (error) => {
@@ -30,7 +32,33 @@ export class BirthdaysComponent implements OnInit {
           this.isLoading = false;
           console.error(error);
         }
-      )
+      );
+  }
+
+  filterName(ev: any) {
+    // Reset items back to all of the items
+    this.initializeBirthdays(this.birthdayBackup);
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.birthdays = this.birthdays.filter((item) => {
+        let name: string = item.firstname + " " + item.lastname;
+        return (name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      });
+    }
+  }
+
+  shareBirthday(pBirthday: Birthday) {
+    if (pBirthday.daysUntilBirthday == 0) {
+      this.socialSharingService.shareBirthday(pBirthday);
+    }
+  }
+
+  private initializeBirthdays(birthdays: Birthday[]) {
+    this.birthdays = birthdays;
   }
 
   /**
@@ -59,12 +87,6 @@ export class BirthdaysComponent implements OnInit {
         pBirthday.age--;
       }
     })
-  }
-
-  shareBirthday(pBirthday: Birthday) {
-    if (pBirthday.daysUntilBirthday == 0) {
-      this.socialSharingService.shareBirthday(pBirthday);
-    }
   }
 
 }
