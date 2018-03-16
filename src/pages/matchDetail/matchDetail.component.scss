@@ -1,64 +1,67 @@
-.matchInfos {
-  text-align: center;
-  margin-top: 15px;
-}
+match-detail {
+  .matchInfos {
+    text-align: center;
+    margin-top: 15px;
+  }
 
-.matchInfosHome {
-  float: left;
-  width: 35%;
-  margin-bottom: 20px;
-}
+  .matchInfosHome {
+    float: left;
+    width: 35%;
+    margin-bottom: 20px;
+  }
 
-.matchInfos img {
-  width: 50px;
-}
+  .matchInfos img {
+    width: 50px;
+  }
 
-.matchInfosResult {
-  float: left;
-  width: 30%;
-  font-size: 3em;
-}
+  .matchInfosResult {
+    float: left;
+    width: 30%;
+    font-size: 3em;
+  }
 
-.matchInfosAway {
-  float: left;
-  width: 35%;
-}
+  .matchInfosAway {
+    float: left;
+    width: 35%;
+  }
 
-.tabs-md .tabbar {
-  background: $primary-color !important;
-}
+  .tabs-md .tabbar {
+    background: $primary-color !important;
+  }
 
-.smallDescription {
-  font-size: 0.75em;
-}
+  .smallDescription {
+    font-size: 0.75em;
+  }
 
-.bigValue {
-  font-size: 1.25em;
-}
+  .bigValue {
+    font-size: 1.25em;
+  }
 
-.floatLeft {
-  float: left;
-  text-align: left;
-}
+  .floatLeft {
+    float: left;
+    text-align: left;
+  }
 
-.floatRight {
-  float: right;
-  text-align: right;
-}
+  .floatRight {
+    float: right;
+    text-align: right;
+  }
 
-.uebersichtHeading {
-  padding-top: 0;
-  margin-top: 0;
-}
+  .uebersichtHeading {
+    padding-top: 0;
+    margin-top: 0;
+  }
 
-.floatRight img {
-  display: initial !important;
-}
+  .floatRight img {
+    display: initial !important;
+  }
 
-.uebersicht ion-label {
-  margin: 5px 8px 5px 0;
-}
+  .uebersicht ion-label {
+    margin: 5px 8px 5px 0;
+  }
 
-.startaufstellung ion-label {
-  margin: 0;
+  .startaufstellung ion-label {
+    margin: 0;
+  }
+
 }

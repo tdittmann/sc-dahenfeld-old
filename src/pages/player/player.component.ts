@@ -1,9 +1,11 @@
 import {Component, OnInit} from "@angular/core";
-import {NavParams, ViewController} from "ionic-angular";
+import {NavParams} from "ionic-angular";
 import {Player} from "../../entities/Player";
 import {environment} from "../../environments/environment";
 import {DevModeService} from "../../services/devMode.service";
+import {ImageUtils} from "../../utils/ImageUtil";
 
+// TODO tdit0703: PlayerDetailComponent
 @Component({
   selector: 'player-detail',
   templateUrl: 'player.component.html'
@@ -12,8 +14,7 @@ export class PlayerComponent implements OnInit {
 
   player: Player;
 
-  constructor(private navParams: NavParams, private viewCtrl: ViewController,
-              private devModeService: DevModeService) {
+  constructor(private navParams: NavParams, private devModeService: DevModeService) {
 
   }
 
@@ -22,18 +23,8 @@ export class PlayerComponent implements OnInit {
   }
 
   getPlayerImage(image: string): string {
-    let prefix: string = 'url("';
-    let suffix: string = '")';
-
-    if (image) {
-      return prefix + environment.siteUrl + '/' + image + suffix;
-    }
-
-    return prefix + environment.placeholderPlayer + suffix;
-  }
-
-  dismiss() {
-    this.viewCtrl.dismiss();
+    let imagePath: string = (image) ? environment.siteUrl + '/' + image : environment.placeholderPlayer;
+    return ImageUtils.createCssBackgroundImageString(imagePath);
   }
 
   isDevModeEnabled(): boolean {

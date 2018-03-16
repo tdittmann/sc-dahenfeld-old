@@ -1,0 +1,17 @@
+player-stats-card {
+
+  .stats-heading-bg {
+    background-size: cover;
+    position: relative;
+    height: 150px;
+  }
+
+  .stats-heading {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 2em;
+  }
+
+}

@@ -4,6 +4,7 @@ import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {FixturesComponent} from "../fixtures/fixtures.component";
 import {TableComponent} from "../table/table.component";
 import {TeamPlayersComponent} from "../teamPlayers/teamPlayers.component";
+import {TeamStatisticsComponent} from "../teamStatistics/teamStatistics.component";
 
 @Component({
   selector: "team-detail",
@@ -16,6 +17,7 @@ export class TeamDetailComponent implements OnInit {
   tableTab: any = TableComponent;
   fixturesTab: any = FixturesComponent;
   teamTab: any = TeamPlayersComponent;
+  statsTab: any = TeamStatisticsComponent;
 
   constructor(private navParams: NavParams) {
 

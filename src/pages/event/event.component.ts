@@ -3,6 +3,7 @@ import {NavParams} from "ionic-angular";
 import {EventEntry} from "../../entities/EventEntry";
 
 @Component({
+  selector: 'event',
   templateUrl: "event.component.html"
 })
 export class EventComponent implements OnInit {

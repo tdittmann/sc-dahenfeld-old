@@ -28,6 +28,7 @@ export class ChronicleComponent implements OnInit {
       (news) => {
         this.articles = news;
 
+        // TODO tdit0703
         // Get first image
         for (let article of this.articles) {
           // This is needed, because sometimes it can happen that an imagename contains special chars

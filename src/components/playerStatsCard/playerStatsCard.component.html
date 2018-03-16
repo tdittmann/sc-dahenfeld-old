@@ -1,0 +1,18 @@
+<ion-card (click)="openStatistics()">
+
+  <ion-card-header class="stats-heading-bg" [ngStyle]="{'background-image': getBackgroundImage()}">
+    <div class="stats-heading">{{ title }}</div>
+  </ion-card-header>
+
+  <ion-card-content>
+    <player-stats-list [show-col-2]="showCol2"
+                       [show-col-3]="showCol3"
+                       [players]="players"
+                       [col-icon-1]="colIcon1"
+                       [col-icon-2]="colIcon2"
+                       [col-icon-3]="colIcon3"
+                       [maxPlayers]="3">
+    </player-stats-list>
+  </ion-card-content>
+
+</ion-card>

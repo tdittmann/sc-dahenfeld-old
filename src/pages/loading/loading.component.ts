@@ -1,4 +1,6 @@
 import {Component, Input} from "@angular/core";
+
+// TODO tdit0703: LoadingSpinnerComponent
 @Component({
   selector: "loading",
   templateUrl: "loading.component.html"

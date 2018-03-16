@@ -1,0 +1,20 @@
+<ion-header>
+  <modal-toolbar [title]="title"></modal-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <div class="maxWidthContainer">
+    <player-stats-list [show-col-2]="showCol2"
+                       [show-col-3]="showCol3"
+                       [players]="players"
+                       [col-icon-1]="colIcon1"
+                       [col-icon-2]="colIcon2"
+                       [col-icon-3]="colIcon3">
+    </player-stats-list>
+  </div>
+
+</ion-content>

@@ -1,9 +1,11 @@
-.todayBirthday {
-  background: $primary-color;
-}
+birthdays {
+  .todayBirthday {
+    background: $primary-color;
+  }
 
-.todayBirthday,
-.todayBirthday ion-note,
-.todayBirthday p {
-  color: #fff;
+  .todayBirthday,
+  .todayBirthday ion-note,
+  .todayBirthday p {
+    color: #fff;
+  }
 }

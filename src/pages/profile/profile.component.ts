@@ -36,7 +36,6 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile() {
-
     this.profileService.saveInRemoteDb(this.profile).subscribe(
       (result: Profile) => {
         console.log("Profile saved: " + result);

@@ -3,6 +3,7 @@ import {ToastService} from "../../services/toast.service";
 import {DevModeService} from "../../services/devMode.service";
 
 @Component({
+  selector: 'about',
   templateUrl: "about.component.html"
 })
 export class AboutComponent implements OnInit {
@@ -27,12 +28,6 @@ export class AboutComponent implements OnInit {
 
   activateDevMode(): void {
     this.counter++;
-    let message: string = "In " + (this.devModeEnabledNumber - this.counter) + " Schritten ist der Entwickler-Modus aktiviert."
-
-    if (this.counter >= (this.devModeEnabledNumber - 3) && this.counter < this.devModeEnabledNumber) {
-      this.toastService.showToast(message);
-    }
-
     if (this.counter == this.devModeEnabledNumber) {
       this.devModeService.updateDevMode(true);
       this.toastService.showToast("Du hast den Entwickler-Modus aktiviert.");

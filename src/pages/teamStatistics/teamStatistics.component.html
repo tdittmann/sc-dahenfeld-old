@@ -1,0 +1,43 @@
+<ion-content class="grayBackground">
+
+  <loading [isLoading]="isLoading"></loading>
+  <error [isError]="isError"></error>
+
+  <div class="maxWidthContainer">
+    <no-content *ngIf="!isLoading && goalscorers.length == 0 && runners.length == 0 && cardHolders.length == 0"
+                icon="sad"
+                message="Es konnten keine Statistiken für diese Mannschaft gefunden werden">
+    </no-content>
+
+    <ng-template [ngIf]="!isLoading && !isError">
+      <!-- Goals -->
+      <player-stats-card img="assets/img/pics/goalgetter.jpg"
+                         title="Goalgetter"
+                         col-icon-1="assets/img/icons/goal.png"
+                         [players]="goalscorers"
+                         *ngIf="goalscorers.length > 0">
+      </player-stats-card>
+
+      <!-- Playing Minutes -->
+      <player-stats-card img="assets/img/pics/runners.jpg"
+                         title="Dauerbrenner"
+                         col-icon-1="assets/img/icons/playtime.png"
+                         [players]="runners"
+                         *ngIf="runners.length > 0">
+      </player-stats-card>
+
+      <!-- Cards -->
+      <player-stats-card img="assets/img/pics/cardHolders.jpg"
+                         title="Kartensammler"
+                         [players]="cardHolders"
+                         col-icon-1="assets/img/icons/yellowCard.png"
+                         col-icon-2="assets/img/icons/yellowRedCard.png"
+                         col-icon-3="assets/img/icons/redCard.png"
+                         [show-col-2]="true"
+                         [show-col-3]="true"
+                         *ngIf="cardHolders.length > 0">
+      </player-stats-card>
+    </ng-template>
+  </div>
+
+</ion-content>

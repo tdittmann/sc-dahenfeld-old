@@ -5,6 +5,7 @@ import {Article} from "../../../entities/Article";
 import {SocialSharingService} from "../../../services/socialSharing.service";
 import {environment} from "../../../environments/environment";
 import {FirstImagePipe} from "../../../pipes/firstImage.pipe";
+import {ImageUtils} from "../../../utils/ImageUtil";
 
 @Component({
   selector: "article-detail-lead-image",
@@ -34,7 +35,7 @@ export class ArticleDetailLeadImageComponent implements OnInit {
 
       // Get the whole article object from parent view
       this.article = this.navParams.data.parameter;
-      this.removeFirstImage();
+      this.article.text = ImageUtils.removeFirstImageFromText(this.article.text);
       this.isLoading = false;
 
     } else {
@@ -43,8 +44,8 @@ export class ArticleDetailLeadImageComponent implements OnInit {
       this.articleService.loadArticle(this.navParams.data.parameter).subscribe(
         (news) => {
           this.article = news;
-          this.article.image = 'url("' + FirstImagePipe.transform(this.article.text) + '")';
-          this.removeFirstImage();
+          this.article.image = ImageUtils.createCssBackgroundImageString(FirstImagePipe.transform(this.article.text));
+          this.article.text = ImageUtils.removeFirstImageFromText(this.article.text);
           this.isLoading = false;
         },
         (error) => {
@@ -59,10 +60,7 @@ export class ArticleDetailLeadImageComponent implements OnInit {
     this.articleService.incrementMobileHitForArticle(this.article);
   }
 
-  private removeFirstImage() {
-    this.article.text = this.article.text.replace(/<img[^>]*>/, "");
-  }
-
+  // TODO tdit0703: auslagern, da doppelter Code!!!
   private changeNavbarColor(): void {
     let sliderHeight = this.content.getContentDimensions().contentHeight * 0.60;
 

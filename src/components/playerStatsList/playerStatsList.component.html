@@ -1,0 +1,19 @@
+<ion-grid>
+
+  <ion-row class="statsCardHeader">
+    <ion-col class="alignCenter"></ion-col>
+    <ion-col class="alignCenter" col-2><img src="{{colIcon1}}"/></ion-col>
+    <ion-col class="alignCenter" col-2 *ngIf="showCol2"><img src="{{colIcon2}}"/></ion-col>
+    <ion-col class="alignCenter" col-2 *ngIf="showCol3"><img src="{{colIcon3}}"/></ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let player of players | orderBy: ['-statValue1', '-statValue2', '-statValue3']; let i=index">
+    <ng-template [ngIf]="maxPlayers <= 0 || i < maxPlayers">
+      <ion-col>{{ player.name }}</ion-col>
+      <ion-col class="alignCenter" col-2>{{ player.statValue1}}</ion-col>
+      <ion-col class="alignCenter" col-2 *ngIf="showCol2">{{ player.statValue2}}</ion-col>
+      <ion-col class="alignCenter" col-2 *ngIf="showCol3">{{ player.statValue3}}</ion-col>
+    </ng-template>
+  </ion-row>
+
+</ion-grid>

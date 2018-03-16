@@ -4,6 +4,7 @@ import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {RankingService} from "../../services/ranking.service";
 import {RankingTeam} from "../../entities/RankingTeam";
 
+// TODO tdit0703: RankingComponent
 @Component({
   selector: 'table',
   templateUrl: "table.component.html"

@@ -9,7 +9,7 @@ import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {EventEntry} from "../../entities/EventEntry";
 
 @Component({
-  selector: "frontPage",
+  selector: "front-page",
   templateUrl: "frontPage.component.html",
 })
 export class FrontPageComponent implements OnInit {

@@ -4,6 +4,7 @@ import {Birthday} from "../../entities/Birthday";
 import {SocialSharingService} from "../../services/socialSharing.service";
 
 @Component({
+  selector: 'birthdays',
   templateUrl: "birthdays.component.html"
 })
 export class BirthdaysComponent implements OnInit {

@@ -11,7 +11,6 @@ import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
 import {ArticleService} from "../services/article.service";
 import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/articleDetailLeadImage.component";
-import {RemoveFirstImagePipe} from "../pipes/removeFirstImage.pipe";
 import {EventService} from "../services/event.service";
 import {CalendarComponent} from "../pages/calendar/calendar.component";
 import {AboutComponent} from "../pages/about/about.component";
@@ -72,6 +71,11 @@ import {StorageService} from "../services/storage.service";
 import {DevModeService} from "../services/devMode.service";
 import {ProfileService} from "../services/profile.service";
 import {ProfileComponent} from "../pages/profile/profile.component";
+import {TeamStatisticsComponent} from "../pages/teamStatistics/teamStatistics.component";
+import {PlayerStatsCardComponent} from "../components/playerStatsCard/playerStatsCard.component";
+import {PlayerStatsListComponent} from "../components/playerStatsList/playerStatsList.component";
+import {StatsDetailListComponent} from "../pages/statsDetailList/statsDetailList.component";
+import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.component";
 
 @NgModule({
   declarations: [
@@ -80,7 +84,6 @@ import {ProfileComponent} from "../pages/profile/profile.component";
     ArticleDetailLeadImageComponent,
     FirstImagePipe,
     LimitHtmlText,
-    RemoveFirstImagePipe,
     CalendarComponent,
     AboutComponent,
     LoadingComponent,
@@ -122,6 +125,11 @@ import {ProfileComponent} from "../pages/profile/profile.component";
     CountdownComponent,
     CountdownTimeComponent,
     ProfileComponent,
+    TeamStatisticsComponent,
+    PlayerStatsCardComponent,
+    PlayerStatsListComponent,
+    StatsDetailListComponent,
+    ModalToolbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -159,6 +167,8 @@ import {ProfileComponent} from "../pages/profile/profile.component";
     LineupComponent,
     MatchOverviewTabComponent,
     ProfileComponent,
+    TeamStatisticsComponent,
+    StatsDetailListComponent,
   ],
   providers: [
     StatusBar,
