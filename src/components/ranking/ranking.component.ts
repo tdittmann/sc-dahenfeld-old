@@ -12,6 +12,11 @@ export class RankingComponent {
   @Input() showPoints: boolean = true;
   @Input() showDiff: boolean = true;
   @Input() showMatches: boolean = true;
+  @Input() showWins: boolean = true;
+  @Input() showDraws: boolean = true;
+  @Input() showLoses: boolean = true;
+  @Input() showGoalsFor: boolean = true;
+  @Input() showGoalsAgainst: boolean = true;
   @Input() showTeamImage: boolean = true;
 
   favTeam: string = environment.teamName;

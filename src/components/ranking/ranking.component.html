@@ -4,6 +4,11 @@
     <ion-col col-1 class="rankingCol rankingPlace">#</ion-col>
     <ion-col class="rankingCol rankingTeam">Verein</ion-col>
     <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showMatches">Sp</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-xs-down" *ngIf="showWins">S</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-xs-down" *ngIf="showDraws">U</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-xs-down" *ngIf="showLoses">N</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-md-down" *ngIf="showGoalsFor">T</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-md-down" *ngIf="showGoalsAgainst">GT</ion-col>
     <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showDiff">+/-</ion-col>
     <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showPoints">Pkt</ion-col>
   </ion-row>
@@ -18,6 +23,11 @@
       <span>{{ team.teamName }}</span>
     </ion-col>
     <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showMatches">{{ team.matches }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-xs-down" *ngIf="showWins">{{ team.wins }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-xs-down" *ngIf="showDraws">{{ team.draws }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-xs-down" *ngIf="showLoses">{{ team.losses }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-md-down" *ngIf="showGoalsFor">{{ team.goalsFor }}</ion-col>
+    <ion-col col-1 class="rankingCol rankingTextCenter hidden-md-down" *ngIf="showGoalsAgainst">{{ team.goalsAgainst }}</ion-col>
     <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showDiff">{{ team.goalsDiff }}</ion-col>
     <ion-col col-1 class="rankingCol rankingTextCenter" *ngIf="showPoints">{{ team.points }}</ion-col>
 

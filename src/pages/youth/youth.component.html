@@ -13,6 +13,11 @@
     <ion-card (click)="openTeamDetails(team.team)">
       <ranking [teams]="team.ranking"
                [showMatches]="false"
+               [showWins]="false"
+               [showDraws]="false"
+               [showLoses]="false"
+               [showGoalsFor]="false"
+               [showGoalsAgainst]="false"
                [showTeamImage]="false">
       </ranking>
 
