@@ -40,7 +40,7 @@
     <ng-template [ngIf]="areThereSubstitutions()">
       <separator text="Auswechslungen"></separator>
       <ion-list>
-        <ng-template ngFor let-player [ngForOf]="players">
+        <ng-template ngFor let-player [ngForOf]="players | orderBy : 'cameInTime'">
           <ion-item *ngIf="isPlayerInSelectedTeam(player.clubId) && player.cameInTime > 0">
 
             <jersey [jerseyNumber]="player.jerseynumber" item-start></jersey>
