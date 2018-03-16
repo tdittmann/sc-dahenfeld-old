@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {NavParams, ViewController} from "ionic-angular";
 import {Player} from "../../entities/Player";
 import {environment} from "../../environments/environment";
+import {DevModeService} from "../../services/devMode.service";
 
 @Component({
   selector: 'player-detail',
@@ -11,7 +12,8 @@ export class PlayerComponent implements OnInit {
 
   player: Player;
 
-  constructor(private navParams: NavParams, private viewCtrl: ViewController) {
+  constructor(private navParams: NavParams, private viewCtrl: ViewController,
+              private devModeService: DevModeService) {
 
   }
 
@@ -32,5 +34,9 @@ export class PlayerComponent implements OnInit {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  isDevModeEnabled(): boolean {
+    return this.devModeService.isDevModeEnabled();
   }
 }

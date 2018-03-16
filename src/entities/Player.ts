@@ -12,6 +12,7 @@ export class Player {
   bild: string;
   position: string;
   age: number;
+  birthday: string;
   jerseynumber: number;
 
   // Stats

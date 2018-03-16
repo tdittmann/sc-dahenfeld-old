@@ -23,6 +23,8 @@
 
     <ion-grid class="playerInfo">
       <player-info-row text="Alter" [value]="player.age" *ngIf="player.age"></player-info-row>
+      <player-info-row text="Geburtstag" [value]="player.birthday | date : 'shortDate'"
+                       *ngIf="player.birthday && isDevModeEnabled()"></player-info-row>
       <player-info-row text="Trikotnummer" [value]="player.jerseynumber"
                        *ngIf="player.jerseynumber > 0"></player-info-row>
       <player-info-row text="Position" [value]="player.position" *ngIf="player.position"></player-info-row>
