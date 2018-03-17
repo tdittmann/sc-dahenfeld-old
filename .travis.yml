@@ -10,10 +10,10 @@ branches:
   - master
 
 install:
-  - sudo apt-get install npm
+  - sudo apt-get install npm, nodejs
   - sudo npm cache clean
   - sudo npm install
-  - sudo npm install -g cordova
+  - sudo npm install -g ionic cordova
   - echo y | android update sdk -u --filter android-22,android-23
 
 before_script:
@@ -23,6 +23,3 @@ before_script:
 script:
   - cordova prepare
   - cordova build android --release -- --ant
-
-release:
-  - exit 0
