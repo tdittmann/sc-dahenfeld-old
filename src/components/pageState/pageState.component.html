@@ -3,6 +3,6 @@
     {{ getMessage() }}<br/>
 
     <ion-spinner name="dots" *ngIf="loading"></ion-spinner>
-    <ion-icon name="{{ icon }}" *ngIf="error"></ion-icon>
+    <ion-icon [name]="errorIcon" *ngIf="error"></ion-icon>
   </div>
 </ion-content>
