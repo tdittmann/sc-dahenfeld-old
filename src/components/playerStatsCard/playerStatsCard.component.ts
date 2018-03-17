@@ -2,7 +2,7 @@ import {Component, Input} from "@angular/core";
 import {StatsPlayer} from "../../entities/StatsPlayer";
 import {ModalController, NavController} from "ionic-angular";
 import {StatsDetailListComponent} from "../../pages/statsDetailList/statsDetailList.component";
-import {ImageUtils} from "../../utils/ImageUtil";
+import {ImageUtils} from "../../utils/ImageUtils";
 
 @Component({
   selector: 'player-stats-card',

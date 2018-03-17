@@ -3,7 +3,7 @@ import {NavParams} from "ionic-angular";
 import {Player} from "../../entities/Player";
 import {environment} from "../../environments/environment";
 import {DevModeService} from "../../services/devMode.service";
-import {ImageUtils} from "../../utils/ImageUtil";
+import {ImageUtils} from "../../utils/ImageUtils";
 
 @Component({
   selector: 'player-detail',

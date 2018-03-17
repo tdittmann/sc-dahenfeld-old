@@ -5,7 +5,8 @@ import {Article} from "../../../entities/Article";
 import {SocialSharingService} from "../../../services/socialSharing.service";
 import {environment} from "../../../environments/environment";
 import {FirstImagePipe} from "../../../pipes/firstImage.pipe";
-import {ImageUtils} from "../../../utils/ImageUtil";
+import {ImageUtils} from "../../../utils/ImageUtils";
+import {NavbarUtils} from "../../../utils/NavbarUtils";
 
 @Component({
   selector: "article-detail-lead-image",
@@ -28,7 +29,7 @@ export class ArticleDetailLeadImageComponent implements OnInit {
   ngOnInit(): void {
     // Add Listener on Scroll (Change Navbar Color)
     this.content.ionScroll.subscribe(() => {
-      this.changeNavbarColor();
+      NavbarUtils.changeNavbarColor(this.content, this.navbar);
     });
 
     if (this.navParams.data.parameter instanceof Object) {
@@ -58,17 +59,6 @@ export class ArticleDetailLeadImageComponent implements OnInit {
     }
 
     this.articleService.incrementMobileHitForArticle(this.article);
-  }
-
-  // TODO tdit0703: auslagern, da doppelter Code!!!
-  private changeNavbarColor(): void {
-    let sliderHeight = this.content.getContentDimensions().contentHeight * 0.60;
-
-    if (this.content.getContentDimensions().scrollTop > sliderHeight) {
-      this.navbar.setElementClass('navBar-color-onScroll', true);
-    } else {
-      this.navbar.setElementClass('navBar-color-onScroll', false);
-    }
   }
 
   shareArticle(): void {

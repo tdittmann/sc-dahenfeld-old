@@ -7,6 +7,7 @@ import {ArticleDetailLeadImageComponent} from "../articleDetail/leadImage/articl
 import {EventComponent} from "../event/event.component";
 import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {EventEntry} from "../../entities/EventEntry";
+import {NavbarUtils} from "../../utils/NavbarUtils";
 
 @Component({
   selector: "front-page",
@@ -34,7 +35,7 @@ export class FrontPageComponent implements OnInit {
   ngOnInit(): void {
     // Add Listener on Scroll (Change Navbar Color)
     this.content.ionScroll.subscribe(() => {
-      this.changeNavbarColor();
+      NavbarUtils.changeNavbarColor(this.content, this.navbar);
     });
 
     // Load Content
@@ -47,6 +48,7 @@ export class FrontPageComponent implements OnInit {
       (pArticles) => {
         this.articles = pArticles;
 
+        // TODO tdit0703
         // Get first image
         for (let article of this.articles) {
           // This is needed, because sometimes it can happen that an imagename contains special chars
@@ -80,16 +82,6 @@ export class FrontPageComponent implements OnInit {
         console.error(error);
       }
     );
-  }
-
-  private changeNavbarColor(): void {
-    let sliderHeight = this.content.getContentDimensions().contentHeight * 0.60;
-
-    if (this.content.getContentDimensions().scrollTop > sliderHeight) {
-      this.navbar.setElementClass('navBar-color-onScroll', true);
-    } else {
-      this.navbar.setElementClass('navBar-color-onScroll', false);
-    }
   }
 
   openArticle(pArticle: Article) {
