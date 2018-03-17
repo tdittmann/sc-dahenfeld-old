@@ -8,11 +8,11 @@
   <error [isError]="isError"></error>
 
   <div class="maxWidthContainer">
-    <big-card *ngFor="let article of articles"
-              (click)="openArticle(article)"
-              [title]="article.titel"
-              [img]="article.image">
-    </big-card>
+    <card-extended *ngFor="let article of articles"
+                   (click)="openArticle(article)"
+                   [title]="article.titel"
+                   [img]="article.image">
+    </card-extended>
   </div>
 
 </ion-content>

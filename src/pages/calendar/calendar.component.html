@@ -18,11 +18,11 @@
                *ngIf="checkHeader(calendarEvent.date)">
     </separator>
 
-    <big-card [title]="calendarEvent.title"
-              [category]="getCalendarEventDate(calendarEvent.date)"
-              [location]="calendarEvent.location"
-              [text]="calendarEvent.category">
-    </big-card>
+    <card-extended [title]="calendarEvent.title"
+                   [category]="getCalendarEventDate(calendarEvent.date)"
+                   [location]="calendarEvent.location"
+                   [text]="calendarEvent.category">
+    </card-extended>
 
   </ng-template>
 

@@ -31,11 +31,11 @@
   <!-- Event -->
   <div *ngIf="eventEntry">
     <h5 class="sectionHeading">Veranstaltung</h5>
-    <smallCard (click)="openEvent(eventEntry)"
-               [img]="getImageUrl(eventEntry.image)"
-               [title]="eventEntry.title"
-               [subTitle]="getFormattedDate(eventEntry.start, eventEntry.end)">
-    </smallCard>
+    <card-simple (click)="openEvent(eventEntry)"
+                 [img]="getImageUrl(eventEntry.image)"
+                 [title]="eventEntry.title"
+                 [subTitle]="getFormattedDate(eventEntry.start, eventEntry.end)">
+    </card-simple>
   </div>
 
   <!-- Articles -->
@@ -43,11 +43,11 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let article of articles" col-12 col-lg-6>
-        <big-card [img]="article.image"
-                  [category]="article.kategorie"
-                  [title]="article.titel"
-                  (click)="openArticle(article)">
-        </big-card>
+        <card-extended [img]="article.image"
+                       [category]="article.kategorie"
+                       [title]="article.titel"
+                       (click)="openArticle(article)">
+        </card-extended>
       </ion-col>
     </ion-row>
   </ion-grid>

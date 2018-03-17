@@ -1,11 +1,10 @@
 import {Component, Input} from "@angular/core";
 
-// TODO tdit0703: CardExtendedComponent
 @Component({
-  selector: 'big-card',
-  templateUrl: 'bigCard.component.html'
+  selector: 'card-extended',
+  templateUrl: 'cardExtended.component.html'
 })
-export class BigCardComponent {
+export class CardExtendedComponent {
 
   @Input('img') image: string;
   @Input("category") category: string;

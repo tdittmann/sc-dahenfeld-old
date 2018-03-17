@@ -38,12 +38,12 @@ import {BirthdayService} from "../services/birthday.service";
 import {SuperTabsModule} from "ionic2-super-tabs";
 import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {LeadImageComponent} from "../components/leadimage/leadimage.component";
-import {SmallCardComponent} from "../components/smallCard/smallCard.component";
+import {CardSimpleComponent} from "../components/cardSimple/cardSimple.component";
 import {DatePipe} from "@angular/common";
 import {environment} from "../environments/environment";
 import {SimpleNavbarComponent} from "../components/simpleNavbar/simpleNavbar.component";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
-import {BigCardComponent} from "../components/bigCard/bigCard.component";
+import {CardExtendedComponent} from "../components/cardExtended/cardExtended.component";
 import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
@@ -103,9 +103,9 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     BirthdaysComponent,
     FrontPageComponent,
     LeadImageComponent,
-    SmallCardComponent,
+    CardSimpleComponent,
     SimpleNavbarComponent,
-    BigCardComponent,
+    CardExtendedComponent,
     ShareButtonComponent,
     ArticleDetailCardComponent,
     ArticleInformationComponent,

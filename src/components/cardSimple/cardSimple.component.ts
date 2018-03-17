@@ -1,11 +1,10 @@
 import {Component, Input} from "@angular/core";
 
-// TODO tdit0703: CardSimpleComponent
 @Component({
-  selector: 'smallCard',
-  templateUrl: 'smallCard.component.html'
+  selector: 'card-simple',
+  templateUrl: 'cardSimple.component.html'
 })
-export class SmallCardComponent {
+export class CardSimpleComponent {
 
   @Input('img') image: string;
   @Input('title') title: string;
