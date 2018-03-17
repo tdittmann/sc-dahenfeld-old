@@ -11,7 +11,6 @@ branches:
 
 install:
   - sudo apt-get install npm
-  - sudo npm cache clean
   - sudo npm install -g ionic cordova
   - echo y | android update sdk -u --filter android-22,android-23
 
