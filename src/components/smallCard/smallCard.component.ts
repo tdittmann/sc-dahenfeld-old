@@ -1,5 +1,6 @@
 import {Component, Input} from "@angular/core";
 
+// TODO tdit0703: CardSimpleComponent
 @Component({
   selector: 'smallCard',
   templateUrl: 'smallCard.component.html'

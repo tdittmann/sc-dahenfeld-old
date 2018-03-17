@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {NavParams} from "ionic-angular";
 import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {FixturesComponent} from "../fixtures/fixtures.component";
-import {TableComponent} from "../table/table.component";
+import {RankingPageComponent} from "../rankingPage/rankingPage.component";
 import {TeamPlayersComponent} from "../teamPlayers/teamPlayers.component";
 import {TeamStatisticsComponent} from "../teamStatistics/teamStatistics.component";
 
@@ -14,7 +14,7 @@ export class TeamDetailComponent implements OnInit {
 
   team: Mannschaftsart;
 
-  tableTab: any = TableComponent;
+  tableTab: any = RankingPageComponent;
   fixturesTab: any = FixturesComponent;
   teamTab: any = TeamPlayersComponent;
   statsTab: any = TeamStatisticsComponent;

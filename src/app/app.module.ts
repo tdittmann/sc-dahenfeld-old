@@ -20,7 +20,7 @@ import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {NgPipesModule} from "ngx-pipes";
 import {FixturesComponent} from "../pages/fixtures/fixtures.component";
 import {SocialSharing} from "@ionic-native/social-sharing";
-import {TableComponent} from "../pages/table/table.component";
+import {RankingPageComponent} from "../pages/rankingPage/rankingPage.component";
 import {Ng2FilterPipeModule} from "ng2-filter-pipe";
 import {FilterMatchdayPipe} from "../pipes/filterMatchday.pipe";
 import {TeamPlayersComponent} from "../pages/teamPlayers/teamPlayers.component";
@@ -65,7 +65,7 @@ import {JerseyComponent} from "../components/jersey/jersey.component";
 import {MatchEventsComponent} from "../components/matchEvents/matchEvents.component";
 import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverviewTab.component";
 import {CountdownComponent} from "../components/countdown/countdown.component";
-import {CountdownTimeComponent} from "../components/countdownTime/countdownTime.component";
+import {CountdownTimeComponent} from "../components/countdown/countdownTime/countdownTime.component";
 import {ToastService} from "../services/toast.service";
 import {StorageService} from "../services/storage.service";
 import {DevModeService} from "../services/devMode.service";
@@ -90,7 +90,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     ErrorComponent,
     TeamDetailComponent,
     FixturesComponent,
-    TableComponent,
+    RankingComponent,
     TeamPlayersComponent,
     FilterMatchdayPipe,
     OrderPositionPipe,
@@ -130,6 +130,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     PlayerStatsListComponent,
     StatsDetailListComponent,
     ModalToolbarComponent,
+    RankingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -152,7 +153,6 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     AboutComponent,
     TeamDetailComponent,
     FixturesComponent,
-    TableComponent,
     TeamPlayersComponent,
     TourComponent,
     PlayerComponent,
@@ -169,6 +169,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     ProfileComponent,
     TeamStatisticsComponent,
     StatsDetailListComponent,
+    RankingPageComponent,
   ],
   providers: [
     StatusBar,

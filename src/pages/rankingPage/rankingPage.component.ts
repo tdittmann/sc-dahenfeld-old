@@ -4,12 +4,11 @@ import {Mannschaftsart} from "../../entities/Mannschaftsart";
 import {RankingService} from "../../services/ranking.service";
 import {RankingTeam} from "../../entities/RankingTeam";
 
-// TODO tdit0703: RankingComponent
 @Component({
-  selector: 'table',
-  templateUrl: "table.component.html"
+  selector: 'ranking-page',
+  templateUrl: "rankingPage.component.html"
 })
-export class TableComponent implements OnInit {
+export class RankingPageComponent implements OnInit {
 
   ranking: RankingTeam[];
   team: Mannschaftsart;

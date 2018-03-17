@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 
-// TODO tdit0703: LoadingSpinnerComponent
+// TODO tdit0703: LoadingSpinnerComponent bzw. kann mit ErrorComponent zusammengefasst werden!!!
 @Component({
   selector: "loading",
   templateUrl: "loading.component.html"

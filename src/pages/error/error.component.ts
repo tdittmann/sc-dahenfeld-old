@@ -1,4 +1,6 @@
 import {Component, Input} from "@angular/core";
+
+// Verschieben zu Component-Dir
 @Component({
   selector: "error",
   templateUrl: "error.component.html"

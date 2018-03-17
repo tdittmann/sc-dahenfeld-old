@@ -1,5 +1,7 @@
 import {Component, Input} from "@angular/core";
 
+
+// TODO tdit0703: SimpleNavbarComponent
 @Component({
   selector: 'scd-navbar',
   templateUrl: 'scdNavbar.component.html'

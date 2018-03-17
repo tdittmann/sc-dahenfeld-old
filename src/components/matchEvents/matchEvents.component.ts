@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {LineupPlayer} from "../../entities/LineupPlayer";
 
+// TODO tdit0703: Verschieben zu LineUp
 @Component({
   selector: 'match-events',
   templateUrl: 'matchEvents.component.html'
