@@ -16,11 +16,11 @@ import {Push, PushObject, PushOptions} from "@ionic-native/push";
 import {BirthdaysComponent} from "../pages/birthdays/birthdays.component";
 import {FrontPageComponent} from "../pages/frontPage/frontPage.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
-import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {HttpClient} from "@angular/common/http";
 import {Storage} from "@ionic/storage";
 import {DevModeService} from "../services/devMode.service";
 import {ProfileComponent} from "../pages/profile/profile.component";
+import {BlogComponent} from "../pages/blog/blog.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -33,7 +33,13 @@ export class MyApp {
   /* NAVIGATION */
   vereinNavigation: NavigationItem[] = [
     {title: 'News', component: FrontPageComponent, icon: "paper", active: true},
-    {title: 'Chronik', component: ChronicleComponent, heading: "Chronik", icon: "time"},
+    {
+      title: 'Chronik',
+      component: BlogComponent,
+      heading: "Chronik",
+      icon: "time",
+      parameter: {heading: 'Chronik', categoryId: 155, showDate: false}
+    },
     {title: 'Kalender', component: CalendarComponent, icon: "calendar"},
     {title: 'Sportheim', component: ArticleDetailCardComponent, parameter: "830", icon: "restaurant"},
   ];
@@ -50,7 +56,12 @@ export class MyApp {
       parameter: Mannschaftsart.ZWEITE_MANNSCHAFT,
       icon: "football"
     },
-    {title: 'Alte Herren', component: OldiesComponent, icon: "football"},
+    {
+      title: 'Alte Herren',
+      component: BlogComponent,
+      icon: "football",
+      parameter: {heading: 'Alte Herren', categoryId: 109, showDate: true}
+    },
     {title: 'Jugend', component: YouthComponent, icon: "football"},
   ];
   turnenTischtennisNavigation: NavigationItem[] = [

@@ -1,35 +1,48 @@
 import {Component, OnInit} from "@angular/core";
-import {ArticleService} from "../../services/article.service";
-import {NavController} from "ionic-angular";
 import {Article} from "../../entities/Article";
 import {ArticleDetailCardComponent} from "../articleDetail/card/articleDetailCard.component";
+import {ArticleService} from "../../services/article.service";
+import {NavController, NavParams} from "ionic-angular";
 import {ImageUtils} from "../../utils/ImageUtils";
 
 @Component({
-  selector: 'chronicle',
-  templateUrl: 'chronicle.component.html'
+  selector: 'blog',
+  templateUrl: 'blog.component.html'
 })
-export class ChronicleComponent implements OnInit {
+export class BlogComponent implements OnInit {
 
-  heading: string = "Chronik";
-  categoryId: number = 155;
+  heading: string = "";
+  categoryId: number = 0;
+  showArticleDate: boolean;
 
   articles: Article[];
 
   isLoading: boolean = true;
   isError: boolean = false;
 
-  constructor(private articleService: ArticleService, private nav: NavController) {
+  constructor(private articleService: ArticleService,
+              private nav: NavController,
+              private navParams: NavParams) {
 
   }
 
   ngOnInit(): void {
+    this.categoryId = this.navParams.data.parameter.categoryId;
+    this.heading = this.navParams.data.parameter.heading;
+    this.showArticleDate = this.navParams.data.parameter.showDate;
+
+    this.loadArticles();
+  }
+
+  private loadArticles() {
     this.articleService.loadArticles(this.categoryId).subscribe(
       (news) => {
         this.articles = news;
+
         for (let article of this.articles) {
           article.image = ImageUtils.getFirstImageFromText(article.text);
         }
+
         this.isLoading = false;
       },
       (error) => {

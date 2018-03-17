@@ -13,6 +13,10 @@ export class CardExtendedComponent {
   @Input("text") text: string;
   @Input("location") location: string;
 
+  @Input("showCategory") showCategory: boolean = true;
+  @Input("showDate") showDate: boolean = true;
+  @Input("showLocation") showLocation: boolean = true;
+
   constructor() {
 
   }

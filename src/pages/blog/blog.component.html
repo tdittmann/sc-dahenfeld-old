@@ -10,7 +10,9 @@
     <card-extended *ngFor="let article of articles"
                    (click)="openArticle(article)"
                    [title]="article.titel"
-                   [img]="article.image">
+                   [img]="article.image"
+                   [date]="article.erstellungsdatum | date: 'longDate'"
+                   [showDate]="showArticleDate">
     </card-extended>
   </div>
 

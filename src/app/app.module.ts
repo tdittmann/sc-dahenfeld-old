@@ -6,7 +6,6 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {IonicStorageModule} from "@ionic/storage";
 
 import {MyApp} from "./app.component";
-import {OldiesComponent} from "../pages/oldies/oldies.component";
 import {FirstImagePipe} from "../pipes/firstImage.pipe";
 import {LimitHtmlText} from "../pipes/limitHtmlText.pipe";
 import {ArticleService} from "../services/article.service";
@@ -45,7 +44,6 @@ import {CardExtendedComponent} from "../components/cardExtended/cardExtended.com
 import {SimpleButtonComponent} from "../components/simpleButton/simpleButton.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ArticleMetadataComponent} from "../components/articleMetadata/articleMetadata.component";
-import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {RankingService} from "../services/ranking.service";
 import {MatchOverviewComponent} from "../pages/fixtures/matchOverview/matchOverview.component";
 import {ClubImageComponent} from "../components/clubImage/clubImage.component";
@@ -75,11 +73,11 @@ import {StatsDetailListComponent} from "../pages/statsDetailList/statsDetailList
 import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.component";
 import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/matchResult.component";
 import {PageStateComponent} from "../components/pageState/pageState.component";
+import {BlogComponent} from "../pages/blog/blog.component";
 
 @NgModule({
   declarations: [
     MyApp,
-    OldiesComponent,
     ArticleDetailLeadImageComponent,
     LimitHtmlText,
     CalendarComponent,
@@ -104,7 +102,6 @@ import {PageStateComponent} from "../components/pageState/pageState.component";
     SimpleButtonComponent,
     ArticleDetailCardComponent,
     ArticleMetadataComponent,
-    ChronicleComponent,
     MatchOverviewComponent,
     ClubImageComponent,
     PlayerImageComponent,
@@ -128,6 +125,7 @@ import {PageStateComponent} from "../components/pageState/pageState.component";
     RankingPageComponent,
     MatchResultComponent,
     PageStateComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -144,7 +142,6 @@ import {PageStateComponent} from "../components/pageState/pageState.component";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    OldiesComponent,
     ArticleDetailLeadImageComponent,
     CalendarComponent,
     AboutComponent,
@@ -159,7 +156,6 @@ import {PageStateComponent} from "../components/pageState/pageState.component";
     BirthdaysComponent,
     FrontPageComponent,
     ArticleDetailCardComponent,
-    ChronicleComponent,
     GameReportComponent,
     LineupComponent,
     MatchOverviewTabComponent,
@@ -167,6 +163,7 @@ import {PageStateComponent} from "../components/pageState/pageState.component";
     TeamStatisticsComponent,
     StatsDetailListComponent,
     RankingPageComponent,
+    BlogComponent,
   ],
   providers: [
     StatusBar,

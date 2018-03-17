@@ -3,7 +3,7 @@ export interface NavigationItem {
   title: string;
   heading?: string;
   component: any;
-  parameter?: string;
+  parameter?: any;
   icon: string;
   active?: boolean;
 
