@@ -21,11 +21,12 @@
 
   <leadimage [src]="article?.image"></leadimage>
 
-  <article-info [title]="article?.titel"
-                [author]="article?.ersteller"
-                [date]="article?.erstellungsdatum"
-                [subHeading]="article?.kategorie"
-                [showDetails]="showInformation(article?.id)"></article-info>
+  <article-metadata [title]="article?.titel"
+                    [author]="article?.ersteller"
+                    [date]="article?.erstellungsdatum"
+                    [subHeading]="article?.kategorie"
+                    [showDetails]="showInformation(article?.id)">
+  </article-metadata>
 
   <div padding [innerHtml]="article?.text" class="htmlContent"></div>
 

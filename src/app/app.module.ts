@@ -46,7 +46,7 @@ import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {CardExtendedComponent} from "../components/cardExtended/cardExtended.component";
 import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
-import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
+import {ArticleMetadataComponent} from "../components/articleMetadata/articleMetadata.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {RankingService} from "../services/ranking.service";
 import {MatchOverviewComponent} from "../pages/fixtures/matchOverview/matchOverview.component";
@@ -108,7 +108,7 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     CardExtendedComponent,
     ShareButtonComponent,
     ArticleDetailCardComponent,
-    ArticleInformationComponent,
+    ArticleMetadataComponent,
     ChronicleComponent,
     MatchOverviewComponent,
     ClubImageComponent,

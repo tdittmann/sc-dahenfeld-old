@@ -1,11 +1,10 @@
 import {Component, Input} from "@angular/core";
 
-// TODO tdit0703: ArticleMetadataComponent
 @Component({
-  selector: 'article-info',
-  templateUrl: 'articleInformation.component.html'
+  selector: 'article-metadata',
+  templateUrl: 'articleMetadata.component.html'
 })
-export class ArticleInformationComponent {
+export class ArticleMetadataComponent {
 
   @Input('subHeading') subHeading: string;
   @Input('title') title: string;

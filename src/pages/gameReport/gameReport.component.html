@@ -4,9 +4,10 @@
   <error [isError]="isError"></error>
 
   <ng-template [ngIf]="gameReport">
-    <article-info [title]="gameReport.titel"
-                  [author]="gameReport.ersteller"
-                  [date]="gameReport.erstellungsdatum"></article-info>
+    <article-metadata [title]="gameReport.titel"
+                      [author]="gameReport.ersteller"
+                      [date]="gameReport.erstellungsdatum">
+    </article-metadata>
 
     <div padding [innerHtml]="gameReport.text" class="htmlContent"></div>
   </ng-template>
