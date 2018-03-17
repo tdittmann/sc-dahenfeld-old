@@ -10,7 +10,7 @@ branches:
   - master
 
 install:
-  - apt-get install npm
+  - sudo apt-get install npm
   - npm cache clean
   - npm install
   - npm install -g cordova
