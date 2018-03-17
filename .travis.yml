@@ -3,9 +3,6 @@ language: android
 node_js:
   - 5.5
 
-notifications:
-  email: false
-
 sudo: false
 
 branches:
@@ -13,6 +10,7 @@ branches:
   - master
 
 install:
+  - apt-get install npm
   - npm cache clean
   - npm install
   - npm install -g cordova
