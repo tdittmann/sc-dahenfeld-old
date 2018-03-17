@@ -4,7 +4,7 @@
     <ion-col>{{ match.round_number }}. Spieltag</ion-col>
   </ion-row>
 
-  <ion-row class="matchDate" *ngIf="showMatchDate">
+  <ion-row *ngIf="showMatchDate">
     <ion-col>{{ match.date | date: 'dd. MMM y, HH:mm' }}</ion-col>
   </ion-row>
 
@@ -13,18 +13,12 @@
       <club-image [clubId]="match.home_id" cssClass="logoMiddle"></club-image>
     </ion-col>
 
-    <ion-col class="matchResult">
-      <ng-template [ngIf]="match.home_result && match.away_result">
-        {{ match.home_result }}:{{ match.away_result }}
-      </ng-template>
-
-      <ng-template [ngIf]="isNextMatch">
-        <countdown [date]="match.date"></countdown>
-      </ng-template>
-
-      <ng-template [ngIf]="!isNextMatch && !match.home_result && !match.away_result">
-        - : -
-      </ng-template>
+    <ion-col>
+      <match-result [isNextMatch]="isNextMatch"
+                    [homeResult]="match.home_result"
+                    [awayResult]="match.away_result"
+                    [matchDate]="match.date">
+      </match-result>
     </ion-col>
 
     <ion-col>

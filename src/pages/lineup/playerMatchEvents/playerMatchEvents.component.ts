@@ -1,12 +1,11 @@
 import {Component, Input} from "@angular/core";
-import {LineupPlayer} from "../../entities/LineupPlayer";
+import {LineupPlayer} from "../../../entities/LineupPlayer";
 
-// TODO tdit0703: Verschieben zu LineUp
 @Component({
-  selector: 'match-events',
-  templateUrl: 'matchEvents.component.html'
+  selector: 'player-match-events',
+  templateUrl: 'playerMatchEvents.component.html'
 })
-export class MatchEventsComponent {
+export class PlayerMatchEventsComponent {
 
   @Input() showEventValue: boolean;
   @Input() showGoals: boolean;

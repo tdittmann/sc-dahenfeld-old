@@ -6,6 +6,7 @@ Repository of the official SC Dahenfeld app, implemented using [Ionic Framework]
 - Calendar for upcoming matches and events
 - Information for all soccer teams
 - Information for gymnastics and table tennis
+- ... and many more
 
 ## Release
 
@@ -20,6 +21,3 @@ Repository of the official SC Dahenfeld app, implemented using [Ionic Framework]
 
 ## Official Website
 http://sc-dahenfeld.de
-
-## License
-Available under the GPL v3 license. See the [LICENSE file](https://choosealicense.com/licenses/gpl-3.0/) for more information.

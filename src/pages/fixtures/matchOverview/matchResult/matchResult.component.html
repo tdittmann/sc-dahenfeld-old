@@ -1,0 +1,13 @@
+<div class="matchResultContainer">
+  <ng-template [ngIf]="homeResult && awayResult">
+    {{ homeResult }}:{{ awayResult }}
+  </ng-template>
+
+  <ng-template [ngIf]="isNextMatch">
+    <countdown [date]="matchDate"></countdown>
+  </ng-template>
+
+  <ng-template [ngIf]="!isNextMatch && !homeResult && !awayResult">
+    - : -
+  </ng-template>
+</div>

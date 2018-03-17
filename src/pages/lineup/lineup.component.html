@@ -24,14 +24,14 @@
 
           <h2>{{player.firstname}} {{player.lastname}}</h2>
 
-          <match-events item-end
-                        [player]="player"
-                        [showGoals]="true"
-                        [showYellowCard]="true"
-                        [showYellowRedCard]="true"
-                        [showRedCard]="true"
-                        [showSubstitution]="true">
-          </match-events>
+          <player-match-events item-end
+                               [player]="player"
+                               [showGoals]="true"
+                               [showYellowCard]="true"
+                               [showYellowRedCard]="true"
+                               [showRedCard]="true"
+                               [showSubstitution]="true">
+          </player-match-events>
 
         </ion-item>
       </ng-template>
@@ -48,11 +48,11 @@
             <h3>{{player.firstname}} {{player.lastname}}</h3>
             <p class="substitionCameInFor">für {{ getPlayerNameById(player.cameInFor) }}</p>
 
-            <match-events item-end
-                          [player]="player"
-                          [showSubstitution]="true"
-                          [showEventValue]="true">
-            </match-events>
+            <player-match-events item-end
+                                 [player]="player"
+                                 [showSubstitution]="true"
+                                 [showEventValue]="true">
+            </player-match-events>
 
           </ion-item>
         </ng-template>

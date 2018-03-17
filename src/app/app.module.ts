@@ -49,7 +49,7 @@ import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDet
 import {ArticleInformationComponent} from "../components/articleInformation/articleInformation.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
 import {RankingService} from "../services/ranking.service";
-import {MatchOverviewComponent} from "../components/matchOverview/matchOverview.component";
+import {MatchOverviewComponent} from "../pages/fixtures/matchOverview/matchOverview.component";
 import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 import {PlayerService} from "../services/player.service";
 import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
@@ -61,11 +61,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {GameReportComponent} from "../pages/gameReport/gameReport.component";
 import {LineupComponent} from "../pages/lineup/lineup.component";
 import {SeparatorComponent} from "../components/separator/separator.component";
-import {JerseyComponent} from "../components/jersey/jersey.component";
-import {MatchEventsComponent} from "../components/matchEvents/matchEvents.component";
+import {JerseyComponent} from "../pages/lineup/jersey/jersey.component";
+import {PlayerMatchEventsComponent} from "../pages/lineup/playerMatchEvents/playerMatchEvents.component";
 import {MatchOverviewTabComponent} from "../pages/matchOverviewTab/matchOverviewTab.component";
-import {CountdownComponent} from "../components/countdown/countdown.component";
-import {CountdownTimeComponent} from "../components/countdown/countdownTime/countdownTime.component";
+import {CountdownComponent} from "../pages/fixtures/matchOverview/matchResult/countdown/countdown.component";
+import {CountdownTimeComponent} from "../pages/fixtures/matchOverview/matchResult/countdown/countdownTime/countdownTime.component";
 import {ToastService} from "../services/toast.service";
 import {StorageService} from "../services/storage.service";
 import {DevModeService} from "../services/devMode.service";
@@ -76,6 +76,7 @@ import {PlayerStatsCardComponent} from "../components/playerStatsCard/playerStat
 import {PlayerStatsListComponent} from "../components/playerStatsList/playerStatsList.component";
 import {StatsDetailListComponent} from "../pages/statsDetailList/statsDetailList.component";
 import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.component";
+import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/matchResult.component";
 
 @NgModule({
   declarations: [
@@ -120,7 +121,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     LineupComponent,
     SeparatorComponent,
     JerseyComponent,
-    MatchEventsComponent,
+    PlayerMatchEventsComponent,
     MatchOverviewTabComponent,
     CountdownComponent,
     CountdownTimeComponent,
@@ -131,6 +132,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     StatsDetailListComponent,
     ModalToolbarComponent,
     RankingPageComponent,
+    MatchResultComponent,
   ],
   imports: [
     BrowserModule,
