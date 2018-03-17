@@ -14,8 +14,6 @@ import {ArticleDetailLeadImageComponent} from "../pages/articleDetail/leadImage/
 import {EventService} from "../services/event.service";
 import {CalendarComponent} from "../pages/calendar/calendar.component";
 import {AboutComponent} from "../pages/about/about.component";
-import {LoadingComponent} from "../pages/loading/loading.component";
-import {ErrorComponent} from "../pages/error/error.component";
 import {TeamDetailComponent} from "../pages/teamDetail/teamDetail.component";
 import {NgPipesModule} from "ngx-pipes";
 import {FixturesComponent} from "../pages/fixtures/fixtures.component";
@@ -54,7 +52,6 @@ import {ClubImageComponent} from "../components/clubImage/clubImage.component";
 import {PlayerService} from "../services/player.service";
 import {PlayerImageComponent} from "../components/playerImage/playerImage.component";
 import {RankingComponent} from "../components/ranking/ranking.component";
-import {NoContentComponent} from "../components/noContent/noContent.component";
 import {PlayerInfoRowComponent} from "../components/playerInfoRow/playerInfoRow.component";
 import {PlayerStatisticComponent} from "../components/playerStatistic/playerStatistic.component";
 import {HttpClientModule} from "@angular/common/http";
@@ -77,6 +74,7 @@ import {PlayerStatsListComponent} from "../components/playerStatsList/playerStat
 import {StatsDetailListComponent} from "../pages/statsDetailList/statsDetailList.component";
 import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.component";
 import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/matchResult.component";
+import {PageStateComponent} from "../components/pageState/pageState.component";
 
 @NgModule({
   declarations: [
@@ -86,8 +84,6 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     LimitHtmlText,
     CalendarComponent,
     AboutComponent,
-    LoadingComponent,
-    ErrorComponent,
     TeamDetailComponent,
     FixturesComponent,
     RankingComponent,
@@ -113,7 +109,6 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     ClubImageComponent,
     PlayerImageComponent,
     RankingComponent,
-    NoContentComponent,
     PlayerInfoRowComponent,
     PlayerStatisticComponent,
     GameReportComponent,
@@ -132,6 +127,7 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     ModalToolbarComponent,
     RankingPageComponent,
     MatchResultComponent,
+    PageStateComponent,
   ],
   imports: [
     BrowserModule,

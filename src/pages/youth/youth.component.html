@@ -4,8 +4,7 @@
 
 <ion-content class="grayBackground">
 
-  <loading [isLoading]="teams.size == 0"></loading>
-  <error [isError]="isError"></error>
+  <page-state [isLoading]="teams.size == 0" [isError]="isError"></page-state>
 
   <div *ngFor="let team of teams">
     <h4 class="teamHeading">{{ team.team.toString() }}</h4>

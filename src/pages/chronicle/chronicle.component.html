@@ -4,8 +4,7 @@
 
 <ion-content no-padding class="grayBackground">
 
-  <loading [isLoading]="isLoading"></loading>
-  <error [isError]="isError"></error>
+  <page-state [isLoading]="isLoading" [isError]="isError"></page-state>
 
   <div class="maxWidthContainer">
     <card-extended *ngFor="let article of articles"

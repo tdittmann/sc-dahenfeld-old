@@ -1,7 +1,10 @@
 <ion-content>
 
-  <loading [isLoading]="isLoading"></loading>
-  <error [isError]="isError"></error>
+  <page-state [isLoading]="isLoading" [isError]="isError"></page-state>
+
+  <page-state [isError]="!isLoading && !gameReport"
+              errorMessage="Zu diesem Spiel existiert kein Spielbericht">
+  </page-state>
 
   <ng-template [ngIf]="gameReport">
     <article-metadata [title]="gameReport.titel"
@@ -10,10 +13,6 @@
     </article-metadata>
 
     <div padding [innerHtml]="gameReport.text" class="htmlContent"></div>
-  </ng-template>
-
-  <ng-template [ngIf]="!isLoading && !gameReport">
-    <no-content icon="sad" message="Zu diesem Spiel existiert kein Spielbericht"></no-content>
   </ng-template>
 
 </ion-content>

@@ -4,16 +4,12 @@
 
 <ion-content no-padding>
 
-  <loading [isLoading]="isLoading"></loading>
-  <error [isError]="isError"></error>
+  <page-state [isLoading]="isLoading" [isError]="isError"></page-state>
 
-  <no-content icon="sad"
-              *ngIf="!isLoading && calendarEvents.length == 0"
-              text="In den nächsten Wochen stehen leider keine Termine des SCD an">
-  </no-content>
+  <page-state [isError]="!isLoading && calendarEvents.length == 0"
+              errorMessage="In den nächsten Wochen stehen leider keine Termine des SCD an"></page-state>
 
   <ng-template ngFor let-calendarEvent [ngForOf]="calendarEvents">
-
     <separator [text]="calendarEvent.date | date : 'longDate'"
                *ngIf="checkHeader(calendarEvent.date)">
     </separator>
@@ -23,7 +19,6 @@
                    [location]="calendarEvent.location"
                    [text]="calendarEvent.category">
     </card-extended>
-
   </ng-template>
 
 

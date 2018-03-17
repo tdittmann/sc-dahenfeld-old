@@ -1,16 +1,14 @@
 <ion-content>
 
-  <loading [isLoading]="isLoading"></loading>
-  <error [isError]="isError"></error>
+  <page-state [isLoading]="isLoading" [isError]="isError"></page-state>
 
-  <no-content *ngIf="!isLoading && players.length == 0"
-              icon="sad"
-              message="Es konnten keine Spieler für diese Mannschaft gefunden werden">
-  </no-content>
+  <page-state [isError]="!isLoading && players.length == 0"
+              errorMessage="Es konnten keine Spieler für diese Mannschaft gefunden werden"></page-state>
 
   <ng-template ngFor let-player [ngForOf]="players | orderPosition: ['Torhüter', 'Abwehr', 'Mittelfeld', 'Sturm']">
     <separator [text]="player.position"
-               *ngIf="checkHeaderPosition(player.position)"></separator>
+               *ngIf="checkHeaderPosition(player.position)">
+    </separator>
 
     <div class="player" (click)="openPlayer(player)">
       <player-image [img]="player.bild"></player-image>

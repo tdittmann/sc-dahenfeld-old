@@ -9,8 +9,7 @@
 
 <ion-content fullscreen class="grayBackground">
 
-  <loading [isLoading]="isLoading"></loading>
-  <error [isError]="isError"></error>
+  <page-state [isLoading]="isLoading" [isError]="isError"></page-state>
 
   <ion-slides class="articlesSlider" pager loop autoplay="5000" *ngIf="featureArticles.length">
 
