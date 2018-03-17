@@ -5,12 +5,11 @@ import {environment} from "../../environments/environment";
 import {DevModeService} from "../../services/devMode.service";
 import {ImageUtils} from "../../utils/ImageUtil";
 
-// TODO tdit0703: PlayerDetailComponent
 @Component({
   selector: 'player-detail',
-  templateUrl: 'player.component.html'
+  templateUrl: 'playerDetail.component.html'
 })
-export class PlayerComponent implements OnInit {
+export class PlayerDetailComponent implements OnInit {
 
   player: Player;
 

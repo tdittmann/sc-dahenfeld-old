@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ModalController, NavParams} from "ionic-angular";
-import {PlayerComponent} from "../player/player.component";
+import {PlayerDetailComponent} from "../playerDetail/playerDetail.component";
 import {Player} from "../../entities/Player";
 import {PlayerService} from "../../services/player.service";
 import {Mannschaftsart} from "../../entities/Mannschaftsart";
@@ -47,7 +47,7 @@ export class TeamPlayersComponent implements OnInit {
   }
 
   openPlayer(player: Player) {
-    let modal = this.modalCtrl.create(PlayerComponent, {params: player});
+    let modal = this.modalCtrl.create(PlayerDetailComponent, {params: player});
     modal.present();
   }
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {ToastService} from "../../services/toast.service";
 import {DevModeService} from "../../services/devMode.service";
 
@@ -6,7 +6,7 @@ import {DevModeService} from "../../services/devMode.service";
   selector: 'about',
   templateUrl: "about.component.html"
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
   version: string = "4.3.0";
   developer: string = "Timo Dittmann";
@@ -15,10 +15,6 @@ export class AboutComponent implements OnInit {
   private devModeEnabledNumber = 7;
 
   constructor(private devModeService: DevModeService, private toastService: ToastService) {
-
-  }
-
-  ngOnInit(): void {
 
   }
 

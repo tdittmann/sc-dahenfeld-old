@@ -26,7 +26,7 @@ import {FilterMatchdayPipe} from "../pipes/filterMatchday.pipe";
 import {TeamPlayersComponent} from "../pages/teamPlayers/teamPlayers.component";
 import {OrderPositionPipe} from "../pipes/orderPosition.pipe";
 import {TourComponent} from "../pages/tour/tour.component";
-import {PlayerComponent} from "../pages/player/player.component";
+import {PlayerDetailComponent} from "../pages/playerDetail/playerDetail.component";
 import {MatchService} from "../services/match.service";
 import {MatchDetailComponent} from "../pages/matchDetail/matchDetail.component";
 import {SocialSharingService} from "../services/socialSharing.service";
@@ -95,7 +95,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     FilterMatchdayPipe,
     OrderPositionPipe,
     TourComponent,
-    PlayerComponent,
+    PlayerDetailComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
@@ -155,7 +155,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     FixturesComponent,
     TeamPlayersComponent,
     TourComponent,
-    PlayerComponent,
+    PlayerDetailComponent,
     MatchDetailComponent,
     YouthComponent,
     EventComponent,
