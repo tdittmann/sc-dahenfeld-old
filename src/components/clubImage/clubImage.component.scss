@@ -1,3 +1,22 @@
 club-image {
 
+  .logoSmall,
+  .logoMiddle,
+  .logoBig {
+    width: auto;
+    margin: auto;
+  }
+
+  .logoSmall {
+    height: 25px;
+  }
+
+  .logoMiddle {
+    height: 50px;
+  }
+
+  .logoBig {
+    height: 75px;
+  }
+
 }
