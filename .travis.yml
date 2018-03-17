@@ -14,8 +14,8 @@ before_install:
 install:
   - npm install -g ionic cordova
   - npm install
-  - cordova prepare
 script:
+  - cordova prepare
   - npm run build
 before_script:
   - export DISPLAY=:99.0
