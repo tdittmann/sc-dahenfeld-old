@@ -11,9 +11,9 @@ branches:
 
 install:
   - sudo apt-get install npm
-  - npm cache clean
-  - npm install
-  - npm install -g cordova
+  - sudo npm cache clean
+  - sudo npm install
+  - sudo npm install -g cordova
   - echo y | android update sdk -u --filter android-22,android-23
 
 before_script:
