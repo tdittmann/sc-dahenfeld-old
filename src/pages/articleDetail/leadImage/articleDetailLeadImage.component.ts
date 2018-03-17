@@ -4,7 +4,6 @@ import {ArticleService} from "../../../services/article.service";
 import {Article} from "../../../entities/Article";
 import {SocialSharingService} from "../../../services/socialSharing.service";
 import {environment} from "../../../environments/environment";
-import {FirstImagePipe} from "../../../pipes/firstImage.pipe";
 import {ImageUtils} from "../../../utils/ImageUtils";
 import {NavbarUtils} from "../../../utils/NavbarUtils";
 
@@ -45,7 +44,7 @@ export class ArticleDetailLeadImageComponent implements OnInit {
       this.articleService.loadArticle(this.navParams.data.parameter).subscribe(
         (news) => {
           this.article = news;
-          this.article.image = ImageUtils.createCssBackgroundImageString(FirstImagePipe.transform(this.article.text));
+          this.article.image = ImageUtils.getFirstImageFromText(this.article.text);
           this.article.text = ImageUtils.removeFirstImageFromText(this.article.text);
           this.isLoading = false;
         },

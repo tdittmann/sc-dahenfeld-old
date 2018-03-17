@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {ArticleService} from "../../services/article.service";
 import {NavController} from "ionic-angular";
-import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {Article} from "../../entities/Article";
 import {ArticleDetailCardComponent} from "../articleDetail/card/articleDetailCard.component";
+import {ImageUtils} from "../../utils/ImageUtils";
 
 @Component({
   selector: 'chronicle',
@@ -27,15 +27,9 @@ export class ChronicleComponent implements OnInit {
     this.articleService.loadArticles(this.categoryId).subscribe(
       (news) => {
         this.articles = news;
-
-        // TODO tdit0703
-        // Get first image
         for (let article of this.articles) {
-          // This is needed, because sometimes it can happen that an imagename contains special chars
-          // and escaping these does not work in frontend
-          article.image = 'url("' + FirstImagePipe.transform(article.text) + '")';
+          article.image = ImageUtils.getFirstImageFromText(article.text);
         }
-
         this.isLoading = false;
       },
       (error) => {

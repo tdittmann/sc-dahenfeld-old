@@ -2,9 +2,10 @@ import {Component, OnInit} from "@angular/core";
 import {Article} from "../../entities/Article";
 import {ArticleService} from "../../services/article.service";
 import {NavController, NavParams} from "ionic-angular";
-import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {ArticleDetailCardComponent} from "../articleDetail/card/articleDetailCard.component";
+import {ImageUtils} from "../../utils/ImageUtils";
 
+// TODO tdit0703: Mit Chronicle zusammenfassen???
 @Component({
   selector: 'oldies',
   templateUrl: "oldies.component.html"
@@ -46,12 +47,8 @@ export class OldiesComponent implements OnInit {
       (news) => {
         this.articles = news;
 
-        // TODO tdit0703: Auslagern, da doppelt vorhanden
-        // Get first image
         for (let article of this.articles) {
-          // This is needed, because sometimes it can happen that an imagename contains special chars
-          // and escaping these does not work in frontend
-          article.image = 'url("' + FirstImagePipe.transform(article.text) + '")';
+          article.image = ImageUtils.getFirstImageFromText(article.text);
         }
 
         this.isLoading = false;

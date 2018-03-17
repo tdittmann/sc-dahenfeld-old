@@ -5,9 +5,9 @@ import {Content, Navbar, NavController} from "ionic-angular";
 import {EventService} from "../../services/event.service";
 import {ArticleDetailLeadImageComponent} from "../articleDetail/leadImage/articleDetailLeadImage.component";
 import {EventComponent} from "../event/event.component";
-import {FirstImagePipe} from "../../pipes/firstImage.pipe";
 import {EventEntry} from "../../entities/EventEntry";
 import {NavbarUtils} from "../../utils/NavbarUtils";
+import {ImageUtils} from "../../utils/ImageUtils";
 
 @Component({
   selector: "front-page",
@@ -47,13 +47,8 @@ export class FrontPageComponent implements OnInit {
     this.newsService.loadArticles(this.categoryId).subscribe(
       (pArticles) => {
         this.articles = pArticles;
-
-        // TODO tdit0703
-        // Get first image
         for (let article of this.articles) {
-          // This is needed, because sometimes it can happen that an imagename contains special chars
-          // and escaping these does not work in frontend
-          article.image = 'url("' + FirstImagePipe.transform(article.text) + '")';
+          article.image = ImageUtils.getFirstImageFromText(article.text);
         }
 
         // First three articles are feature-articles

@@ -83,7 +83,6 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     MyApp,
     OldiesComponent,
     ArticleDetailLeadImageComponent,
-    FirstImagePipe,
     LimitHtmlText,
     CalendarComponent,
     AboutComponent,
