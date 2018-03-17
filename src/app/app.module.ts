@@ -41,7 +41,7 @@ import {LeadImageComponent} from "../components/leadimage/leadimage.component";
 import {SmallCardComponent} from "../components/smallCard/smallCard.component";
 import {DatePipe} from "@angular/common";
 import {environment} from "../environments/environment";
-import {ScdNavbarComponent} from "../components/scdNavbar/scdNavbar.component";
+import {SimpleNavbarComponent} from "../components/simpleNavbar/simpleNavbar.component";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {BigCardComponent} from "../components/bigCard/bigCard.component";
 import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
@@ -103,7 +103,7 @@ import {ModalToolbarComponent} from "../components/modalToolbar/modalToolbar.com
     FrontPageComponent,
     LeadImageComponent,
     SmallCardComponent,
-    ScdNavbarComponent,
+    SimpleNavbarComponent,
     BigCardComponent,
     ShareButtonComponent,
     ArticleDetailCardComponent,

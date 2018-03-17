@@ -1,12 +1,11 @@
 import {Component, Input} from "@angular/core";
 
 
-// TODO tdit0703: SimpleNavbarComponent
 @Component({
-  selector: 'scd-navbar',
-  templateUrl: 'scdNavbar.component.html'
+  selector: 'simple-navbar',
+  templateUrl: 'simpleNavbar.component.html'
 })
-export class ScdNavbarComponent {
+export class SimpleNavbarComponent {
 
   @Input('heading') heading: string;
   @Input('showMenu') showMenu: boolean = true;
