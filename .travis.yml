@@ -12,7 +12,9 @@ node_js:
 before_install:
   - npm i npm@^4 -g
 install:
+  - npm install -g ionic cordova
   - npm install
+  - cordova prepare
 script:
   - npm run build
 before_script:
