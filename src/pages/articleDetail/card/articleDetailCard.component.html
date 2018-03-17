@@ -22,6 +22,10 @@
 
   <div padding [innerHtml]="article?.text" class="htmlContent"></div>
 
-  <share-button (click)="shareArticle()"></share-button>
+  <simple-button text="Teilen"
+                 icon="share"
+                 (click)="shareArticle()">
+  </simple-button>
+
 
 </ion-content>

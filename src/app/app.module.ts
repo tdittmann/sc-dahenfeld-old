@@ -44,7 +44,7 @@ import {environment} from "../environments/environment";
 import {SimpleNavbarComponent} from "../components/simpleNavbar/simpleNavbar.component";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {CardExtendedComponent} from "../components/cardExtended/cardExtended.component";
-import {ShareButtonComponent} from "../components/shareButton/shareButton.component";
+import {SimpleButtonComponent} from "../components/simpleButton/simpleButton.component";
 import {ArticleDetailCardComponent} from "../pages/articleDetail/card/articleDetailCard.component";
 import {ArticleMetadataComponent} from "../components/articleMetadata/articleMetadata.component";
 import {ChronicleComponent} from "../pages/chronicle/chronicle.component";
@@ -106,7 +106,7 @@ import {MatchResultComponent} from "../pages/fixtures/matchOverview/matchResult/
     CardSimpleComponent,
     SimpleNavbarComponent,
     CardExtendedComponent,
-    ShareButtonComponent,
+    SimpleButtonComponent,
     ArticleDetailCardComponent,
     ArticleMetadataComponent,
     ChronicleComponent,

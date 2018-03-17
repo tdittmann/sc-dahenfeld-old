@@ -20,13 +20,10 @@ export class ArticleDetailCardComponent {
               private socialSharingService: SocialSharingService) {
 
     if (this.navParams.data.parameter instanceof Object) {
-
       // Get the whole article object from parent view
       this.article = this.navParams.data.parameter;
       this.isLoading = false;
-
     } else {
-
       // Get only the id of article and load complete article object
       this.articleService.loadArticle(this.navParams.data.parameter).subscribe(
         (news) => {
@@ -39,7 +36,6 @@ export class ArticleDetailCardComponent {
           console.error(error);
         }
       );
-
     }
 
     this.articleService.incrementMobileHitForArticle(this.article);

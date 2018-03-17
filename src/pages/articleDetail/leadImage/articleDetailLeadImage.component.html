@@ -3,9 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-
     <ion-title></ion-title>
-
     <ion-buttons end>
       <button ion-button icon-only (click)="shareArticle()">
         <ion-icon name="share"></ion-icon>
@@ -30,6 +28,9 @@
 
   <div padding [innerHtml]="article?.text" class="htmlContent"></div>
 
-  <share-button (click)="shareArticle()"></share-button>
+  <simple-button text="Teilen"
+                 icon="share"
+                 (click)="shareArticle()">
+  </simple-button>
 
 </ion-content>
