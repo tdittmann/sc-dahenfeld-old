@@ -132,7 +132,8 @@ export class MyApp {
     // Init the push service
     const pushOptions: PushOptions = {
       android: {
-        forceShow: "true"
+        forceShow: "true",
+        senderID: ''
       },
       ios: {
         alert: "true",

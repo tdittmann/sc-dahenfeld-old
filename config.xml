@@ -112,7 +112,7 @@
     <plugin name="com-sarriaroman-photoviewer" spec="^1.1.11" />
     <plugin name="cordova-plugin-statusbar" spec="^2.3.0" />
     <plugin name="cordova-plugin-headercolor" spec="^1.0.0" />
-    <plugin name="phonegap-plugin-push" spec="^2.1.2">
+    <plugin name="phonegap-plugin-push" spec="^2.2.2">
         <variable name="FCM_VERSION" value="11.0.1" />
     </plugin>
 </widget>
