@@ -11,13 +11,19 @@ Repository of the official SC Dahenfeld app, implemented using [Ionic Framework]
 ## Release
 
 ### Android
-1. ionic cordova build android --release
+**Without Google Play App Signing**
+1. ionic cordova build android --release --prod
 2. zipalign -v -p 4 my-app-unsigned.apk my-app-unsigned-aligned.apk
 3. apksigner sign --ks my-release-key.jks --out my-app-release.apk my-app-unsigned-aligned.apk
 
+**With Google Play App Signing**
+1. ionic cordova build android --release --prod
+2. apksigner sign --ks my-release-key.jks --out my-app-release.apk my-app-unsigned-aligned.apk
+
+
 ### iOS
-1. ionic cordova build android --release
-2. Deploy via XCode
+1. ionic cordova build ios --release --prod
+2. Release via XCode
 
 ## Official Website
 http://sc-dahenfeld.de
