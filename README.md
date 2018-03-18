@@ -22,7 +22,7 @@ Repository of the official SC Dahenfeld app, implemented using [Ionic Framework]
 
 
 ### iOS
-1. ionic cordova build ios --release --prod
+1. ionic cordova build ios --release
 2. Release via XCode
 
 ## Official Website
