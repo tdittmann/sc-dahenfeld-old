@@ -8,7 +8,7 @@ import {DevModeService} from "../../services/devMode.service";
 })
 export class AboutComponent {
 
-  version: string = "4.3.0";
+  version: string = "4.4.0";
   developer: string = "Timo Dittmann";
 
   private counter: number = 0;
