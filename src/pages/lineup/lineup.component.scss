@@ -1,29 +1,5 @@
 lineup {
 
-  .mannschaftsauswahl {
-    text-transform: uppercase;
-    text-align: center;
-    width: 90%;
-    margin: 10px auto 10px auto;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    overflow: auto;
-    display: flex;
-  }
-
-  .mannschaftTeam {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    border-radius: 2px;
-    height: auto;
-  }
-
-  .mannschaftAktiv {
-    background: $heading-dark;
-    color: #fff;
-  }
-
   .substitionCameInFor {
     text-transform: uppercase;
   }

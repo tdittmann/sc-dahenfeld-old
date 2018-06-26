@@ -43,10 +43,6 @@ export class LineupComponent implements OnInit {
     );
   }
 
-  changeSelectedClub(teamName: string) {
-    this.selectedTeam = teamName;
-  }
-
   isPlayerInSelectedTeam(teamId: number) {
     let clubId: number = this.getClubId();
     return teamId == clubId;

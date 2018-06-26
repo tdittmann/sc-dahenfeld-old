@@ -4,17 +4,7 @@
 
   <div class="maxWidthContainer" *ngIf="lineup && players">
 
-    <div class="mannschaftsauswahl">
-      <div class="mannschaftTeam" (click)="changeSelectedClub(lineup.matchInfo.home_name)"
-           [ngClass]="{ mannschaftAktiv : lineup.matchInfo.home_name == selectedTeam}">
-        {{ lineup.matchInfo.home_name }}
-      </div>
-      <div class="mannschaftTeam" (click)="changeSelectedClub(lineup.matchInfo.away_name)"
-           [ngClass]="{ mannschaftAktiv : lineup.matchInfo.away_name == selectedTeam}">
-        {{ lineup.matchInfo.away_name }}
-      </div>
-    </div>
-
+    <separator text="Startaufstellung"></separator>
     <ion-list>
       <ng-template ngFor let-player [ngForOf]="players">
         <ion-item *ngIf="isPlayerInSelectedTeam(player.clubId) && !player.cameInTime">
