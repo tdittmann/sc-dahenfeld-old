@@ -73,6 +73,7 @@ export class MyApp {
     {title: 'Profil', component: ProfileComponent, icon: "person"},
   ];
   appNavigation: NavigationItem[] = [
+    {title: 'Datenschutz', component: ArticleDetailCardComponent, parameter: "1195", icon: "finger-print"},
     {title: 'Impressum', component: AboutComponent, icon: "information-circle"}
   ];
 
