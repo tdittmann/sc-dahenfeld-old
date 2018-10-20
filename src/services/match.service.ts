@@ -1,12 +1,13 @@
 import {environment} from "../environments/environment";
 import {Injectable} from "@angular/core";
 import {Mannschaftsart} from "../entities/Mannschaftsart";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import {Match} from "../entities/Match";
 import {HttpClient} from "@angular/common/http";
 import {Lineup} from "../entities/Lineup";
 import {Article} from "../entities/Article";
 import {MatchOverview} from "../entities/MatchOverview";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class MatchService {
@@ -29,9 +30,11 @@ export class MatchService {
 
   loadGameReport(matchId: string): Observable<Article> {
     return this.http.get<Article[]>(environment.backendUrl + "gameReport?matchId=" + matchId)
-      .map(response => {
-        return response[0];
-      });
+      .pipe(
+        map(response => {
+          return response[0];
+        })
+      );
   }
 
 }

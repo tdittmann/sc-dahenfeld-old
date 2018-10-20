@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Mannschaftsart} from "../entities/Mannschaftsart";
 import {environment} from "../environments/environment";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import {Player} from "../entities/Player";
 import {HttpClient} from "@angular/common/http";
 

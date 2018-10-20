@@ -1,9 +1,10 @@
 import {Injectable} from "@angular/core";
 import {environment} from "../environments/environment";
 import {Article} from "../entities/Article";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 import "rxjs/Rx";
 import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/operators";
 
 @Injectable()
 export class ArticleService {
@@ -18,9 +19,9 @@ export class ArticleService {
 
   loadArticle(newsId: string): Observable<Article> {
     return this.http.get<Article[]>(environment.backendUrl + "news?id=" + newsId)
-      .map(response => {
-        return response[0];
-      });
+      .pipe(
+        map(response => response[0])
+      );
   }
 
   incrementMobileHitForArticle(pArticle: Article) {
